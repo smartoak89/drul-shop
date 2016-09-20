@@ -5,6 +5,7 @@ var shell = require('gulp-shell')
 
 var paths = {
 	'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json']
+
 };
 
 
