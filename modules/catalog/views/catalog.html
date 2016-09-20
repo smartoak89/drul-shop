@@ -1,0 +1,55 @@
+<div class="uk-grid uk-margin-bottom">
+    <div class="uk-width-large-1-2 uk-width-medium-1-1 uk-width-small-1-1">!{root.current_cat_bread.html_uikit}</div>
+    <div class="uk-width-large-1-2 uk-hidden-small uk-hidden-medium taracot-catalog-right-links">
+        <a href="/catalog/cart!{root.url_data}" class="uk-button uk-button-small"><span class="uk-badge">!{root.cart_items_count}</span>&nbsp;!{root.lang.__('cart')}</a>&nbsp;<a href="/catalog/orders!{root.url_data}" class="uk-button uk-button-small"><i class="uk-icon-reorder"></i>&nbsp;!{root.lang.__('my_orders')}</a>
+    </div>
+    <div class="uk-width-1-1 uk-hidden-large uk-margin-top">
+        <a href="/catalog/cart!{root.url_data}" class="uk-button uk-button-small"><span class="uk-badge">!{root.cart_items_count}</span>&nbsp;!{root.lang.__('cart')}</a>&nbsp;<a href="/catalog/orders!{root.url_data}" class="uk-button uk-button-small"><i class="uk-icon-reorder"></i>&nbsp;!{root.lang.__('my_orders')}</a>
+    </div>
+</div>
+<h1 class="taracot-catalog-h1">!{root.current_cat_title}</h1>
+<div class="uk-grid uk-margin-top">
+    <div class="uk-width-large-2-10 uk-width-medium-3-10 uk-width-small-1-1 uk-margin-bottom">
+        <div class="uk-panel uk-panel-box catalog-panel-box">
+            <ul class="uk-nav uk-nav-side">
+                !{root.current_neighborhood_html}
+            </ul>
+        </div>
+    </div>
+    <div class="uk-width-large-8-10 uk-width-medium-7-10 uk-width-small-1-1 uk-margin-bottom">
+        <div class="uk-margin-bottom uk-panel uk-panel-box catalog-panel-box">
+            <div class="uk-grid">
+                <div class="uk-width-large-7-10 uk-width-medium-1-1 uk-width-small-1-1">
+                    <ul class="uk-subnav uk-subnav-pill taracot-catalog-subnav-pill">
+                        <li><span>!{root.lang.__('filter_sort')}:</span>
+                        </li> !{root.filter_sort}
+                    </ul>
+                </div>
+                <div class="uk-width-large-3-10 uk-width-medium-1-1 uk-width-small-1-1 uk-hidden-small uk-hidden-medium taracot-catalog-align-right">
+                    <ul class="uk-subnav uk-subnav-pill taracot-catalog-subnav-pill">
+                        </li> !{root.filter_show}
+                    </ul>
+                </div>
+                <div class="uk-width-large-3-10 uk-width-medium-1-1 uk-width-small-1-1 uk-hidden-large uk-margin-top">
+                    <ul class="uk-subnav uk-subnav-pill taracot-catalog-subnav-pill">
+                        </li> !{root.filter_show}
+                    </ul>
+                </div>
+                <div class="uk-width-1-1 uk-margin-top uk-form">
+                    <button class="uk-button uk-button-primary taracot-catlaog-search-btn">!{root.lang.__('search')}</button>
+                    <div class="taracot-catalog-search-field-wrap">
+                        <input type="text" class="taracot-catalog-search-field" value="#{root.init_find}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        !{root.catalog_items} !{root.pagination}
+    </div>
+</div>
+<script>
+var _taracot_catalog_init_sort = "!{root.init_sort}",
+    _taracot_catalog_init_view = "!{root.init_view}",
+    _taracot_catalog_init_path = "!{root.init_path}",
+    _taracot_catalog_init_page = "!{root.init_page}";
+</script>
+<script src="/modules/catalog/js/frontend.min.js"></script>
