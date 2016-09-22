@@ -3,5 +3,5 @@ var userAPI = require('../handlers/user');
 
 module.exports = function (app) {
     app.get('/', commonAPI.get);
-    app.post('/auth', userAPI.auth);
+    app.post('/user/register', userAPI.register);
 };

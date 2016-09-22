@@ -6,8 +6,7 @@ module.exports = {
         "key": "sid",
         "coockie": {
             "path": "/",
-            "httpOnly": true,
-            "maxAge": true
+            "httpOnly": true
         }
     },
     "mongoose": {
