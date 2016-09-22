@@ -33,6 +33,7 @@ app.use(cookieParser());
 app.use(require('./middleware/sendHttpError'));
 
 require('./routes/common')(app);
+require('./routes/admin')(app);
 
 app.use(require('./middleware/page404'));
 

@@ -1,5 +1,5 @@
 var commonAPI = require('../handlers/common');
-var userAPI = require('../handlers/userAPI');
+var userAPI = require('../handlers/user');
 
 module.exports = function (app) {
     app.get('/', commonAPI.get);
