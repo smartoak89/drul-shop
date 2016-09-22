@@ -6,21 +6,24 @@ var schema = new Schema({
     email: {
         type: String,
         //unique: true,
-        // required: true
+        required: true
     },
     username: {
-        type: String,
+        // type: String,
         // required: true
     },
     hashedPassword: {
         type: String,
-        // required: true
+        required: true
     },
     salt: {
         type: String,
-        // required: true
+        required: true
     },
-    creared: {
+    uuid: {
+        type: String
+    },
+    created: {
         type: Date,
         default: Date.now
     }
@@ -42,4 +45,4 @@ schema.methods.checkPassword = function(password) {
     return this.encryptPassword(password) === this.hashedPassword;
 };
 
-exports.Add = mongoose.model('User', schema);
+exports.User = mongoose.model('User', schema);

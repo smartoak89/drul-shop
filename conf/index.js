@@ -10,6 +10,6 @@ module.exports = {
         }
     },
     "mongoose": {
-        "uri": "mongodb://localhost/drul-shop"
+        "uri": "mongodb://localhost/test"
     }
 };

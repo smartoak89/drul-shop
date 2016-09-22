@@ -1,4 +1,5 @@
-var User = require('../models/user').Add;
+var User = require('../models/user').User;
+var uuid = require('uuid');
 
 exports.auth = function (req, res, next) {
     res.end('ok');
@@ -7,7 +8,8 @@ exports.auth = function (req, res, next) {
 exports.register = function (req, res, next) {
     var user = {
         email: req.body.email,
-        password: req.body.pass
+        password: req.body.password,
+        uuid: uuid.v4()
     };
 
     //TODO: sanitize and validate
@@ -15,6 +17,7 @@ exports.register = function (req, res, next) {
     var user = new User(user);
     user.save(function (err, user) {
         if (err) next(err);
-        console.log('savedUser', user);
+        res.status(200);
+        res.json({uuid: user.uuid});
     });
 };
