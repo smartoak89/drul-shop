@@ -1,12 +1,13 @@
 var adminApi = require('../handlers/admin');
 
 module.exports = function (app) {
-    app.get('/admin', adminApi.getAdmin);
-    app.get('/admin/tovs', adminApi.adminTovs);
-    app.get('/admin/categ', adminApi.adminCateg);
-    app.get('/admin/reqs', adminApi.adminReqs);
-    app.get('/admin/stocks', adminApi.adminStocks);
-    app.get('/admin/curr', adminApi.adminCurr);
-    app.get('/admin/deliv', adminApi.adminDeliv);
-    app.get('/admin/com', adminApi.adminCom);
+    app.get('/admin', adminApi.main);
+    app.get('/admin/tovs', adminApi.tovs);
+    app.get('/admin/categ', adminApi.categ);
+    app.get('/admin/reqs', adminApi.reqs);
+    app.get('/admin/stocks', adminApi.stocks);
+    app.get('/admin/curr', adminApi.curr);
+    app.get('/admin/deliv', adminApi.deliv);
+    app.get('/admin/com', adminApi.com);
+    app.get('/admin/users', adminApi.listUsers);
 };
