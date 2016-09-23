@@ -9,7 +9,7 @@ var passport = require('./libs/passport');
 var conf = require('./conf');
 
 // var mongoose = require('./libs/mongoose');
-
+//puz-karapuz
 
 var app = express();
 
