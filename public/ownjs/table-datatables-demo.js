@@ -15,7 +15,7 @@
     'oLanguage': {
       'sInfoFiltered': '<span class="label label-info"><i class="fa fa-filter"></i> filtering from _MAX_ records</span>',
     },
-    'sAjaxSource': '_includes/data-source.json',
+    'sAjaxSource': 'data-source.json',
     'fnInitComplete': function(settings) {
       var aoData = settings.aoData;
 
