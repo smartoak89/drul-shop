@@ -9,5 +9,7 @@ module.exports = function (app) {
     app.get('/admin/curr', handler.curr);
     app.get('/admin/deliv', handler.deliv);
     app.get('/admin/com', handler.com);
-    app.get('/admin/users', handler.listUsers);
+    app.get('/admin/users', handler.users);
+
+    app.get('/list-of-users', handler.listUsers);
 };

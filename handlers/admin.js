@@ -25,24 +25,22 @@ exports.com = function (req, res, next) {
     res.render('admin/com');
 };
 
+exports.users = function (req, res, next) {
+    res.render('admin/users');
+
+};
+
 exports.listUsers = function (req, res, next) {
     var userAPI = require('../api/user');
     userAPI.listUsers(function (err, data) {
         if (err) next(err);
         var listOfUsers = data.map(function (a, b, d) {
            return {
-               email: a.email,
-               created: a.created,
+               email: a.email
            }
         });
-
-        console.log(listOfUsers);
         res.status(200);
-        req.flash( 'message', {type: 'success', message: 'bleat'});
-        res.render('admin/users', {
-            listOfUsers: listOfUsers,
-            flashMessage: req.flash('message')
-        });
+        res.json({data: listOfUsers})
     });
 
 };
