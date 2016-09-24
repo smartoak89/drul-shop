@@ -18,3 +18,4 @@
 {"level":"error","message":"","timestamp":"2016-09-22T18:36:50.581Z"}
 {"level":"error","message":"","timestamp":"2016-09-22T18:37:16.066Z"}
 {"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-22T18:48:26.784Z"}
+{"view":{"defaultEngine":"jade","ext":".jade","name":"/admin/users","root":"D:\\FirstRepos\\drul-shop\\views"},"level":"error","message":"","timestamp":"2016-09-24T10:02:13.921Z"}
