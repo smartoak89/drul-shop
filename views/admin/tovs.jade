@@ -68,29 +68,29 @@ block content
                                 div.row
                                     div.col-md-3
                                         div.form-group
-                                            input.form-control.input-sm#addEngine(name="addEngine" placeholder="Rendering engine" autocomplete="off" required="")
-                                    div.col-md-3
-                                        div.form-group
-                                            input.form-control.input-sm#addBrowser(name="addBrowser" placeholder="Browser" autocomplete="off" required="")
-                                    div.col-md-2
-                                        div.form-group
-                                            input.form-control.input-sm#addPlatform(name="addPlatform" placeholder="Platform" autocomplete="off" required="")
-                                    div.col-md-2
-                                        div.form-group
-                                            input.form-control.input-sm#addVersion(name="addVersion" placeholder="Engine version" autocomplete="off" required="")
-                                    div.col-md-2
-                                        div.form-group
-                                            label.select.select-sm
-                                                select#addGrade(name="addGrade" required="")
-                                                    option(value="") CSS grade
-                                                    option(value="A") A
-                                                    option(value="B") B
-                                                    option(value="C") C
-                                                    option(value="D") D
-                                                    option(value="E") E
-                                                    option(value="X") X
-                                                    option(value="C/A1") C/A
-                                                        sup 1
+                                            input.form-control.input-sm#addEngine(name="email" placeholder="User email" autocomplete="off" required="")
+                                    //div.col-md-3
+                                    //    div.form-group
+                                    //        input.form-control.input-sm#addBrowser(name="index" placeholder="index" autocomplete="off" required="")
+                                    //div.col-md-2
+                                    //    div.form-group
+                                    //        input.form-control.input-sm#addPlatform(name="addPlatform" placeholder="Platform" autocomplete="off" required="")
+                                    //div.col-md-2
+                                    //    div.form-group
+                                    //        input.form-control.input-sm#addVersion(name="addVersion" placeholder="Engine version" autocomplete="off" required="")
+                                    //div.col-md-2
+                                    //    div.form-group
+                                    //        label.select.select-sm
+                                    //            select#addGrade(name="addGrade" required="")
+                                    //                option(value="") CSS grade
+                                    //                option(value="A") A
+                                    //                option(value="B") B
+                                    //                option(value="C") C
+                                    //                option(value="D") D
+                                    //                option(value="E") E
+                                    //                option(value="X") X
+                                    //                option(value="C/A1") C/A
+                                    //                    sup 1
                             div.form-grouphide
                                 button.btn.btn-default.btn-sm#hideAddDatatables1 Cancel
                                 button.btn.btn-success.btn-sm(type="submit") Create
@@ -131,19 +131,13 @@ block content
                 table.table.table-noborder.table-hover.bordered-top#datatables1
                     thead
                         tr
-                            th Rendering engine
-                            th Browser
-                            th Platform(s)
-                            th Engine version
-                            th CSS grade
+                            //th №
+                            th Email
                     tbody
                     tfoot
                         tr
-                            th Rendering engine
-                            th Browser
-                            th Platform(s)
-                            th Engine version
-                            th CSS grade
+                            //th Rendering №
+                            th Rendering Email
             div.modal.fade#templateSetup
                 div.modal-dialog
                     div.modal-content

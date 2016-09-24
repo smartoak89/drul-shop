@@ -15,15 +15,17 @@
     'oLanguage': {
       'sInfoFiltered': '<span class="label label-info"><i class="fa fa-filter"></i> filtering from _MAX_ records</span>',
     },
-    'sAjaxSource': 'data-source.json',
+    'ajax': "/list-of-users",
+    "columns": [
+      { "data": "email" }
+    ],
     'fnInitComplete': function(settings) {
       var aoData = settings.aoData;
 
       // adding uniquen id to TR to crud
       $.each( aoData, function(i, val){
         var $ntr = $( val.nTr );
-
-        $ntr.attr( 'data-id', 'datatables1_' + i );
+        $ntr.attr( 'data-id', val._aData.uuid );
       });
 
       var $nTable = $(settings.nTable);
@@ -170,7 +172,7 @@
 
               // do server action here ( ajax )
               // ...
-
+              console.log($elem)
               // deleting selected data
               datatables1.fnDeleteRow( $elem );
             });
@@ -198,32 +200,44 @@
 
     // do server action to save change here ( ajax )
     // ...
-    // just simple rule after ajax is done (demo)
-    $.each( datas, function( i, data ){
-      console.log( data.name + ' = ' + data.value );
+    $.ajax({
+      type: "POST",
+      url: "/add-user",
+      data: {
+        "email": datas[0].value
+      },
+      error: function error(err) {
+        console.log('err', err)
+      },
+      success: function success(data) {
+        console.log('success', data);
+
+        var addData = datatables1.fnAddDataAndDisplay({
+              "email": datas[0].value
+            }),
+            newRow = addData.nTr,
+            newID = data; // just sample id (on real case: get it from server callback)
+
+        // adding data-id to new row
+        // then make it selected and enable to delete or edit
+        datatables1.$( 'tr.active' ).removeClass( 'active' );
+        $( newRow ).attr( 'data-id', newID )
+            .addClass( 'active' );
+        // activate actions edit & delete
+        $( '.datatables1-actions' ).removeClass( 'disabled' );
+        // reset form
+        $( '#formAddDatatables1' )[0].reset();
+
+        // just simple rule after ajax is done (demo)
+        $.each( datas, function( i, data ){
+          console.log( data.name + ' = ' + data.value );
+        });
+      }
     });
 
     // add new row to datatables using datatables plugin fnAddDataAndDisplay([ 1,2,3,... ]) ( see scripts/demo/datatables-plugins.js )
     // or you can just use fnAddData([ 1,2,3,... ]) - without any datatables plugin
-    var addData = datatables1.fnAddDataAndDisplay([
-      datas[0].value,
-      datas[1].value,
-      datas[2].value,
-      datas[3].value,
-      datas[4].value
-      ]),
-    newRow = addData.nTr,
-      newID = datatables1.fnGetData().length; // just sample id (on real case: get it from server callback)
 
-    // adding data-id to new row
-    // then make it selected and enable to delete or edit
-    datatables1.$( 'tr.active' ).removeClass( 'active' );
-    $( newRow ).attr( 'data-id', 'datatables1_' + newID )
-    .addClass( 'active' );
-    // activate actions edit & delete
-    $( '.datatables1-actions' ).removeClass( 'disabled' );
-    // reset form
-    $( '#formAddDatatables1' )[0].reset();
   })
   // edit rule
   .on( 'click', '#edit-datatables1, #hideEditDatatables1', function(e){
@@ -388,3 +402,23 @@
   });
 
 })(window);
+
+function getUsers (){
+  return {
+    "data": [
+      {
+        "name": "Tiger Nixon",
+        "position": "System Architect",
+        "salary": "$320,800",
+        "start_date": "2011/04/25",
+        "office": "Edinburgh"
+      },{
+        "name": "Tiger Nixon",
+        "position": "System Architect",
+        "salary": "$320,800",
+        "start_date": "2011/04/25",
+        "office": "Edinburgh"
+      }
+    ]
+  }
+}

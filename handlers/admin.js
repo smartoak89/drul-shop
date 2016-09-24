@@ -1,3 +1,4 @@
+var userAPI = require('../api/user');
 
 exports.main = function (req, res, next) {
     res.render('admin/admin');
@@ -30,17 +31,37 @@ exports.users = function (req, res, next) {
 
 };
 
-exports.listUsers = function (req, res, next) {
-    var userAPI = require('../api/user');
-    userAPI.listUsers(function (err, data) {
-        if (err) next(err);
+exports.listOfUsers = function (req, res, next) {
+    userAPI.listOfUsers(function (err, data) {
+        if (err) return next(err);
         var listOfUsers = data.map(function (a, b, d) {
            return {
-               email: a.email
+               uuid: a.uuid,
+               email: a.email,
            }
         });
         res.status(200);
         res.json({data: listOfUsers})
+    });
+
+};
+
+exports.addUser = function (req, res, next) {
+    var user = {
+        email: req.body.email
+    };
+    userAPI.addUser(user, function (err, user) {
+        if (err) return next(err);
+        res.status(200);
+        res.json(user.uuid);
+    });
+
+};
+exports.dropUsers = function (req, res, next) {
+    userAPI.dropUsers(null, function (err, result) {
+        if (err) return next(err);
+        res.status(200);
+        res.json(result);
     });
 
 };

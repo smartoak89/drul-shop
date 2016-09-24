@@ -39,3 +39,6 @@
 =======
 >>>>>>> 6ca31a3d226c834f22290b49b34d077063002bf5
 >>>>>>> 399d7409ddea2e288bd586fb52342f0e0539ef7c
+{"message":"","name":"ValidationError","errors":{"salt":{"message":"Path `salt` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"salt"},"kind":"required","path":"salt"},"hashedPassword":{"message":"Path `hashedPassword` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"hashedPassword"},"kind":"required","path":"hashedPassword"},"email":{"message":"Path `email` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"email"},"kind":"required","path":"email"}},"level":"error","timestamp":"2016-09-24T14:20:11.014Z"}
+{"level":"error","message":"","timestamp":"2016-09-24T15:31:54.694Z"}
+{"level":"error","message":"","timestamp":"2016-09-24T15:32:43.438Z"}

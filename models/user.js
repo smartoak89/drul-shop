@@ -6,7 +6,7 @@ var schema = new Schema({
     email: {
         type: String,
         //unique: true,
-        required: true
+        // required: true
     },
     username: {
         // type: String,
@@ -14,11 +14,11 @@ var schema = new Schema({
     },
     hashedPassword: {
         type: String,
-        required: true
+        // required: true
     },
     salt: {
         type: String,
-        required: true
+        // required: true
     },
     uuid: {
         type: String

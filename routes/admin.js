@@ -11,5 +11,7 @@ module.exports = function (app) {
     app.get('/admin/com', handler.com);
     app.get('/admin/users', handler.users);
 
-    app.get('/list-of-users', handler.listUsers);
+    app.get('/list-of-users', handler.listOfUsers);
+    app.post('/add-user', handler.addUser);
+    app.get('/drop-users', handler.dropUsers);
 };
