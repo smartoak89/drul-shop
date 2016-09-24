@@ -1,4 +1,5 @@
 var handler = require('../handlers/admin');
+var user = require('../handlers/user');
 
 module.exports = function (app) {
     app.get('/admin', handler.main);
@@ -11,7 +12,10 @@ module.exports = function (app) {
     app.get('/admin/com', handler.com);
     app.get('/admin/users', handler.users);
 
-    app.get('/list-of-users', handler.listOfUsers);
-    app.post('/add-user', handler.addUser);
-    app.get('/drop-users', handler.dropUsers);
+    app.get('/list-users', user.listUsers);
+    app.post('/user', user.create);
+    app.get('/user/:id', user.read);
+    app.put('/user/:id', user.update);
+    app.delete('/user/:id', user.delete);
+    app.get('/drop-users', user.drop);
 };

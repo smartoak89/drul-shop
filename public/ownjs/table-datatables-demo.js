@@ -15,7 +15,7 @@
     'oLanguage': {
       'sInfoFiltered': '<span class="label label-info"><i class="fa fa-filter"></i> filtering from _MAX_ records</span>',
     },
-    'ajax': "/list-of-users",
+    'ajax': "/list-users",
     "columns": [
       { "data": "email" }
     ],
@@ -169,12 +169,20 @@
 
             // process it one by one
             dataSelected.each( function( i, $elem ){
-
+              var uuid = $($elem).attr('data-id');
               // do server action here ( ajax )
               // ...
-              console.log($elem)
-              // deleting selected data
-              datatables1.fnDeleteRow( $elem );
+              $.ajax({
+                type: "DELETE",
+                url: "/user/" + uuid,
+                error: function error(err) {
+                  console.log('err', err)
+                },
+                success: function success(data) {
+                  // deleting selected data
+                  datatables1.fnDeleteRow( $elem );
+                }
+              });
             });
           }
           // disabled button
@@ -202,7 +210,7 @@
     // ...
     $.ajax({
       type: "POST",
-      url: "/add-user",
+      url: "/user",
       data: {
         "email": datas[0].value
       },
