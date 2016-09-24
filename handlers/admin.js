@@ -29,16 +29,20 @@ exports.listUsers = function (req, res, next) {
     var userAPI = require('../api/user');
     userAPI.listUsers(function (err, data) {
         if (err) next(err);
-        var listUsers = data.map(function (a, b, d) {
+        var listOfUsers = data.map(function (a, b, d) {
            return {
                email: a.email,
                created: a.created,
            }
         });
 
-        console.log(listUsers);
+        console.log(listOfUsers);
         res.status(200);
-        res.render('/admin/users', {listUsers: listUsers});
+        req.flash( 'message', {type: 'success', message: 'bleat'});
+        res.render('admin/users', {
+            listOfUsers: listOfUsers,
+            flashMessage: req.flash('message')
+        });
     });
 
 };

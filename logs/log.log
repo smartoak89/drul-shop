@@ -18,4 +18,19 @@
 {"level":"error","message":"","timestamp":"2016-09-22T18:36:50.581Z"}
 {"level":"error","message":"","timestamp":"2016-09-22T18:37:16.066Z"}
 {"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-22T18:48:26.784Z"}
+<<<<<<< HEAD
 {"view":{"defaultEngine":"jade","ext":".jade","name":"/admin/users","root":"D:\\FirstRepos\\drul-shop\\views"},"level":"error","message":"","timestamp":"2016-09-24T10:02:13.921Z"}
+=======
+{"view":{"defaultEngine":"jade","ext":".jade","name":"/admin/users","root":"/home/smart-yura/Документы/Projects/drul-shop/views"},"level":"error","message":"","timestamp":"2016-09-24T09:02:55.123Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:08:10.923Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:08:45.829Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:08:55.133Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:09:40.675Z"}
+{"pos":703,"loc":{"line":13,"column":3},"raisedAt":715,"level":"error","message":"","timestamp":"2016-09-24T09:10:29.670Z"}
+{"pos":703,"loc":{"line":13,"column":3},"raisedAt":715,"level":"error","message":"","timestamp":"2016-09-24T09:10:45.673Z"}
+{"pos":703,"loc":{"line":14,"column":0},"raisedAt":713,"level":"error","message":"","timestamp":"2016-09-24T09:10:52.388Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:11:13.939Z"}
+{"pos":731,"loc":{"line":13,"column":31},"raisedAt":736,"level":"error","message":"","timestamp":"2016-09-24T09:11:24.445Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:11:31.054Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:11:44.111Z"}
+>>>>>>> 6ca31a3d226c834f22290b49b34d077063002bf5

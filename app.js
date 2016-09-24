@@ -4,12 +4,12 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var flash = require('express-flash');
 var log = require('./libs/logger')(module);
-var passport = require('./libs/passport');
+var auth = require('./libs/passport');
 var conf = require('./conf');
 
 // var mongoose = require('./libs/mongoose');
-//puz-karapuz
 
 var app = express();
 
@@ -24,12 +24,14 @@ app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser());
 app.use(cookieParser());
-app.use(passport.initialize());
+app.use(auth.initialize());
 
 // var MongoStore = require('connect-mongo')(session);
 app.use(session({
     secret: 'secret'
 }));
+
+app.use(flash());
 
 app.use(require('./middleware/sendHttpError'));
 
