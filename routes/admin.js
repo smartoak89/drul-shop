@@ -1,5 +1,5 @@
 var handler = require('../handlers/admin');
-var user = require('../handlers/user');
+var user = require('../handlers/admin/user');
 
 module.exports = function (app) {
     app.get('/admin', handler.main);
