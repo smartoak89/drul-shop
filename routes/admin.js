@@ -14,7 +14,7 @@ module.exports = function (app) {
 
     app.get('/list-users', user.listUsers);
     app.post('/user', user.create);
-    app.get('/user/:id', user.read);
+    app.get('/admin/user/:id', user.read);
     app.put('/user/:id', user.update);
     app.delete('/user/:id', user.delete);
     app.get('/drop-users', user.drop);

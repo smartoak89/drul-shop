@@ -50,15 +50,7 @@ exports.create = function (req, res, next) {
 };
 
 exports.read = function (req, res, next) {
-    // var user = {
-    //     email: req.body.email
-    // };
-    // userAPI.createUser(user, function (err, user) {
-    //     if (err) return next(err);
-    //     res.status(200);
-    //     res.json(user.uuid);
-    // });
-
+   res.render('admin/detalUser');
 };
 
 exports.update = function (req, res, next) {

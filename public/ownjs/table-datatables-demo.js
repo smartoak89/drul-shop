@@ -176,6 +176,7 @@
                 type: "DELETE",
                 url: "/user/" + uuid,
                 error: function error(err) {
+                  //TODO: error handle
                   console.log('err', err)
                 },
                 success: function success(data) {
@@ -215,6 +216,7 @@
         "email": datas[0].value
       },
       error: function error(err) {
+          //TODO: error handle
         console.log('err', err)
       },
       success: function success(data) {
