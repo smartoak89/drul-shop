@@ -12,7 +12,7 @@ module.exports = function (app) {
     app.get('/admin/com', handler.com);
     app.get('/admin/users', handler.users);
 
-    app.get('/list-users', user.listUsers);
+    app.get('/admin/list-users', user.listUsers);
     app.post('/user', user.create);
     app.get('/admin/user/:id', user.read);
     app.put('/user/:id', user.update);

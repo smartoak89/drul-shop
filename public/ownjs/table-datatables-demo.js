@@ -15,7 +15,7 @@
     'oLanguage': {
       'sInfoFiltered': '<span class="label label-info"><i class="fa fa-filter"></i> filtering from _MAX_ records</span>',
     },
-    'ajax': "/list-users",
+    'ajax': "/admin/list-users",
     "columns": [
       { "data": "email" }
     ],
@@ -26,6 +26,7 @@
       $.each( aoData, function(i, val){
         var $ntr = $( val.nTr );
         $ntr.attr( 'data-id', val._aData.uuid );
+        $ntr.find( 'td' ).wrap('<a class="a-detalUser" href="user/' + val._aData.uuid + '"></a>');
       });
 
       var $nTable = $(settings.nTable);
@@ -233,6 +234,7 @@
         datatables1.$( 'tr.active' ).removeClass( 'active' );
         $( newRow ).attr( 'data-id', newID )
             .addClass( 'active' );
+        $(newRow).find('td').wrap('<a class="a-detalUser" href="user/' + newID + '"></a>');
         // activate actions edit & delete
         $( '.datatables1-actions' ).removeClass( 'disabled' );
         // reset form
