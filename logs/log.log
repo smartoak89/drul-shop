@@ -46,3 +46,5 @@
 {"level":"error","message":"","timestamp":"2016-09-24T19:26:24.277Z"}
 {"level":"error","message":"","timestamp":"2016-09-24T19:39:31.576Z"}
 {"level":"error","message":"","timestamp":"2016-09-24T19:39:38.606Z"}
+{"view":{"defaultEngine":"jade","ext":".jade","name":"admin/reqs","root":"/home/smart-yura/Документы/Projects/drul-shop/views"},"level":"error","message":"","timestamp":"2016-09-25T11:00:04.208Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/detalUser.jade","level":"error","message":"","timestamp":"2016-09-25T11:00:46.985Z"}

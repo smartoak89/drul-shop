@@ -1,6 +1,6 @@
 mixin navAdmin(name, code)
     li.nav-item(role="presentation")&attributes(attributes)
-        a(href= code)
+        a(href= '/admin/' + code)
             span.nav-icon
                 i.fa.fa-cube
             span.nav-text= name
