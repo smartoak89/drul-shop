@@ -39,6 +39,32 @@ block content
                 div.panel(data-fill-color="true")
                     div.panel-heading
                         h3.panel-title Список категорий
+                    div.panel-body
+                        div.btn-toolbar.clearfix(role="toolbar")
+                            //div.btn-group.pull-right(style="direction: ltr")
+                            //    label.text-muted(style="margin-right:10px") Multiple select:
+                            //    input#allowMultipleSelect.js-switch(type="checkbox" data-class-name="switchery switchery-alt")
+                            div.btn-group.btn-group-sm.pull-left
+                                button.btn.btn-default#add-mainCateg(data-toggle="tooltip" data-container="body" title="add new record" role="button")
+                                    i.fa.fa-plus
+                            //div.btn-group.btn-group-sm.pull-left
+                            //    button.btn.btn-default.datatables1-actions.disabled#edit-datatables1(data-toggle="tooltip" data-container="body" title="edit record" role="button")
+                            //        i.fa.fa-edit
+                                //button.btn.btn-default.datatables1-actions.disabled#delete-datatables1(data-toggle="tooltip" data-container="body" title="delete record(s)" role="button")
+                                //    i.fa.fa-trash-o
+                            //div.btn-group.pull-left
+                            //    input.form-control.input-sm#filterDatatables1(placeholder="Filter")
+                    div.panel-body.hide#addMainCategFormContainer
+                        form#formAddMainCateg(action="#" method="POST")
+                            div.form-group
+                                p.lead Добавить категорию
+                                div.row
+                                    div.col-md-3
+                                        div.form-group
+                                            input.form-control.input-sm#addEngine(name="Имя" placeholder="Имя категории" autocomplete="off" required="")
+                            div.form-grouphide
+                                button.btn.btn-default.btn-sm#hideAddmainCateg Отмена
+                                button.btn.btn-success.btn-sm(type="submit") Создать
                 div.dataTables_wrapper.form-inline.dt-bootstrap
                     table.table.table-noborder.table-hover.tree.dataTable.bordered-top
                         thead
