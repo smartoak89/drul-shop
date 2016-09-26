@@ -224,4 +224,8 @@ block content
                             th Rendering Email
 
             div.content-body
+            select#currency
+                option(value='$' selected) $
+                option(value='UAH') UAH
+            button(onClick="user.save(event.target.id)" id="#{data.uuid}") Save
             p #{JSON.stringify(data)}

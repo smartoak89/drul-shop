@@ -40,6 +40,8 @@ exports.create = function (req, res, next) {
     var user = {
         email: req.body.email
     };
+    if (!validateUser(user)) return next(400);
+
     userAPI.create(user, function (err, user) {
         if (err) return next(err);
         res.status(200);
@@ -85,10 +87,15 @@ exports.delete = function (req, res, next) {
 };
 
 exports.drop = function (req, res, next) {
-    userAPI.dropUsers(null, function (err, result) {
+    userAPI.drop(null, function (err, result) {
         if (err) return next(err);
         res.status(200);
         res.json(result);
     });
 
 };
+
+function validateUser (user) {
+    //TODO: validata and sanitaze
+    return true;
+}
