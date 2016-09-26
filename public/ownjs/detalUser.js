@@ -2,7 +2,6 @@
     'use strict';
     // edit rule
     $( document ).on( 'click', '#edit-detailUser, #hideEditUserInfo', function(e){
-        console.log('+');
         e.preventDefault();
         $( '#editUserInfoContainer' ).toggleClass( 'hide' );
         // get data selecter row

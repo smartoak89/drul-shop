@@ -45,7 +45,7 @@ block content
                                 //    img(alt="cover" src="images/dummy/uifaces22.jpg")
                             div.col-sm-8
                                 div.hidden-xs
-                                    h2.display-name.media-heading.text-teal user@gmail.com
+                                    h2.display-name.media-heading.text-teal #{data.email}
                                     p.text-muted.mb-4x
                                         span.mr-2x Покупатель
                                         span <i class="fa fa-map-marker fa-fw"></i> Страна
@@ -117,7 +117,9 @@ block content
                                                         sup 1
                                         div.form-group
                                             button.btn.btn-default.btn-sm#hideEditUserInfo Cancel
-                                            button.btn.btn-primary.btn-sm(type="submit") Save Change
+                                            button.btn.btn-primary.btn-sm(type="submit") Save Chang
+
+                    +errorMessage()
             div.content-body
                 div.panel(data-fill-color="true")
                     div.panel-heading

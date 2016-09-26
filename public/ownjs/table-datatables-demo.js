@@ -26,7 +26,7 @@
       $.each( aoData, function(i, val){
         var $ntr = $( val.nTr );
         $ntr.attr( 'data-id', val._aData.uuid );
-        $ntr.find( 'td' ).wrap('<a class="a-detalUser" href="user/' + val._aData.uuid + '"></a>');
+        //$ntr.find( 'td' ).wrap('<a class="a-detalUser" href="user/' + val._aData.uuid + '"></a>');
       });
 
       var $nTable = $(settings.nTable);
@@ -118,8 +118,11 @@
   })
   // selectable rule
   .on( 'click', '#datatables1 tbody tr', function(){
+
     var $tr = $( this ),
     allowMultipleSelect = $( '#allowMultipleSelect' ).is(':checked');
+
+    window.location.href = "user/" + $tr.attr('data-id');
 
     if ( allowMultipleSelect ) {  // multiple select
       $tr.toggleClass( 'active' );
@@ -234,7 +237,10 @@
         datatables1.$( 'tr.active' ).removeClass( 'active' );
         $( newRow ).attr( 'data-id', newID )
             .addClass( 'active' );
-        $(newRow).find('td').wrap('<a class="a-detalUser" href="user/' + newID + '"></a>');
+        $( newRow).click(function(){
+          console.log(newID)
+        })
+        //$(newRow).find('td').wrap('<a class="a-detalUser" href="user/' + newID + '"></a>');
         // activate actions edit & delete
         $( '.datatables1-actions' ).removeClass( 'disabled' );
         // reset form
