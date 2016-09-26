@@ -17,7 +17,6 @@ $http.prototype.send = function () {
         }
     });
 };
-
 $(document).ready(function () {
     user = {
         save: function (id) {
