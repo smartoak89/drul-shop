@@ -2,7 +2,7 @@ extends ../layout/mainAdmin
 block content
     include ../mixins/mixins
     aside.sidebar(role="complementary")
-        div.sidebar-block
+        div.sidebar-bnodemilock
             div.media
                 div.media-left
                     a(href="page-profile.html")
@@ -226,4 +226,8 @@ block content
                             th Rendering Email
 
             div.content-body
+            select#currency
+                option(value='$' selected) $
+                option(value='UAH') UAH
+            button(onClick="user.save(event.target.id)" id="#{data.uuid}") Save
             p #{JSON.stringify(data)}

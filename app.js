@@ -25,11 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser());
 app.use(cookieParser());
 app.use(auth.initialize());
+app.use(require('./middleware/sendHttpError'));
+app.use(require('./middleware/sendMessage'));
 
-// var MongoStore = require('connect-mongo')(session);
-app.use(session({
-    secret: 'secret'
-}));
+var MongoStore = require('connect-mongo')(session);
+app.use(session(conf.session));
 
 app.use(flash());
 

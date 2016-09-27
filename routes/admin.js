@@ -1,5 +1,6 @@
 var handler = require('../handlers/admin');
 var user = require('../handlers/admin/user');
+var category = require('../handlers/category');
 
 module.exports = function (app) {
     app.get('/admin', handler.main);
@@ -18,4 +19,6 @@ module.exports = function (app) {
     app.put('/user/:id', user.update);
     app.delete('/user/:id', user.delete);
     app.get('/drop-users', user.drop);
+
+    app.post('/api/category', category.create);
 };
