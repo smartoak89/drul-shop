@@ -21,4 +21,8 @@ module.exports = function (app) {
     app.get('/drop-users', user.drop);
 
     app.post('/api/category', category.create);
+    app.put('/api/category/:id', category.update);
+    app.post('/api/category/:id', category.add);
+    app.delete('/api/category/:id', category.remove);
+    app.delete('/api/category/:id/:index', category.remove);
 };

@@ -11,5 +11,8 @@
     },
     "mongoose": {
         "uri": "mongodb://localhost/test"
+    },
+    "mongoDB": {
+        "uri": "mongodb://localhost/drul-shop"
     }
 }

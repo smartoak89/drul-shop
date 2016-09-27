@@ -3,20 +3,16 @@ var Schema = mongoose.Schema;
 
 var schema = new Schema({
     uuid: {
-        type: String,
-        required: true
+        type: String
     },
     name: {
-        type: String,
-        required: true,
-        unique: true
+        type: String
     },
-    parent: {
-        type: String,
-        required: true
+    link: {
+        type: String
     },
     subcat: {
-        type: Array,
+        type: Array
     }
 });
 
