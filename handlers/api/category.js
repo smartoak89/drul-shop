@@ -28,12 +28,14 @@ exports.list = function (req, res, next) {
 };
 
 exports.update = function (req, res, next) {
-    if(!isValidCategory(req)) return next( new HttpError(400, 'Invalid Category') );
-    var categ = sanitazeCattegory(req);
-    categoryAPI.update(req.params.id, categ, function (err) {
-        if (err) return next(err);
-        res.sendMsg(msg.CATEGORY_UPDATED);
+    isValid(req, function (err, value) {
+        if (err) return res.sendMsg(err, true, 400);
+        categoryAPI.update(req.params.id, value, function (err) {
+            if (err) return next(err);
+            res.sendMsg(msg.CATEGORY_UPDATED);
+        });
     });
+
 };
 
 exports.add = function (req, res, next) {
