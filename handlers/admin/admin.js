@@ -1,4 +1,4 @@
-var userAPI = require('../api/user');
+var userAPI = require('../../api/user');
 
 exports.main = function (req, res, next) {
     res.render('admin/admin');

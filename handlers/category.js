@@ -1,6 +1,6 @@
 var HttpError = require('../error/index').HttpError;
+var msg = require('../message/ru/category');
 var categoryAPI = require('../api/category');
-var msg = require('./message/ru/category');
 
 exports.create = function (req, res, next) {
     isValid(req, function (err, value) {
