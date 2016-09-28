@@ -127,4 +127,8 @@
 {"level":"error","message":"","timestamp":"2016-09-28T12:03:47.823Z"}
 {"level":"error","message":"","timestamp":"2016-09-28T12:05:26.503Z"}
 {"status":404,"message":"","level":"error","timestamp":"2016-09-28T12:11:32.860Z"}
+<<<<<<< HEAD
 {"status":404,"message":"","level":"error","timestamp":"2016-09-28T17:32:55.821Z"}
+=======
+{"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-28T17:50:14.891Z"}
+>>>>>>> 5065a3db4dfe1133e6972b856aa7386a2674c0f8
