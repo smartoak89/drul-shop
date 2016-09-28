@@ -1,6 +1,6 @@
-var HttpError = require('../error/index').HttpError;
-var msg = require('../message/ru/category');
-var categoryAPI = require('../api/category');
+var HttpError = require('../../error/index').HttpError;
+var msg = require('../../message/ru/category');
+var categoryAPI = require('../../api/category');
 
 exports.create = function (req, res, next) {
     isValid(req, function (err, value) {
@@ -23,7 +23,7 @@ exports.list = function (req, res, next) {
                 subcat: i.subcat
             }
         });
-        res.json(cat);
+        res.json({data: cat});
     });
 };
 
@@ -55,7 +55,7 @@ exports.remove = function (req, res, next) {
 };
 
 function isValid (req, callback) {
-    var v = require('../libs/validator');
+    var v = require('../../libs/validator');
 
     var data = {
         name: req.body.name,

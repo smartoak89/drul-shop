@@ -1,4 +1,4 @@
-var conf = require('../conf');
+var conf = require('../conf/index');
 var uuid = require('uuid');
 
 function Datastore (model) {

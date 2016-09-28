@@ -30,6 +30,7 @@ exports.listUsers = function (req, res, next) {
                 email: a.email,
             }
         });
+        console.log(listOfUsers);
         res.status(200);
         res.json({data: listOfUsers})
     });
@@ -54,7 +55,7 @@ exports.read = function (req, res, next) {
     userAPI.read(req.params.id, function (err, user) {
         if (err) next(err);
 
-        var viewModel = require('../../view-model').admin;
+        var viewModel = require('../../view-model/index').admin;
         viewModel.showUserDetail(user, function (user) {
             console.log('got user', user);
             res.status(200);
