@@ -1,3 +1,57 @@
+<<<<<<< HEAD
+{"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-21T18:02:35.493Z"}
+{"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-21T18:04:15.712Z"}
+{"status":404,"message":"","level":"error","timestamp":"2016-09-21T18:09:06.724Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T17:21:01.693Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T17:22:05.780Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T17:46:08.419Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T17:47:56.901Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T17:48:46.987Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T17:50:33.510Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T17:51:22.810Z"}
+{"view":{"defaultEngine":"jade","ext":".jade","name":"admin/tovs","root":"/home/smart-yura/Документы/Projects/drul-shop/views"},"level":"error","message":"","timestamp":"2016-09-22T18:16:06.459Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T18:27:20.224Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T18:30:01.565Z"}
+{"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-22T18:30:50.977Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T18:33:03.324Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T18:33:59.578Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T18:34:34.373Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T18:36:50.581Z"}
+{"level":"error","message":"","timestamp":"2016-09-22T18:37:16.066Z"}
+{"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-22T18:48:26.784Z"}
+<<<<<<< HEAD
+{"view":{"defaultEngine":"jade","ext":".jade","name":"/admin/users","root":"D:\\FirstRepos\\drul-shop\\views"},"level":"error","message":"","timestamp":"2016-09-24T10:02:13.921Z"}
+=======
+{"view":{"defaultEngine":"jade","ext":".jade","name":"/admin/users","root":"/home/smart-yura/Документы/Projects/drul-shop/views"},"level":"error","message":"","timestamp":"2016-09-24T09:02:55.123Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:08:10.923Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:08:45.829Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:08:55.133Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:09:40.675Z"}
+{"pos":703,"loc":{"line":13,"column":3},"raisedAt":715,"level":"error","message":"","timestamp":"2016-09-24T09:10:29.670Z"}
+{"pos":703,"loc":{"line":13,"column":3},"raisedAt":715,"level":"error","message":"","timestamp":"2016-09-24T09:10:45.673Z"}
+{"pos":703,"loc":{"line":14,"column":0},"raisedAt":713,"level":"error","message":"","timestamp":"2016-09-24T09:10:52.388Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:11:13.939Z"}
+{"pos":731,"loc":{"line":13,"column":31},"raisedAt":736,"level":"error","message":"","timestamp":"2016-09-24T09:11:24.445Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:11:31.054Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/users.jade","level":"error","message":"","timestamp":"2016-09-24T09:11:44.111Z"}
+<<<<<<< HEAD
+{"view":{"defaultEngine":"jade","ext":".jade","name":"admin/categ","root":"/home/smart-yura/Документы/Projects/drul-shop/views"},"level":"error","message":"","timestamp":"2016-09-24T10:13:26.257Z"}
+{"view":{"defaultEngine":"jade","ext":".jade","name":"admin/categ","root":"/home/smart-yura/Документы/Projects/drul-shop/views"},"level":"error","message":"","timestamp":"2016-09-24T10:13:28.460Z"}
+=======
+>>>>>>> 6ca31a3d226c834f22290b49b34d077063002bf5
+>>>>>>> 399d7409ddea2e288bd586fb52342f0e0539ef7c
+{"message":"","name":"ValidationError","errors":{"salt":{"message":"Path `salt` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"salt"},"kind":"required","path":"salt"},"hashedPassword":{"message":"Path `hashedPassword` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"hashedPassword"},"kind":"required","path":"hashedPassword"},"email":{"message":"Path `email` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"email"},"kind":"required","path":"email"}},"level":"error","timestamp":"2016-09-24T14:20:11.014Z"}
+{"level":"error","message":"","timestamp":"2016-09-24T15:31:54.694Z"}
+{"level":"error","message":"","timestamp":"2016-09-24T15:32:43.438Z"}
+{"level":"error","message":"","timestamp":"2016-09-24T19:24:29.633Z"}
+{"level":"error","message":"","timestamp":"2016-09-24T19:26:24.277Z"}
+{"level":"error","message":"","timestamp":"2016-09-24T19:39:31.576Z"}
+{"level":"error","message":"","timestamp":"2016-09-24T19:39:38.606Z"}
+{"view":{"defaultEngine":"jade","ext":".jade","name":"admin/reqs","root":"/home/smart-yura/Документы/Projects/drul-shop/views"},"level":"error","message":"","timestamp":"2016-09-25T11:00:04.208Z"}
+{"path":"/home/smart-yura/Документы/Projects/drul-shop/views/admin/detalUser.jade","level":"error","message":"","timestamp":"2016-09-25T11:00:46.985Z"}
+{"view":{"defaultEngine":"jade","ext":".jade","name":"admin/categ","root":"D:\\FirstRepos\\drul-shop\\views"},"level":"error","message":"","timestamp":"2016-09-25T17:24:31.182Z"}
+{"path":"D:\\FirstRepos\\drul-shop\\views\\admin\\reqs.jade","level":"error","message":"","timestamp":"2016-09-27T16:47:32.039Z"}
+=======
 {"level":"error","message":"","timestamp":"2016-09-26T17:00:11.918Z"}
 {"level":"error","message":"","timestamp":"2016-09-26T17:50:41.628Z"}
 {"level":"error","message":"","timestamp":"2016-09-26T18:11:28.332Z"}
@@ -9,6 +63,7 @@
 {"$__":{"strictMode":true,"inserting":true,"getters":{},"wasPopulated":false,"activePaths":{"paths":{"uuid":"require","parent":"require","name":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"uuid":true,"parent":true,"name":true}},"stateNames":["require","modify","init","default","ignore"]},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0}},"isNew":false,"_doc":{"_id":{"_bsontype":"ObjectID","id":{"0":87,"1":233,"2":104,"3":33,"4":189,"5":8,"6":61,"7":73,"8":210,"9":141,"10":192,"11":127}},"parent":"root","name":"Main","uuid":"7925d745-bedb-43a1-9321-e61173ba8b51","__v":0},"_pres":{"$__original_save":[null,null],"$__original_validate":[null],"$__original_remove":[null]},"_posts":{"$__original_save":[],"$__original_validate":[],"$__original_remove":[]},"level":"error","message":"","timestamp":"2016-09-26T18:25:38.008Z"}
 {"$__":{"strictMode":true,"getters":{},"wasPopulated":false,"activePaths":{"paths":{"parent":"init","name":"init","uuid":"init","subcat":"default","__v":"init","_id":"init"},"states":{"ignore":{},"default":{"subcat":true},"init":{"__v":true,"parent":true,"name":true,"uuid":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0}},"isNew":false,"_doc":{"subcat":[],"__v":0,"parent":"root","name":"golovna","uuid":"37b3cdb5-1189-480f-93c5-79018a177b85","_id":{"_bsontype":"ObjectID","id":{"0":87,"1":233,"2":103,"3":143,"4":14,"5":199,"6":134,"7":73,"8":114,"9":1,"10":136,"11":227}}},"_pres":{"$__original_save":[null,null],"$__original_validate":[null],"$__original_remove":[null]},"_posts":{"$__original_save":[],"$__original_validate":[],"$__original_remove":[]},"level":"error","message":"","timestamp":"2016-09-26T18:56:58.802Z"}
 {"$__":{"strictMode":true,"getters":{},"wasPopulated":false,"activePaths":{"paths":{"parent":"init","name":"init","uuid":"init","subcat":"default","__v":"init","_id":"init"},"states":{"ignore":{},"default":{"subcat":true},"init":{"__v":true,"parent":true,"name":true,"uuid":true,"_id":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"emitter":{"domain":null,"_events":{},"_eventsCount":0,"_maxListeners":0}},"isNew":false,"_doc":{"subcat":[],"__v":0,"parent":"root","name":"golovna","uuid":"37b3cdb5-1189-480f-93c5-79018a177b85","_id":{"_bsontype":"ObjectID","id":{"0":87,"1":233,"2":103,"3":143,"4":14,"5":199,"6":134,"7":73,"8":114,"9":1,"10":136,"11":227}}},"_pres":{"$__original_save":[null,null],"$__original_validate":[null],"$__original_remove":[null]},"_posts":{"$__original_save":[],"$__original_validate":[],"$__original_remove":[]},"level":"error","message":"","timestamp":"2016-09-26T18:58:22.950Z"}
+<<<<<<< HEAD
 {"message":"","name":"ValidationError","errors":{"name":{"message":"Path `name` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"name"},"kind":"required","path":"name"}},"level":"error","timestamp":"2016-09-27T15:27:07.687Z"}
 {"message":"","name":"ValidationError","errors":{"name":{"message":"Path `name` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"name"},"kind":"required","path":"name"}},"level":"error","timestamp":"2016-09-27T15:35:06.894Z"}
 {"message":"","name":"ValidationError","errors":{"name":{"message":"Path `name` is required.","name":"ValidatorError","properties":{"type":"required","message":"Path `{PATH}` is required.","path":"name"},"kind":"required","path":"name"}},"level":"error","timestamp":"2016-09-27T15:37:13.244Z"}
@@ -36,3 +91,39 @@
 {"status":404,"message":"","level":"error","timestamp":"2016-09-27T18:57:57.331Z"}
 {"status":404,"message":"","level":"error","timestamp":"2016-09-27T19:07:54.758Z"}
 {"status":404,"message":"","level":"error","timestamp":"2016-09-27T19:08:09.229Z"}
+=======
+>>>>>>> 5651cf4a2e369672dc10982ddb1c1aaba4861f7a
+>>>>>>> 06f6a400d69dc43ed4566eb80bbde9595d07592d
+{"level":"error","message":"","timestamp":"2016-09-28T08:56:50.987Z"}
+{"status":400,"message":"","level":"error","timestamp":"2016-09-28T08:57:38.137Z"}
+{"status":400,"message":"","level":"error","timestamp":"2016-09-28T08:58:09.497Z"}
+{"status":400,"message":"","level":"error","timestamp":"2016-09-28T08:58:26.538Z"}
+{"status":400,"message":"","level":"error","timestamp":"2016-09-28T08:58:53.544Z"}
+{"status":400,"message":"","level":"error","timestamp":"2016-09-28T08:59:09.208Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:06:10.791Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:36:00.101Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:42:16.258Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:42:27.147Z"}
+{"status":400,"message":"","uuid":"6dcfd24a-b6ce-44ae-954a-7e6a466f17f3","level":"error","timestamp":"2016-09-28T09:43:43.518Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:47:46.628Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:48:28.190Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:49:14.505Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:49:31.404Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T09:51:38.232Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:39:49.434Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:43:25.849Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:44:00.080Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:44:59.292Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:46:55.086Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:49:29.002Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:51:57.955Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:53:49.400Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:54:15.486Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:54:49.115Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:55:00.757Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:57:05.893Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:59:24.626Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T11:59:50.394Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T12:03:47.823Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T12:05:26.503Z"}
+{"status":404,"message":"","level":"error","timestamp":"2016-09-28T12:11:32.860Z"}

@@ -1,14 +1,15 @@
 var HttpError = require('../error/index').HttpError;
 var categoryAPI = require('../api/category');
-var msg = require('../error/message.ru');
+var msg = require('./message/ru/category');
 
 exports.create = function (req, res, next) {
-    if(!isValidCategory(req)) return next( new HttpError(400, 'Invalid Category') );
-    var category = sanitazeCattegory(req);
-    categoryAPI.create(category, function (err) {
-        if (err) return next(err);
-        res.sendMsg(msg.CATEGORY_ADDED);
-    })
+    isValid(req, function (err, value) {
+        if (err) return res.sendMsg(err, true, 400);
+        categoryAPI.create(value, function (err) {
+            if (err) return next(err);
+            res.sendMsg(msg.CATEGORY_ADDED);
+        })
+    });
 };
 
 exports.list = function (req, res, next) {
@@ -36,12 +37,13 @@ exports.update = function (req, res, next) {
 };
 
 exports.add = function (req, res, next) {
-    if(!isValidCategory(req)) return next( new HttpError(400, 'Invalid Category') );
-    var categ = sanitazeCattegory(req);
-    categoryAPI.add(req.params.id, categ, function (err) {
-        if (err) return next(err);
-        res.sendMsg(msg.SUBCATEGORY_UPDATED);
-    })
+    isValid(req, function (err, value) {
+        if (err) return res.sendMsg(err, true, 400);
+        categoryAPI.add(req.params.id, value, function (err) {
+            if (err) return next(err);
+            res.sendMsg(msg.SUBCATEGORY_UPDATED);
+        })
+    });
 };
 
 exports.remove = function (req, res, next) {
@@ -52,15 +54,18 @@ exports.remove = function (req, res, next) {
     })
 };
 
-function sanitazeCattegory (req) {
-    //TODO: sanitaze
-    return {
+function isValid (req, callback) {
+    var v = require('../libs/validator');
+
+    var data = {
         name: req.body.name,
         link: req.body.link
-    }
-}
+    };
 
-function isValidCategory (req) {
-    //TODO: validation
-    return true;
+    var schema = v.joi.object().keys({
+        name: v.joi.string().alphanum().min(3).max(20).required(),
+        link: v.joi.string().alphanum().min(3).max(20).required()
+    });
+
+    v.validate(data, schema, callback);
 }

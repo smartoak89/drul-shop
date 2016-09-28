@@ -47,7 +47,7 @@ Datastore.prototype = {
         var self = this;
         this.find(id, function (err, result) {
             if (err) return callback(err);
-            self.model.remove({uuid: id}, function (err, result) {
+            self.model.remove(result, function (err, result) {
                 if (err) return callback(err);
                 return callback(null, result);
             })
