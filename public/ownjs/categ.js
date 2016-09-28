@@ -1,8 +1,40 @@
 (function() {
     'use strict';
+
+        var categtable = $( '#categtable' ).dataTable({
+        'sDom': 'rt<"table-footer"<"pull-left"i>p>',
+        'oLanguage': {
+            'sInfoFiltered': '<span class="label label-info"><i class="fa fa-filter"></i> filtering from _MAX_ records</span>',
+        },
+        'ajax': "/api/category",
+        "columns": [
+            { "data": "name"},
+            { "data":"link"}
+        ],
+        'fnInitComplete': function(settings) {
+            var aoData = settings.aoData;
+
+            // adding uniquen id to TR to crud
+            $.each( aoData, function(i, val){
+                var $ntr = $( val.nTr );
+                $ntr.attr( 'data-id', val._aData.uuid );
+                $ntr.find( 'td' ).wrap('<a class="a-detalUser" href="user/' + val._aData.uuid + '"></a>');
+            });
+
+            var $nTable = $(settings.nTable);
+            $nTable.closest( '.dataTables_wrapper' ).find( '.dataTable' ).wrap('<div class="table-responsive"></div>');
+        },
+        'drawCallback': function( settings ) {
+            var $nTable = $(settings.nTable);
+            $nTable.closest( '.dataTables_wrapper' ).find( '.dataTables_paginate' ).children( '.pagination' )
+                .addClass( 'pagination-circle' );
+        }
+    });
         $(document).ready(function() {
             $('.tree').treegrid();
         })
+
+
         // add rule
         .on( 'click', '#add-mainCateg, #hideAddmainCateg', function(e){
             e.preventDefault();

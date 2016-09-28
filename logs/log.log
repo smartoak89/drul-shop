@@ -127,3 +127,4 @@
 {"level":"error","message":"","timestamp":"2016-09-28T12:03:47.823Z"}
 {"level":"error","message":"","timestamp":"2016-09-28T12:05:26.503Z"}
 {"status":404,"message":"","level":"error","timestamp":"2016-09-28T12:11:32.860Z"}
+{"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-28T17:50:14.891Z"}
