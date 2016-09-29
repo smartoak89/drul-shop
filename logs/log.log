@@ -132,3 +132,9 @@
 =======
 {"code":"MODULE_NOT_FOUND","level":"error","message":"","timestamp":"2016-09-28T17:50:14.891Z"}
 >>>>>>> 5065a3db4dfe1133e6972b856aa7386a2674c0f8
+{"name":"MongoError","message":"","driver":true,"ok":1,"n":0,"code":10148,"errmsg":"Mod on _id not allowed","writeConcernError":{"code":10148,"errmsg":"Mod on _id not allowed"},"level":"error","timestamp":"2016-09-28T18:37:10.813Z"}
+{"name":"MongoError","message":"","driver":true,"ok":1,"n":0,"code":10148,"errmsg":"Mod on _id not allowed","writeConcernError":{"code":10148,"errmsg":"Mod on _id not allowed"},"level":"error","timestamp":"2016-09-28T18:38:45.483Z"}
+{"name":"MongoError","message":"","driver":true,"ok":1,"n":0,"code":10148,"errmsg":"Mod on _id not allowed","writeConcernError":{"code":10148,"errmsg":"Mod on _id not allowed"},"level":"error","timestamp":"2016-09-28T18:41:14.998Z"}
+{"name":"MongoError","message":"","driver":true,"ok":1,"n":0,"code":10148,"errmsg":"Mod on _id not allowed","writeConcernError":{"code":10148,"errmsg":"Mod on _id not allowed"},"level":"error","timestamp":"2016-09-28T18:44:30.903Z"}
+{"name":"MongoError","message":"","driver":true,"ok":1,"n":0,"code":10148,"errmsg":"Mod on _id not allowed","writeConcernError":{"code":10148,"errmsg":"Mod on _id not allowed"},"level":"error","timestamp":"2016-09-28T18:59:21.349Z"}
+{"level":"error","message":"","timestamp":"2016-09-28T19:00:26.833Z"}
