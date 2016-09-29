@@ -8,8 +8,12 @@ var schema = new Schema({
         //unique: true,
         // required: true
     },
-    username: {
-        // type: String,
+    first_name: {
+        type: String,
+        // required: true
+    },
+    last_name: {
+        type: String,
         // required: true
     },
     hashedPassword: {
@@ -45,4 +49,4 @@ schema.methods.checkPassword = function(password) {
     return this.encryptPassword(password) === this.hashedPassword;
 };
 
-exports.User = mongoose.model('User', schema);
+module.exports = mongoose.model('User', schema);

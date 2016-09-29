@@ -15,7 +15,7 @@ exports.create = function (req, res, next) {
 exports.list = function (req, res, next) {
     categoryAPI.list(function (err, result) {
         if (err) return next(err);
-        var cat = result.map(function (i) {
+        var list = result.map(function (i) {
             return {
                 uuid: i.uuid,
                 name: i.name,
@@ -23,17 +23,19 @@ exports.list = function (req, res, next) {
                 subcat: i.subcat
             }
         });
-        res.json({data: cat});
+        res.json({data: list});
     });
 };
 
 exports.update = function (req, res, next) {
-    if(!isValidCategory(req)) return next( new HttpError(400, 'Invalid Category') );
-    var categ = sanitazeCattegory(req);
-    categoryAPI.update(req.params.id, categ, function (err) {
-        if (err) return next(err);
-        res.sendMsg(msg.CATEGORY_UPDATED);
+    isValid(req, function (err, value) {
+        if (err) return res.sendMsg(err, true, 400);
+        categoryAPI.update(req.params.id, value, function (err) {
+            if (err) return next(err);
+            res.sendMsg(msg.CATEGORY_UPDATED);
+        });
     });
+
 };
 
 exports.add = function (req, res, next) {
