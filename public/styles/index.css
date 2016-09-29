@@ -9,3 +9,31 @@ body{
     height: 60px;
     background: transparent;
 }
+.prev ul{
+    margin: 0;
+}
+.prev ul.cutTime>li{
+    float: left;
+    display: block;
+}
+.current{
+    padding: 12px 0 5px 0;
+}
+.current .nice-select{
+    color: #000;
+    border: none;
+}
+.current .nice-select:after{
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    height: 9px;
+    width:9px;
+    margin-top: -8px;
+}
+.current .nice-select .list{
+    border-radius: 0;
+    border: 1px solid #000;
+}
+.icon{
+    margin-left: 25px
+}

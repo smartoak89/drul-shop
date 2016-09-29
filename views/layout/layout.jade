@@ -4,12 +4,33 @@ html
         title #{title}
         link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=cyrillic" rel="stylesheet")
         link(rel="stylesheet" href="/styles/reset.css")
-        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
-        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css")
+        link(rel="stylesheet" href="/bower_components/jquery-nice-select/css/nice-select.css")
+        link(rel="stylesheet" href="/styles/budicon.css")
 
         link(rel="stylesheet" href="/styles/index.css")
     body
         div.prev
+            div.container-fluid
+                div.col-lg-12.col-md-12.col-sm-12.col-xs-12
+                    ul.cutTime
+                        li.current
+                            select.sel
+                                option(data-display="UAH") UAH
+                                option RUB
+                                option DOL
+                        li.icon
+                            i.bi_interface-circle-tick
+                        li.time
+                            p 09:00 - 17:00
+                        li.placeTime
+                            p Киев 00:39
+
         block content
-script(scr="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
-script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js")
+script(src="/bower_components/jquery-nice-select/js/jquery.nice-select.min.js")
+script(src="/ownjs/main.js")
