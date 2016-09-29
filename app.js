@@ -25,21 +25,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser());
 app.use(cookieParser());
 app.use(auth.initialize());
-app.use(require('./middleware/sendHttpError'));
-app.use(require('./middleware/sendMessage'));
 
 var MongoStore = require('connect-mongo')(session);
 app.use(session(conf.session));
-
 app.use(flash());
+
+app.use(require('./middleware/sendMessage'));
 
 app.use(require('./middleware/sendHttpError'));
 
-require('./routes')(app);
+require('./middleware/errorHandler')(app);
+
+require('./routes')(app, express);
 
 app.use(require('./middleware/page404'));
-
-require('./middleware/errorHandler')(app);
 
 http.createServer(app).listen(process.env.PORT || conf.port, function () {
     log.info('Server is listening on localhost:' + conf.port);
