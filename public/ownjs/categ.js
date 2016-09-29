@@ -16,9 +16,11 @@
 
             // adding uniquen id to TR to crud
             $.each( aoData, function(i, val){
+                console.log(val)
                 var $ntr = $( val.nTr );
                 $ntr.attr( 'data-id', val._aData.uuid );
-                $ntr.find( 'td' ).wrap('<a class="a-detalUser" href="user/' + val._aData.uuid + '"></a>');
+
+                //$ntr.find( 'td' ).wrap('<a class="a-detalUser" href="user/' + val._aData.uuid + '"></a>');
             });
 
             var $nTable = $(settings.nTable);

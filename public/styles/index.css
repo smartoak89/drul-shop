@@ -1,0 +1,11 @@
+body{
+    background: #fff;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+.prev{
+    height: 60px;
+    background: transparent;
+}
