@@ -16,6 +16,7 @@ var schema = new Schema({
         type: String,
         // required: true
     },
+    phone: {type: String},
     hashedPassword: {
         type: String,
         // required: true

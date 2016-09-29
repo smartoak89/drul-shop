@@ -14,6 +14,9 @@ function getRouter(router) {
     router.post('/user/register', userHandler.register);
     router.get('/users', userHandler.list);
     router.put('/user/:id', userHandler.update);
+    router.delete('/user/:id', userHandler.remove);
+    router.get('/user/:id', userHandler.find);
+    router.post('/user/auth', userHandler.auth);
 
     return router;
 }

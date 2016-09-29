@@ -1,14 +1,19 @@
 var userAPI = require('../../api/user');
 var msg = require('../../message/ru/user');
+var HttpError = require('../../error').HttpError;
 
 exports.register = function (req, res, next) {
     isValid(req, function (err, value) {
         if (err) return res.sendMsg(err, true, 400);
-        userAPI.create(value, function (err, user) {
+        userAPI.findOne({email: value.email}, function(err, result) {
             if (err) return next(err);
-            if (!user) return res.sendMsg(msg.REGISTERED_ERROR, true, 400);
-            res.sendMsg(msg.REGISTERED_SUCCESS);
-        })
+            if (result) return res.sendMsg(msg.EMAIL_EXISTS, true, 400)
+            userAPI.create(value, function (err, user) {
+                if (err) return next(err);
+                if (!user) return res.sendMsg(msg.REGISTERED_ERROR, true, 400);
+                res.sendMsg(msg.REGISTERED_SUCCESS);
+            })
+        });
     });
 };
 
@@ -16,11 +21,7 @@ exports.list = function (req, res, next) {
     userAPI.list(function (err, result) {
         if (err) return next(err);
         var list = result.map(function (i) {
-            return {
-                uuid: i.uuid,
-                email: i.email,
-                created: i.created
-            }
+            return viewData(i);
         });
         res.json({data: list});
     });
@@ -35,6 +36,49 @@ exports.update = function (req, res, next) {
         });
     });
 };
+
+exports.remove = function (req, res, next) {
+    userAPI.remove(req.params.id, function(err) {
+        if (err) return next(err);
+        res.sendMsg(msg.DELETED);
+    })
+};
+
+exports.find = function (req, res, next) {
+    userAPI.find(req.params.id, function (err, result) {
+        if (err) return next(err);
+        if (!result) return next(new HttpError(404, 'User Not Found'));
+        var data = viewData(result);
+        res.json(data);
+    })
+};
+
+exports.auth = function (req, res, next) {
+    isValid(req, function (err) {
+        if (err) return res.sendMsg(err, true, 400);
+        userAPI.auth(req.body.email, req.body.password, function (err, result) {
+            if (err) return next(err);
+            if (!result) return res.sendMsg(msg.AUTH_ERROR, true, 400);
+            req.session.user = {
+                uuid: result.uuid,
+                email: result.email
+            };
+            res.sendMsg(msg.AUTH_SUCCESS);
+        })
+    });
+};
+
+function viewData (data) {
+    var res = {
+        uuid: data.uuid,
+        email: data.email,
+        first_name: data.first_name,
+        last_name: data.last_name,
+        phone: data.phone,
+        created: data.created
+    };
+    return res;
+}
 
 function isValidUpdate (req, callback) {
     var v = require('../../libs/validator');
@@ -70,105 +114,4 @@ function isValid (req, callback) {
     });
 
     v.validate(data, schema, callback);
-}
-
-// exports.auth = function (req, res, next) {
-//     res.end('ok');
-// };
-//
-// exports.register = function (req, res, next) {
-//     var user = {
-//         email: req.body.email,
-//         password: req.body.password,
-//         uuid: uuid.v4()
-//     };
-//
-//     //TODO: sanitize and validate
-//
-//     var user = new User(user);
-//     user.save(function (err, user) {
-//         if (err) next(err);
-//         res.status(200);
-//         res.json({uuid: user.uuid});
-//     });
-// };
-//
-// exports.listUsers = function (req, res, next) {
-//     userAPI.listUsers(function (err, data) {
-//         if (err) return next(err);
-//         var listOfUsers = data.map(function (a, b, d) {
-//             return {
-//                 uuid: a.uuid,
-//                 email: a.email,
-//             }
-//         });
-//         console.log(listOfUsers);
-//         res.status(200);
-//         res.json({data: listOfUsers})
-//     });
-//
-// };
-//
-// exports.create = function (req, res, next) {
-//     var user = {
-//         email: req.body.email
-//     };
-//     if (!validateUser(user)) return next(400);
-//
-//     userAPI.create(user, function (err, user) {
-//         if (err) return next(err);
-//         res.status(200);
-//         res.json(user.uuid);
-//     });
-//
-// };
-//
-// exports.read = function (req, res, next) {
-//     userAPI.read(req.params.id, function (err, user) {
-//         if (err) next(err);
-//
-//         var viewModel = require('../../view-model/index').admin;
-//         viewModel.showUserDetail(user, function (user) {
-//             console.log('got user', user);
-//             res.status(200);
-//             res.render('admin/detalUser', {data: user});
-//         });
-//     });
-//
-// };
-//
-// exports.update = function (req, res, next) {
-//     // var user = {
-//     //     email: req.body.email
-//     // };
-//     // userAPI.createUser(user, function (err, user) {
-//     //     if (err) return next(err);
-//     //     res.status(200);
-//     //     res.json(user.uuid);
-//     // });
-//
-// };
-//
-// exports.delete = function (req, res, next) {
-//
-//     userAPI.delete(req.params.id, function (err, result) {
-//         if (err) return next(err);
-//         res.status(200);
-//         res.json(result);
-//     });
-//
-// };
-//
-// exports.drop = function (req, res, next) {
-//     userAPI.drop(null, function (err, result) {
-//         if (err) return next(err);
-//         res.status(200);
-//         res.json(result);
-//     });
-//
-// };
-
-function validateUser (user) {
-    //TODO: validata and sanitaze
-    return true;
 }

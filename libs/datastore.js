@@ -14,10 +14,8 @@ Datastore.prototype = {
         })
     },
     find: function (id, callback) {
-        var dok = {uuid: id};
-        this.model.findOne(dok, function (err, result) {
+        this.model.findOne({uuid: id}, function (err, result) {
             if (err) return callback(err);
-            if (!result) return callback(404);
             return callback(null, result);
         })
     },
@@ -38,7 +36,7 @@ Datastore.prototype = {
             self.model.update({uuid: id}, data, function (err, result) {
                 if (err) return callback(err);
                 if (!result) return callback(500);
-                console.log('Updated data => ', JSON.stringify(result))
+                console.log('Updated data => ', JSON.stringify(result));
                 return callback(null, result);
             })
         });
@@ -51,6 +49,12 @@ Datastore.prototype = {
                 if (err) return callback(err);
                 return callback(null, result);
             })
+        })
+    },
+    findOne: function (document, callback) {
+        this.model.findOne(document, function (err, result) {
+            if (err) return callback(err);
+            return callback(null, result);
         })
     }
 };

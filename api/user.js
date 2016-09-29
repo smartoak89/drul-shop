@@ -21,23 +21,29 @@ module.exports = {
             db.update(result.uuid, result, callback);
         })
     },
-    add: function (id, data, callback) {
+    remove: function (id, callback) {
         db.find(id, function (err, result) {
             if (err) return callback(err);
-            result.subcat.push(data);
-            db.update(result.uuid, result, callback);
-        })
-    },
-    remove: function (id, index, callback) {
-        db.find(id, function (err, result) {
-            if (err) return callback(err);
-            if(index) {
-                result.subcat.splice(index, 1);
-                db.update(id, result, callback);
-            } else {
-                db.remove(id, callback);
-            }
+            if (!result) return callback(404);
+            db.remove(id, callback);
         });
+    },
+    find: function (id, callback) {
+        db.find(id, callback);
+    },
+    auth: function (email, password, callback) {
+        db.findOne({email: email}, function (err, result) {
+            console.log('email', email);
+            console.log('password', password);
+            if (err) return callback(err);
+            if (!result) return callback(new HttpError(404, 'User Not Found'));
+            if (!result.checkPassword(password)) return callback();
+            console.log('Got user =>', result);
+            return callback (null, result);
+        });
+    },
+    findOne: function (data, callback) {
+        db.findOne (data, callback);
     }
 };
 
