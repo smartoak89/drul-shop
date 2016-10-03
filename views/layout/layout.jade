@@ -8,6 +8,7 @@ html
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css")
         link(rel="stylesheet" href="/bower_components/jquery-nice-select/css/nice-select.css")
+        link(rel="stylesheet" href="/bower_components/smSlider/smSlider/css/smSlider.css")
         link(rel="stylesheet" href="/styles/budicon.css")
 
         link(rel="stylesheet" href="/styles/index.css")
@@ -27,10 +28,40 @@ html
                             p 09:00 - 17:00
                         li.placeTime
                             p Киев 00:39
+                        li.singIn.pull-right
+                            button.btn.btn-drul.dark(type="button") войти
+                        li.singUp.pull-right
+                            button.btn.btn-drul(type="button") регистрация
+                        li.icon.iconRig.pull-right
+                            i.bi_ecommerce-bag
+                        li.icon.iconRig.pull-right
+                            i.fa.fa-heart-o(aria-hidden="true")
+                        li.icon.iconRig.pull-right
+                            i.bi_interface-search
+        div.nav
+            div.container-fluid
+                div.col-lg-12.col-md-12.col-sm-12.col-xs-12
+                    div.logo
+                    ul.navigation
+                        li одежда
+                        li аксессуары
+                        li сумки
+                        li обувь
+                    section
+                        //span.tooltip
+                        div#slider
+                        span.volume.bi_volume-low-a
+        div#sm_slider
+            ul
+                li 1
+                li 2
+                li 3
 
         block content
 
 script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
+script(src="/bower_components/smSlider/smSlider/jquery.smslider.min.js")
 script(src="/bower_components/jquery-nice-select/js/jquery.nice-select.min.js")
 script(src="/ownjs/main.js")
