@@ -10,7 +10,7 @@ var auth = require('./libs/passport');
 var conf = require('./conf');
 
 // var mongoose = require('./libs/mongoose');
-//Hello Ssh git
+
 var app = express();
 
 app.use(function(req, res, next) {
