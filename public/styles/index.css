@@ -42,7 +42,7 @@ body{
 }
 .time{
     margin-left: 15px;
-    padding: 9px 0;
+    padding: 9px 0 7px 0;
     font-size: 16px;
 }
 .time > p:after{
@@ -55,7 +55,7 @@ body{
     margin: 0 8px;
 }
 .placeTime{
-    padding: 17px 0;
+    padding: 17px 0 11px 0;
     font-size: 16px;
 }
 .btn-drul{
@@ -167,4 +167,119 @@ section {
     top: 0;
     height: 100%;
     border-radius: 25px;
+}
+#sm_slider{
+    background: url(../images/slideBack.jpg);
+    position: relative;
+    max-height: 560px;
+}
+#sm_slider > ul{
+    margin-bottom: 0;
+}
+.sm_slide{
+    height: 100%;
+}
+.pad35{
+    padding: 35px;
+ }
+
+.bigBlock{
+    height: 455px;
+    position: relative;
+}
+.littleBlock{
+    height: 210px;
+    position: relative;
+}
+.bigBlock > img, .littleBlock > img{
+    height: 100%;
+    width:100%;
+    object-position: 0 30%;
+}
+.cover{
+    object-fit: cover;
+}
+.bigNamePrice{
+    position: absolute;
+    bottom: 0;
+    font-size: 15px;
+    width:100%;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    text-align: left;
+    padding: 12px;
+}
+.littleNamePrice{
+    position: absolute;
+    bottom: 0;
+    font-size: 15px;
+    width:100%;
+    color: #fff;
+    background: rgba(255,255,255,0);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(138,138,138,0.13) 20%, rgba(59,59,59,0.22) 35%, rgba(38,38,38,0.34) 54%, rgba(28,28,28,0.45) 71%, rgba(0,0,0,0.57) 90%, rgba(0,0,0,0.63) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(20%, rgba(138,138,138,0.13)), color-stop(35%, rgba(59,59,59,0.22)), color-stop(54%, rgba(38,38,38,0.34)), color-stop(71%, rgba(28,28,28,0.45)), color-stop(90%, rgba(0,0,0,0.57)), color-stop(100%, rgba(0,0,0,0.63)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(138,138,138,0.13) 20%, rgba(59,59,59,0.22) 35%, rgba(38,38,38,0.34) 54%, rgba(28,28,28,0.45) 71%, rgba(0,0,0,0.57) 90%, rgba(0,0,0,0.63) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(138,138,138,0.13) 20%, rgba(59,59,59,0.22) 35%, rgba(38,38,38,0.34) 54%, rgba(28,28,28,0.45) 71%, rgba(0,0,0,0.57) 90%, rgba(0,0,0,0.63) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(138,138,138,0.13) 20%, rgba(59,59,59,0.22) 35%, rgba(38,38,38,0.34) 54%, rgba(28,28,28,0.45) 71%, rgba(0,0,0,0.57) 90%, rgba(0,0,0,0.63) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(138,138,138,0.13) 20%, rgba(59,59,59,0.22) 35%, rgba(38,38,38,0.34) 54%, rgba(28,28,28,0.45) 71%, rgba(0,0,0,0.57) 90%, rgba(0,0,0,0.63) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+    text-align: left;
+    padding: 12px;
+}
+.bigNamePrice > span:first-child, .littleNamePrice > span:first-child{
+    text-transform: uppercase;
+    font-weight: 100;
+}
+.bigNamePrice > span, .littleNamePrice > span{
+    font-weight: 700;
+}
+.littleNamePrice > strike{
+    color: #a3a3a3;
+    font-size: 12px;
+    margin-left: 15px;
+}
+.marker{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    padding: 1px 4px;
+}
+.blue{
+    background: #36a5ec;
+}
+.red{
+    background: #ec3654;
+}
+.green{
+    background: #2eb72e;
+}
+.step > .col-lg-6:first-child, .step > .col-lg-6:nth-child(2){
+    margin-bottom: 35px;
+}
+.sm_nav {
+    padding: 28px 0px;
+    right: 47%;
+}
+.sm_nav-item {
+    width: 25px;
+}
+.sm_nav-item i {
+    display: block;
+    width: 17px;
+    height: 7px;
+    background-color: #cecece;
+    border-radius: 0;
+}
+.sm_nav-item.active i, .sm_nav-item:hover i {
+    background-color: #000;
+}
+.sm_nav-item.active:hover i {
+    background-color: #000;
+}
+.main{
+    margin-top: 35px;
 }
