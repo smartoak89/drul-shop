@@ -1,8 +1,8 @@
 var adminHandler = require('../handlers/templates/admin-templates');
 
 function getRouter(router) {
-    router.get('/', function (req,res,next) {
-        res.end('ok');
+    router.get('/', function (req, res, next) {
+        res.render('admin/admin');
     });
 
     return router;

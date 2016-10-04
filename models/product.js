@@ -9,11 +9,11 @@ var schema = new Schema({
     },
     article: {type: String},
     name: {type: String},
+    description: {type: String},
     category: {type: String},
     count: { type: String },
-    link: { type: String },
     color: { type: Array },
     size: { type: Array }
 });
 
-module.exports = mongoose.model('Category', schema);
+module.exports = mongoose.model('Product', schema);

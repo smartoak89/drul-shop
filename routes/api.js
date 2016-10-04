@@ -21,6 +21,9 @@ function getRouter(router) {
 
     //--Product
     router.post('/product', productHandler.create);
+    router.get('/products', productHandler.list);
+    router.put('/product/:id', productHandler.update);
+    router.delete('/product/:id', productHandler.remove);
 
     return router;
 }

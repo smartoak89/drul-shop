@@ -3,6 +3,14 @@ function getRouter(router) {
         res.render('main/index');
     });
 
+    router.get('/auth', function (req, res, next) {
+        res.render('common/auth');
+    });
+
+    router.post('/auth', require('../middleware/auth'), function (req, res, next) {
+        res.redirect(req.session.returnTo);
+    });
+
     return router;
 }
 
