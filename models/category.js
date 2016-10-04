@@ -3,7 +3,9 @@ var Schema = mongoose.Schema;
 
 var schema = new Schema({
     uuid: {
-        type: String
+        type: String,
+        unique: true,
+        required: true
     },
     name: {
         type: String
@@ -16,4 +18,4 @@ var schema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Category', schema);
+module.exports = mongoose.model('Product', schema);

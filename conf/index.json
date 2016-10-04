@@ -1,6 +1,6 @@
 {
     "port" : "8088",
-    "live": false,
+    "live": true,
     "session": {
         "secret": "SomeThink",
         "key": "sid",

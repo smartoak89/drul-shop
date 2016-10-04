@@ -1,5 +1,6 @@
 var categoryHandler = require('../handlers/api/category');
 var userHandler = require('../handlers/api/user');
+var productHandler = require('../handlers/api/product');
 
 function getRouter(router) {
     //--Category
@@ -17,6 +18,9 @@ function getRouter(router) {
     router.delete('/user/:id', userHandler.remove);
     router.get('/user/:id', userHandler.find);
     router.post('/user/auth', userHandler.auth);
+
+    //--Product
+    router.post('/product', productHandler.create);
 
     return router;
 }

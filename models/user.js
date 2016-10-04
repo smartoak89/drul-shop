@@ -3,6 +3,11 @@ var mongoose = require('../libs/mongoose');
 var Schema = mongoose.Schema;
 
 var schema = new Schema({
+    uuid: {
+        type: String,
+        unique: true,
+        required: true
+    },
     email: {
         type: String,
         //unique: true,
@@ -24,9 +29,6 @@ var schema = new Schema({
     salt: {
         type: String,
         // required: true
-    },
-    uuid: {
-        type: String
     },
     created: {
         type: Date,
