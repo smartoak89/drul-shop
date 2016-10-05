@@ -1,18 +1,13 @@
+var commonHandler = require('../handlers/common');
+
 function getRouter(router) {
-    router.get('/', function (req,res,next) {
-        req.session.currency = "$";
-        console.log(req.session);
-        res.render('main/index');
-    });
+    router.get('/', commonHandler.index.get);
 
-    router.get('/auth', function (req, res, next) {
-        res.render('common/auth');
-    });
+    router.get('/auth', commonHandler.auth.get);
 
-    router.post('/auth', require('../middleware/auth'), function (req, res, next) {
-        console.log('Auth all right');
-        res.redirect(req.session.returnTo);
-    });
+    router.post('/auth', require('../middleware/auth'), commonHandler.auth.post);
+
+    router.post('/currency', commonHandler.currency.post);
 
     return router;
 }

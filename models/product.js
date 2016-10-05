@@ -13,7 +13,9 @@ var schema = new Schema({
     category: {type: String},
     count: { type: String },
     color: { type: Array },
-    size: { type: Array }
+    size: { type: Array },
+    price: {type: Number},
+    old_price: {type: Number}
 });
 
 module.exports = mongoose.model('Product', schema);

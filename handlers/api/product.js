@@ -50,7 +50,9 @@ function viewData (data) {
         category: data.category,
         count: data.count,
         color: data.color,
-        size: data.size
+        size: data.size,
+        price: data.price,
+        old_price: data.old_price,
     };
     return res;
 }
@@ -65,7 +67,9 @@ function isValid (req, callback) {
         category: req.body.category,
         count: req.body.count,
         color: req.body.color,
-        size: req.body.size
+        size: req.body.size,
+        price: req.body.price,
+        old_price: req.body.old_price,
 
     };
 
@@ -76,7 +80,9 @@ function isValid (req, callback) {
         category: v.joi.string().max(50),
         count: v.joi.string().max(3),
         color: v.joi.array().items(v.joi.string()),
-        size: v.joi.array().items(v.joi.string())
+        size: v.joi.array().items(v.joi.string()),
+        price: v.joi.number(),
+        old_price: v.joi.number(),
     });
 
     v.validate(data, schema, callback);

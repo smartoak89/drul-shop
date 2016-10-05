@@ -17,7 +17,7 @@ module.exports = {
                     result[k] = data[k];
                 }
             }
-            console.log('User data for update => ', JSON.stringify(data));
+            console.log('User data for update => ', JSON.stringify(result));
             db.update(result.uuid, result, callback);
         })
     },

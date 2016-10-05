@@ -12,6 +12,7 @@ var redisStore = require('connect-redis')(session);
 var redisCli = require('./libs/redis');
 var app = express();
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 app.use(require('./middleware/sendHttpError'));
 app.use(require('./middleware/sendMessage'));
 

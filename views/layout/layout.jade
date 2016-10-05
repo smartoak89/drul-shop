@@ -8,7 +8,7 @@ html
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css")
         link(rel="stylesheet" href="/bower_components/jquery-nice-select/css/nice-select.css")
-        link(rel="stylesheet" href="/bower_components/smSlider/smSlider/css/smSlider.css")
+        link(rel="stylesheet" href="/bower_components/smSlider/smSlider/css/smslider.css")
         link(rel="stylesheet" href="/styles/budicon.css")
 
         link(rel="stylesheet" href="/styles/index.css")
@@ -17,16 +17,17 @@ html
             div.container-fluid
                 div.col-lg-12.col-md-12.col-sm-12.col-xs-12
                     ul.cutTime
-                        li.current
+                        li.current#currency
                             select.sel
-                                option(data-display="UAH") UAH
-                                option RUB
-                                option DOL
+                                option(data-display="#{currency}")
+                                option UAH
+                                option RUR
+                                option USD
                         li.icon
                             i.bi_interface-circle-tick
                         li.time
                             p 09:00 - 17:00
-                        li.placeTime
+                        li.placeTime#clock
                             p Киев 00:39
                         li.singIn.pull-right
                             button.btn.btn-drul.dark(type="button") войти
@@ -110,3 +111,4 @@ script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min
 script(src="/bower_components/smSlider/smSlider/jquery.smslider.min.js")
 script(src="/bower_components/jquery-nice-select/js/jquery.nice-select.min.js")
 script(src="/ownjs/main.js")
+script(src="/js/index.js")
