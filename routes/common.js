@@ -1,5 +1,7 @@
 function getRouter(router) {
     router.get('/', function (req,res,next) {
+        req.session.currency = "$";
+        console.log(req.session);
         res.render('main/index');
     });
 
@@ -8,6 +10,7 @@ function getRouter(router) {
     });
 
     router.post('/auth', require('../middleware/auth'), function (req, res, next) {
+        console.log('Auth all right');
         res.redirect(req.session.returnTo);
     });
 

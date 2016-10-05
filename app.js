@@ -8,10 +8,8 @@ var flash = require('express-flash');
 var log = require('./libs/logger')(module);
 var passport = require('./libs/passport');
 var conf = require('./conf');
-var redis   = require("redis");
-var client  = redis.createClient();
 var redisStore = require('connect-redis')(session);
-
+var redisCli = require('./libs/redis');
 var app = express();
 
 app.use(require('./middleware/sendHttpError'));
@@ -29,9 +27,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser());
 app.use(cookieParser());
 
-conf.session.store = new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  260});
-
-app.use(session(conf.session));
+app.use(session({
+        secret: conf.session.secret,
+        key: conf.session.key,
+        coockie: conf.session.coockie,
+        store: new redisStore({
+            client: redisCli,
+            ttl: conf.redis.ttl
+        })
+    }
+));
 
 app.use(passport.initialize());
 app.use(passport.session());

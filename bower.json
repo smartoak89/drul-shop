@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "jquery.cookie": "^1.4.1",
+    "jquery-nice-select": "^1.1.0",
+    "jquery-treegrid": "^0.3.0",
+    "smSlider": "https://github.com/sashamochalin/smSlider.git"
+  }
+}

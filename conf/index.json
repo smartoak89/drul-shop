@@ -14,5 +14,10 @@
     },
     "mongoDB": {
         "uri": "mongodb://localhost/drul-shop"
+    },
+    "redis": {
+      "host": "localhost",
+      "port": "6379",
+      "ttl": 25
     }
 }
