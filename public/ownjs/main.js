@@ -3,6 +3,12 @@
     $(document).ready(function() {
         $('.sel').niceSelect();
         $('#sm_slider').smSlider();
+        $(".accordion").accordion({
+            firstChildExpand: true,
+            multiExpand: false,
+            slideSpeed: 500,
+            dropDownIcon: "&#8595"
+        });
     });
     var slider = $('#slider'),
         tooltip = $('.tooltip');

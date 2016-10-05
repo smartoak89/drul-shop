@@ -287,3 +287,56 @@ section {
 .main{
     margin-top: 35px;
 }
+.accordion-header{
+    background: #fff;
+    min-height: 60px;
+    padding: 22px;
+    border: none;
+}
+.accordion-header h1{
+    font-size: 14px;
+    font-weight: 500;
+}
+.accordion-item{
+    border: none;
+    border-radius: 0;
+}
+.drawer{
+    border: 1px solid #dedede;
+    border-bottom: none;
+    border-radius: 0;
+}
+.drawer:last-child{
+    border-bottom: 1px solid #dedede;
+}
+.accordion-content {
+    border: none;
+}
+.accordion-item-active .accordion-header {
+    background: #f8f8f8;
+}
+.accordion-item-active .accordion-header h1 {
+    color: #000;
+}
+.accordion-content {
+    padding-top: 0;
+    background: #f8f8f8;
+
+}
+.accordion-content > a{
+    padding: 15px;
+    color: #a9a9a9;
+    display: block;
+    text-decoration: none;
+}
+.sort{
+    padding: 20px 0;
+}
+.sort > a{
+    padding-left: 15px;
+    color: #36a5ec;
+    text-decoration: none;
+}
+.sort > a:first-child{
+    padding-left: 10px;
+}
