@@ -169,7 +169,11 @@ section {
     border-radius: 25px;
 }
 #sm_slider{
-    background: url(../images/slideBack.jpg);
+    background: url(../images/slideBack.jpg)no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     position: relative;
     max-height: 560px;
 }
