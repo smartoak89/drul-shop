@@ -6,6 +6,7 @@
     "jquery.cookie": "^1.4.1",
     "jquery-nice-select": "^1.1.0",
     "jquery-treegrid": "^0.3.0",
-    "smSlider": "https://github.com/sashamochalin/smSlider.git"
+    "smSlider": "https://github.com/sashamochalin/smSlider.git",
+    "woco-accordion": "https://github.com/chooowai/woco-accordion.git"
   }
 }
