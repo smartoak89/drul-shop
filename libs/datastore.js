@@ -56,6 +56,12 @@ Datastore.prototype = {
             if (err) return callback(err);
             return callback(null, result);
         })
+    },
+    findAll: function (patern, callback) {
+        this.model.find(patern, function (err, result) {
+            if (err) return callback(err);
+            return callback(null, result);
+        })
     }
 };
 

@@ -2,6 +2,7 @@ var productApi = require('../../api/product');
 var msg = require('../../message/ru/product');
 var log = require('../../libs/logger')(module);
 var HttpError = require('../../error').HttpError;
+var Promise = require('bluebird');
 
 exports.create = function (req, res, next) {
     isValid(req, function (err, value) {
@@ -17,10 +18,22 @@ exports.create = function (req, res, next) {
 exports.list = function (req, res, next) {
     productApi.list(function (err, result) {
         if (err) return next(err);
-        var list = result.map(function (i) {
-                return viewData(i);
-            });
-        res.json({data: list});
+
+        Promise.map(result, view).then(function (data) {
+            console.log('data', result);
+            // var list = viewData(result);
+            // res.json({data: list});
+        }, function (err) {
+            next(err);
+        });
+        // var list = result.map(function (i) {
+        //         fileAPI.findAll({parent: i.uuid}, function (err, gall) {
+        //             if (err) return next(err);
+        //             i.gallery = gall;
+        //             console.log(i)
+        //         });
+        //         return viewData(i);
+        //     });
     });
 };
 
@@ -41,7 +54,18 @@ exports.remove = function (req, res, next) {
     })
 };
 
+var fileAPI = require('../../api/file');
+var view = Promise.promisify(function (prod, i, c, callback) {
+    prod.abs = 'ksjdfjl';
+    // fileAPI.findAll({parent: prod.uuid}, function (err, gall) {
+    //     if (err) return callback(new HttpError(500));
+    //     prod.gallery = gall;
+    // });
+    // callback();
+});
+
 function viewData (data) {
+    console.log(data);
     var res = {
         uuid: data.uuid,
         name: data.name,
@@ -52,6 +76,7 @@ function viewData (data) {
         color: data.color,
         size: data.size,
         price: data.price,
+        gallery: data.gallery,
         old_price: data.old_price,
     };
     return res;
