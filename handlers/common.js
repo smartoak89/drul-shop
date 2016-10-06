@@ -11,7 +11,11 @@ exports.index = {
             };
             res.render('main/index', data);
         });
+    },
+    filter: function (req, res, next) {
+        res.render('main/filter');
     }
+
 };
 
 exports.auth = {

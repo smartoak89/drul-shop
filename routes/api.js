@@ -28,6 +28,10 @@ function getRouter(router) {
 
     //--File
     router.post('/file/:id', fileHandler.uploadPhoto);
+    router.get('/files/:id', fileHandler.list);
+    router.get('/file/:id', fileHandler.get);
+    router.delete('/file/:id', fileHandler.delete);
+
     return router;
 }
 

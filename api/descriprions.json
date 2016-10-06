@@ -26,7 +26,8 @@
     }
   },{
     "File": {
-      "POST /file/{uuid}": "Upload photo for current product"
+      "POST /file/{uuid}": "Upload photo for current product",
+      "GET /files/{uuid}": "Get all photos for current product"
     }
   }
 ]

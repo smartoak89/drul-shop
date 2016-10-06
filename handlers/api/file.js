@@ -7,9 +7,9 @@ var conf = require('../../conf');
 var fs = require('fs');
 
 exports.uploadPhoto = function (req, res, next) {
-    var productID = {uuid: req.params.id};
+    var document = {uuid: req.params.id};
     //TODO: allow upload only type "image"
-    productAPI.findOne(productID, function (err, result) {
+    productAPI.findOne(document, function (err, result) {
         if (err) return next(err);
 
         createFolder(result.uuid, function (err) {
@@ -22,6 +22,37 @@ exports.uploadPhoto = function (req, res, next) {
     });
 };
 
+exports.list = function (req, res, next) {
+    var document = {parent: req.params.id};
+    fileAPI.findAll(document, function (err, result) {
+        if (err) return next(err);
+        res.json(result);
+    });
+};
+
+exports.delete = function (req, res, next) {
+    fileAPI.remove(req.params.id, function (err, result) {
+        if (err) return next(err);
+        res.sendMsg(msg.DELETED_ONE);
+    });
+};
+
+exports.get = function (req, res, next) {
+    fileAPI.findOne({uuid: req.params.id}, function (err, result) {
+        if (err) return next(err);
+        if (!result) return next(new HttpError(404, 'File Not Found'));
+        res.setHeader("Content-Type", result.mime);
+        read(result, res, function (err) {
+            if (err) return callback(err);
+        })
+    });
+};
+
+function read (file, res, callback) {
+    var path = conf.tmp + '/' + file.parent + '/' + file.name;
+    var rs = fs.createReadStream(path);
+    rs.pipe(res);
+}
 
 function upload (req, productID, callback) {
     var Busboy = require('busboy');

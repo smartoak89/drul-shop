@@ -3,6 +3,8 @@ var commonHandler = require('../handlers/common');
 function getRouter(router) {
     router.get('/', commonHandler.index.get);
 
+    router.get('/filter', commonHandler.index.filter);
+
     router.get('/auth', commonHandler.auth.get);
 
     router.post('/auth', require('../middleware/auth'), commonHandler.auth.post);

@@ -5,6 +5,19 @@ module.exports = {
     create: function (data, callback) {
         db.create(data, callback)
     },
+    findAll: function (patern, callback) {
+        db.findAll(patern, callback);
+    },
+    remove: function (id, callback) {
+        db.findOne({uuid: id}, function (err, result) {
+            if (err) return callback(err);
+            if (!result) return callback(404);
+            db.remove(id, callback);
+        });
+    },
+    findOne: function (data, callback) {
+        db.findOne (data, callback);
+    },
     // list: function (callback) {
     //     db.list(callback);
     // },
@@ -21,16 +34,7 @@ module.exports = {
     //         db.update(result.uuid, result, callback);
     //     })
     // },
-    // remove: function (id, callback) {
-    //     db.find(id, function (err, result) {
-    //         if (err) return callback(err);
-    //         if (!result) return callback(404);
-    //         db.remove(id, callback);
-    //     });
-    // },
-    // find: function (id, callback) {
-    //     db.find(id, callback);
-    // },
+
     // auth: function (email, password, callback) {
     //     db.findOne({email: email}, function (err, result) {
     //         console.log('email', email);
@@ -42,9 +46,7 @@ module.exports = {
     //         return callback (null, result);
     //     });
     // },
-    // findOne: function (data, callback) {
-    //     db.findOne (data, callback);
-    // },
+
     // currentAcriveUser: function (req, callback) {
     //     if (req.session.passport && req.isAuthenticated && req.isAuthenticated()) {
     //         var uuid = req.session.passport.user;
