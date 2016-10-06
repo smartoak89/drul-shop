@@ -20,6 +20,13 @@
   },{
     "Product": {
       "POST /product": "Create a new product",
+      "GET /products": "Return list of products",
+      "PUT /product/{uuid}": "Update product",
+      "DELETE /product/{uuid}": "Delete product"
+    }
+  },{
+    "File": {
+      "POST /file/{uuid}": "Upload photo for current product"
     }
   }
 ]

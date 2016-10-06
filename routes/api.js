@@ -1,6 +1,7 @@
 var categoryHandler = require('../handlers/api/category');
 var userHandler = require('../handlers/api/user');
 var productHandler = require('../handlers/api/product');
+var fileHandler = require('../handlers/api/file');
 
 function getRouter(router) {
     //--Category
@@ -25,6 +26,8 @@ function getRouter(router) {
     router.put('/product/:id', productHandler.update);
     router.delete('/product/:id', productHandler.remove);
 
+    //--File
+    router.post('/file/:id', fileHandler.uploadPhoto);
     return router;
 }
 

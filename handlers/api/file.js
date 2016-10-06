@@ -1,0 +1,81 @@
+var fileAPI = require('../../api/file');
+var productAPI = require('../../api/product');
+var msg = require('../../message/ru/file');
+var HttpError = require('../../error').HttpError;
+var Promise = require("bluebird");
+var conf = require('../../conf');
+var fs = require('fs');
+
+exports.uploadPhoto = function (req, res, next) {
+    var productID = {uuid: req.params.id};
+    //TODO: allow upload only type "image"
+    productAPI.findOne(productID, function (err, result) {
+        if (err) return next(err);
+
+        createFolder(result.uuid, function (err) {
+            if (err) return next(err);
+            upload(req, result.uuid, function (err) {
+                if (err) return next(err);
+                res.sendMsg(msg.UPLOADED);
+            });
+        })
+    });
+};
+
+
+function upload (req, productID, callback) {
+    var Busboy = require('busboy');
+    var busboy = new Busboy({ headers: req.headers });
+
+    var files = [];
+
+    busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+        var filedesc = {
+            parent: productID,
+            name: filename,
+            mime: mimetype,
+            created: Date.now(),
+            size: undefined
+        };
+
+        var out = fs.createWriteStream(conf.tmp + '/' + productID + '/' + filename)
+            .on('error', function (err) { return callback(err); });
+
+        var dataLength = 0;
+        file.on('data', function(chunk) {
+            dataLength += chunk.length;
+            out.write(chunk);
+        })
+            .on('end', function() {
+                out.end();
+                filedesc.size = dataLength;
+                files.push(filedesc);
+            })
+            .on('error', function(err) { return callback(err) });
+    });
+
+    busboy.on('finish', function() {
+        Promise.map(files, save).then(function (data) {
+            callback();
+        }, function(err) {
+            callback(err);
+        });
+    });
+
+    req.pipe(busboy);
+}
+
+var save = Promise.promisify(function (file, b, c, callback) {
+    fileAPI.create(file, callback);
+});
+
+function createFolder (name, callback) {
+    var folder = conf.tmp + '/' + name;
+    fs.exists(folder, function (exists) {
+        if (exists) return callback(null);
+        fs.mkdir(folder, function (err) {
+            if (err) return callback(err);
+            return callback(null);
+        })
+    })
+}

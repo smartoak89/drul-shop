@@ -44,5 +44,14 @@ module.exports = {
     },
     findOne: function (data, callback) {
         db.findOne (data, callback);
+    },
+    currentAcriveUser: function (req, callback) {
+        if (req.session.passport && req.isAuthenticated && req.isAuthenticated()) {
+            var uuid = req.session.passport.user;
+            console.log('user active');
+            db.find(uuid, callback);
+        } else {
+            return callback (null, null);
+        }
     }
 };

@@ -23,5 +23,12 @@ module.exports = {
             if (!result) return callback(new HttpError(404, 'Product Not Found'));
             db.remove(id, callback);
         });
+    },
+    findOne: function (document, callback) {
+        db.findOne(document, function (err, result) {
+            if (err) return callback(err);
+            if (!result) return callback(new HttpError(404, 'Product Not Found'));
+            callback(null, result);
+        })
     }
 };

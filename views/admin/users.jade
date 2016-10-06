@@ -1,27 +1,27 @@
 extends ../layout/mainAdmin
 block content
     include ../mixins/mixins
-    aside.sidebar(role="complementary")
-        div.sidebar-block
-            div.media
-                div.media-left
-                    a(href="page-profile.html")
-                        span.status.dotted.dotted-primary(data-toggle="tooltip", data-container="body", title="", data-original-title="available")
-                        img.media-object.img-circle(src="/images/ava/uifaces5.jpg", alt="photo profile")
-                div.media-body
-                    h4.media-heading Emma Greene
-                    p.text-muted
-                        small Graphic Designer
-        div.nav-wrapper
-            ul.nav.nav-stacked(role="navigation")
-                +navAdmin('Категории', 'categ')
-                +navAdmin('Товары', 'tovs')
-                +navAdmin('Пользователи', 'users')(class="active")
-                +navAdmin('Заявки', 'reqs')
-                +navAdmin('Акции', 'stocks')
-                +navAdmin('Валюты', 'curr')
-                +navAdmin('Доставка', 'deliv')
-                +navAdmin('Отзывы', 'com')
+    //aside.sidebar(role="complementary")
+    //    div.sidebar-block
+    //        div.media
+    //            div.media-left
+    //                a(href="page-profile.html")
+    //                    span.status.dotted.dotted-primary(data-toggle="tooltip", data-container="body", title="", data-original-title="available")
+    //                    img.media-object.img-circle(src="/images/ava/uifaces5.jpg", alt="photo profile")
+    //            div.media-body
+    //                h4.media-heading Emma Greene
+    //                p.text-muted
+    //                    small Graphic Designer
+    //    div.nav-wrapper
+    //        ul.nav.nav-stacked(role="navigation")
+    //            +navAdmin('Категории', 'categ')
+    //            +navAdmin('Товары', 'tovs')
+    //            +navAdmin('Пользователи', 'users')(class="active")
+    //            +navAdmin('Заявки', 'reqs')
+    //            +navAdmin('Акции', 'stocks')
+    //            +navAdmin('Валюты', 'curr')
+    //            +navAdmin('Доставка', 'deliv')
+    //            +navAdmin('Отзывы', 'com')
     section.content-wrapper(role="main")
         div.content
             div.content-bar

@@ -27,14 +27,14 @@ $(document).ready(function () {
     })();
 
     (function () {
-        function clock() {
+        function clock () {
             var date = new Date();
             var hour=date.getHours();
             var minute=date.getMinutes();
             var sec=date.getSeconds();
 
             $('#clock').html((hour<10?'0':'')+hour+':'+(minute<10?'0':'')+minute+':'+(sec<10?'0':'')+sec);
-            window.setTimeout('clock()',1000);
+            setTimeout(clock,1000);
         }
         clock();
     })();

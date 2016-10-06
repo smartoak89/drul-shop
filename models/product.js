@@ -15,7 +15,11 @@ var schema = new Schema({
     color: { type: Array },
     size: { type: Array },
     price: {type: Number},
-    old_price: {type: Number}
+    old_price: {type: Number},
+    created: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 module.exports = mongoose.model('Product', schema);

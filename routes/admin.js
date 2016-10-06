@@ -1,9 +1,14 @@
 var adminHandler = require('../handlers/templates/admin-templates');
 
 function getRouter(router) {
-    router.get('/', function (req, res, next) {
-        res.render('admin/admin');
-    });
+    router.get('/', adminHandler.index);
+    router.get('/categories', adminHandler.categories);
+    router.get('/products', adminHandler.products);
+    router.get('/users', adminHandler.users);
+    router.get('/request', adminHandler.request);
+    router.get('/stocks', adminHandler.stocks);
+    router.get('/delivery', adminHandler.delivery);
+    router.get('/reviews', adminHandler.reviews);
 
     return router;
 }

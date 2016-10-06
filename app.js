@@ -25,12 +25,15 @@ app.use(function(req, res, next) {
 app.set('view engine', 'jade');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 
 app.use(session({
         secret: conf.session.secret,
         key: conf.session.key,
+        resave: conf.session.resave,
+        saveUninitialized: conf.session.saveUninitialized,
         coockie: conf.session.coockie,
         store: new redisStore({
             client: redisCli,

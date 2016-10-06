@@ -28,6 +28,27 @@ html
     body
         main.wrapkit-wrapper(id="wrapper")
             include ../common/headerAdmin
+            aside.sidebar(role="complementary")
+                div.sidebar-block
+                    div.media
+                        div.media-left
+                            a(href="page-profile.html")
+                                span.status.dotted.dotted-primary(data-toggle="tooltip", data-container="body", title="", data-original-title="available")
+                                img.media-object.img-circle(src="/images/ava/uifaces5.jpg", alt="photo profile")
+                        div.media-body
+                            h4.media-heading Emma Greene
+                            p.text-muted
+                                small Graphic Designer
+                div.nav-wrapper
+                    ul.nav.nav-stacked(role="navigation")
+                        +navAdmin('Категории', 'categories')(class="active")
+                        +navAdmin('Товары', 'products')
+                        +navAdmin('Пользователи', 'users')
+                        +navAdmin('Заявки', 'request')
+                        +navAdmin('Акции', 'stocks')
+                        +navAdmin('Валюты', 'curr')
+                        +navAdmin('Доставка', 'delivery')
+                        +navAdmin('Отзывы', 'reviews')
             block content
             include ../common/footerAdmin
 script(src="/js/vendor.js")

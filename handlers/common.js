@@ -2,9 +2,14 @@ exports.index = {
     get: function (req, res, next) {
         var productApi = require('../api/product');
         var convector = require('../libs/currency').converter;
+        var userAPI = require('../api/user');
 
-        res.render('main/index', {
-            currency: req.session.currency || 'UAH'
+        userAPI.currentAcriveUser(req, function (err, user) {
+            if (err) return next(err);
+            var data = {
+                currency: user.currency || req.session.currency || 'UAH'
+            };
+            res.render('main/index', data);
         });
     }
 };
