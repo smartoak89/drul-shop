@@ -30,5 +30,8 @@ module.exports = {
             if (!result) return callback(new HttpError(404, 'Product Not Found'));
             callback(null, result);
         })
+    },
+    findAll: function (document, callback) {
+        db.findAll(document, callback);
     }
 };
