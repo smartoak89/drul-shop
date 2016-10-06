@@ -9,6 +9,12 @@
             slideSpeed: 500,
             dropDownIcon: "&#8595"
         });
+        $('.paginat').pagination({
+            items: 93,
+            cssStyle: 'light-theme',
+            edges: 2,
+            displayedPages: 3
+        });
     });
     var slider = $('#slider'),
         tooltip = $('.tooltip');
@@ -31,19 +37,23 @@
 
             tooltip.css('left', value).text(ui.value);
 
+            //if(value <= 5) {
+            //    $('.volume').removeClass('bi_volume-low-a').removeClass('bi_volume-high-a').removeClass('bi_volume-medium-a').addClass('bi_volume-mute-a');
+            //}
+            //else if (value <= 35 && value > 6) {
+            //    $('.volume').removeClass('bi_volume-mute-a').removeClass('bi_volume-high-a').removeClass('bi_volume-medium-a').addClass('bi_volume-low-a');
+            //}
+            //else if (value <= 75 && value > 36) {
+            //    $('.volume').removeClass('bi_volume-mute-a').removeClass('bi_volume-high-a').removeClass('bi_volume-low-a').addClass('bi_volume-medium-a');
+            //}
+            //else{
+            //    $('.volume').removeClass('bi_volume-mute-a').removeClass('bi_volume-medium-a').removeClass('bi_volume-low-a').addClass('bi_volume-high-a');
+            //};
             if(value <= 5) {
-                $('.volume').removeClass('bi_volume-low-a').removeClass('bi_volume-high-a').removeClass('bi_volume-medium-a').addClass('bi_volume-mute-a');
-            }
-            else if (value <= 35 && value > 6) {
-                $('.volume').removeClass('bi_volume-mute-a').removeClass('bi_volume-high-a').removeClass('bi_volume-medium-a').addClass('bi_volume-low-a');
-            }
-            else if (value <= 75 && value > 36) {
-                $('.volume').removeClass('bi_volume-mute-a').removeClass('bi_volume-high-a').removeClass('bi_volume-low-a').addClass('bi_volume-medium-a');
-            }
-            else{
-                $('.volume').removeClass('bi_volume-mute-a').removeClass('bi_volume-medium-a').removeClass('bi_volume-low-a').addClass('bi_volume-high-a');
+                $('.volume').removeClass('s-7').addClass('s-6');
+            }else{
+                $('.volume').removeClass('s-6').addClass('s-7');
             };
-
         },
 
         stop: function(event,ui) {

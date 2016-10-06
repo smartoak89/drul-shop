@@ -5,14 +5,14 @@ body{
     font-size: 14px;
     color: #000000;
 }
-.prev{
+.prevs{
     height: 60px;
     background: transparent;
 }
-.prev ul{
+.prevs ul{
     margin: 0;
 }
-.prev ul.cutTime>li{
+.prevs ul.cutTime>li{
     float: left;
     display: block;
 }
@@ -37,7 +37,7 @@ body{
 }
 .icon{
     margin-left: 25px;
-    padding: 12px 0;
+    padding: 18px 0;
     font-size: 24px;
 }
 .time{
@@ -54,6 +54,11 @@ body{
     top: 1px;
     margin: 0 8px;
 }
+.logoWrapper{
+    width: 100%;
+    text-align: center;
+    margin-top: 35px;
+}
 .placeTime{
     padding: 17px 0 11px 0;
     font-size: 16px;
@@ -61,7 +66,7 @@ body{
 .btn-drul{
     border-radius: 0;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 15px;
     border:1px solid #000;
     background: #fff;
     text-transform: uppercase;
@@ -87,20 +92,21 @@ body{
     background: #000;
     position: relative;
 }
+.list > li:first-child{
+    display: none;
+}
 .navigation{
     width: 100%;
     color: rgb(75,75,75);
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
-}
-.logo{
-    height: 165px;
+    margin-top: 70px;
 }
 .navigation > li{
     display: inline;
     border-right: 1px solid rgb(30,30,30);
-    padding: 29px 20px;
+    padding: 22px 20px;
 }
 .navigation > li:last-child{
     border-right: 0px solid rgb(30,30,30);
@@ -234,10 +240,10 @@ section {
     text-transform: uppercase;
     font-weight: 100;
 }
-.bigNamePrice > span, .littleNamePrice > span{
+.bigNamePrice > span, .littleNamePrice > span, .namePrice > span{
     font-weight: 700;
 }
-.littleNamePrice > strike{
+.littleNamePrice > strike, .namePrice > strike{
     color: #a3a3a3;
     font-size: 12px;
     margin-left: 15px;
@@ -325,7 +331,7 @@ section {
 }
 .accordion-content > a{
     padding: 15px;
-    color: #a9a9a9;
+    color: #c3c3c3;
     display: block;
     text-decoration: none;
 }
@@ -339,4 +345,136 @@ section {
 }
 .sort > a:first-child{
     padding-left: 10px;
+}
+.goodsBlock{
+    position: relative;
+    margin-bottom: 30px;
+}
+.goodsBlock > img{
+    height: 280px;
+    width: 100%
+}
+.namePrice{
+    border: 1px solid #dedede;
+    border-top: none;
+    padding: 15px;
+    font-size: 15px;
+}
+.namePrice > div{
+    color: #c3c3c3;
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+.namePrice > p{
+    text-transform: uppercase;
+}
+.line{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-top: 1px solid #dedede;
+}
+.paginat > ul{
+
+}
+.paginat .prev, .paginat .next{
+    display: none;
+}
+.light-theme > ul > li >a{
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    color: #000;
+    padding: 7px 15px;
+    font-weight: 500;
+}
+.light-theme .current {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 7px 15px;
+    background: #000;
+}
+.s-1, .s-2, .s-3, .s-4, .s-5, .s-6, .s-7, .logo, .logo-2{
+    background: url(../images/sprites.png) no-repeat;
+}
+
+.s-1{
+    background-position: 0 0;
+    width: 19px;
+    height: 20px;
+}
+
+.s-2{
+    background-position: -25px 0;
+    width: 23px;
+    height: 21px;
+}
+
+.s-3{
+    background-position: -50px 0;
+    width: 18px;
+    height: 21px;
+}
+
+.s-4{
+    background-position: -72px 0;
+    width: 22px;
+    height: 22px;
+}
+
+.s-5{
+    background-position: 0 -26px ;
+    width: 11px;
+    height: 6px;
+}
+
+.s-6{
+    background-position: -97px 0;
+    width: 21px;
+    height: 23px;
+}
+
+.s-7{
+    background-position: -124px 1px;
+    width: 21px;
+    height: 23px;
+}
+
+.logo{
+    background-position: -145px 0;
+    width: 73px;
+    height: 76px;
+    margin: 0 auto;
+}
+
+.logo-2{
+    background-position: -225px 0;
+    width: 73px;
+    height: 65px;
+    margin: 0 auto;
+}
+.footer{
+    background: #000;
+    height: 320px;
+    margin-top: 150px
+}
+.logoWrapper2{
+    width: 100%;
+    text-align: center;
+    margin-top: 70px;
+}
+.social{
+    color: #fff;
+    font-size: 22px;
+    margin-top: 65px;
+}
+.social > li{
+    display: inline;
+    margin-left: 40px;
+}
+.social > li:first-child{
+    display: inline;
+    margin-left: 0;
 }

@@ -10,10 +10,11 @@ html
         link(rel="stylesheet" href="/bower_components/jquery-nice-select/css/nice-select.css")
         link(rel="stylesheet" href="/bower_components/smSlider/smSlider/css/smslider.css")
         link(rel="stylesheet" href="/bower_components/woco-accordion/woco-accordion.min.css")
+        link(rel="stylesheet" href="/bower_components/simplePagination.js/simplePagination.css")
         link(rel="stylesheet" href="/styles/budicon.css")
         link(rel="stylesheet" href="/styles/index.css")
     body
-        div.prev
+        div.prevs
             div.container-fluid
                 div.col-lg-12.col-md-12.col-sm-12.col-xs-12
                     ul.cutTime
@@ -24,7 +25,7 @@ html
                                 option RUR
                                 option USD
                         li.icon
-                            i.bi_interface-circle-tick
+                            div.s-4
                         li.time
                             p 09:00 - 17:00
                         li.placeTime#clock
@@ -34,15 +35,16 @@ html
                         li.singUp.pull-right
                             button.btn.btn-drul(type="button") регистрация
                         li.icon.iconRig.pull-right
-                            i.bi_ecommerce-bag
+                            div.s-3
                         li.icon.iconRig.pull-right
-                            i.fa.fa-heart-o(aria-hidden="true")
+                            div.s-2
                         li.icon.iconRig.pull-right
-                            i.bi_interface-search
+                            div.s-1
         div.nav
             div.container-fluid
                 div.col-lg-12.col-md-12.col-sm-12.col-xs-12
-                    div.logo
+                    div.logoWrapper
+                        div.logo
                     ul.navigation
                         li одежда
                         li аксессуары
@@ -51,7 +53,7 @@ html
                     section
                         //span.tooltip
                         div#slider
-                        span.volume.bi_volume-low-a
+                        div.volume.s-7
         div#sm_slider
             ul
                 li.pad35
@@ -104,6 +106,20 @@ html
                 li.pad35 3
 
         block content
+        div.footer
+            div.container-fluid
+                div.col-lg-12.col-md-12.col-sm-12.col-xs-12
+                    div.logoWrapper2
+                        div.logo
+                        ul.social
+                            li
+                                i.fa.fa-twitter
+                            li
+                                i.fa.fa-facebook
+                            li
+                                i.fa.fa-instagram
+                            li
+                                i.fa.fa-dribbble
 
 script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js")
@@ -111,5 +127,6 @@ script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min
 script(src="/bower_components/smSlider/smSlider/jquery.smslider.min.js")
 script(src="/bower_components/jquery-nice-select/js/jquery.nice-select.min.js")
 script(src="/bower_components/woco-accordion/woco.accordion.js")
+script(src="/bower_components/simplePagination.js/jquery.simplePagination.js")
 script(src="/ownjs/main.js")
 script(src="/js/index.js")
