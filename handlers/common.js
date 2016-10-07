@@ -7,7 +7,7 @@ exports.index = {
         userAPI.currentAcriveUser(req, function (err, user) {
             if (err) return next(err);
             var data = {
-                currency: user.currency || req.session.currency || 'UAH'
+                //currency: user.currency || req.session.currency || 'UAH'
             };
             res.render('main/index', data);
         });

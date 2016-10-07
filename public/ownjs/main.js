@@ -7,7 +7,7 @@
             firstChildExpand: true,
             multiExpand: false,
             slideSpeed: 500,
-            dropDownIcon: "&#8595"
+            dropDownIcon: "&#xf107"
         });
         $('.paginat').pagination({
             items: 93,
