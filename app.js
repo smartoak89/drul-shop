@@ -45,7 +45,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.use(require('./middleware/configureUser'));
+require('./middleware/configureUser')(app);
 
 require('./routes')(app, express);
 
