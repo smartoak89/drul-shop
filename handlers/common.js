@@ -8,10 +8,13 @@ exports.index = {
 
         productApi.list(function (err, products) {
             if (err) return next(err);
-            res.render('main/index', {data: {
-                products: products
-            }});
-        });
+
+            res.render('main/index', {
+                data: {
+                    products: products
+                }
+            });
+        })
     },
     filter: function (req, res, next) {
         res.render('main/filter');

@@ -293,13 +293,13 @@ section {
 .main{
     margin-top: 35px;
 }
-.accordion-header{
+.accordion-header, .minMaxCost{
     background: #fff;
     min-height: 60px;
     padding: 22px;
     border: none;
 }
-.accordion-header h1{
+.accordion-header h1, .minMaxCost h1{
     font-size: 14px;
     font-weight: 500;
 }
@@ -478,3 +478,97 @@ section {
     display: inline;
     margin-left: 0;
 }
+.accordion-header-icon{
+    font-family: FontAwesome;
+    font-size: 18px;
+    color: #000;
+    /*position: absolute;*/
+    bottom: 3px;
+}
+.accordion-header-icon.accordion-header-icon-active{
+    color: #000;
+}
+input[type=checkbox] {
+    display: none;
+}
+.checkbo{
+    position: relative;
+    padding: 10px;
+    display: flex;
+}
+.minMaxCost > .checkbo{
+    padding: 0;
+}
+.checkbo > label{
+    position: relative;
+    color: #c7c7c7;
+    font-size: 15px;
+    display: flex;
+}
+.checkbo > span {
+    color: #b9b9b9;
+}
+.checkbo label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    border:1px solid #dedede;
+    background-color: #ffffff;
+
+    /*box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);*/
+
+}
+
+input[type=checkbox]:checked + label:before {
+    content: "\eb23";
+    /*text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);*/
+    font-family: "budicon";
+    font-size: 13px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center
+    /*height: 17px;*/
+}
+.scroll{
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+.minMaxCost{
+    border: 1px solid #dedede;
+    border-bottom: 0;
+
+}
+.minMaxCost h1{
+    margin: 0;
+}
+.minMaxWrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0 15px 0;
+}
+.minMaxWrapper input{
+    width: 100px;
+    height: 35px;
+    border: 1px solid #dedede;
+    padding-left: 26px;
+}
+.minMaxInputWrapper{
+    position: relative;
+}
+.minMaxInputWrapper > label{
+    position:absolute;
+    top: 7px;
+    left: 8px;
+    font-weight: 500;
+}
+::-webkit-input-placeholder {color:#e5e5e5;}
+::-moz-placeholder          {color:#e5e5e5;}
+:-moz-placeholder           {color:#e5e5e5;}
+:-ms-input-placeholder      {color:#e5e5e5;}

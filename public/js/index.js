@@ -1,7 +1,6 @@
 console.log('load')
 
 $(document).ready(function () {
-    console.log('load doca')
     (function () {
         var currency = $('#currency .list');
         currency.click( function (event) {

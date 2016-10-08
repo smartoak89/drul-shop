@@ -7,13 +7,16 @@
             firstChildExpand: true,
             multiExpand: false,
             slideSpeed: 500,
-            dropDownIcon: "&#8595"
+            dropDownIcon: "&#xf107"
         });
         $('.paginat').pagination({
             items: 93,
             cssStyle: 'light-theme',
             edges: 2,
             displayedPages: 3
+        });
+        $(".scroll").mCustomScrollbar({
+            theme: 'rounded-dark'
         });
     });
     var slider = $('#slider'),
