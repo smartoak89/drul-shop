@@ -1,24 +1,15 @@
-function Http (url) {
-    $.ajax({
-        url: url,
-        data: data,
-        success: success
-    });
-}
-
 $(document).ready(function () {
-    console.log('sdf');
     (function () {
         var currency = $('#currency .list');
         currency.click( function (event) {
             var current = event.target.textContent;
-
+            console.log('currency', currency);
             $.ajax({
                 type: "POST",
                 url: '/currency',
                 data: { currency: current },
                 success: function () {
-                    console.log('sucs');
+                    window.location.reload();
                 },
                 error: function () {
                     console.log('error');

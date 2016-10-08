@@ -1,10 +1,10 @@
-var productApi = require('../../api/product');
 var msg = require('../../message/ru/product');
 var log = require('../../libs/logger')(module);
 var HttpError = require('../../error').HttpError;
-var Promise = require('bluebird');
 
 exports.create = function (req, res, next) {
+    var productApi = require('../../api/product')(req.user);
+
     isValid(req, function (err, value) {
         log.log('gotVal %', value);
         if (err) return res.sendMsg(err, true, 400);
@@ -16,18 +16,16 @@ exports.create = function (req, res, next) {
 };
 
 exports.list = function (req, res, next) {
-    productApi.list(function (err, result) {
-        if (err) return next(err);
+    var productApi = require('../../api/product')(req.user);
 
-        Promise.map(result, view).then(function (data) {
-            res.json({data: result});
-        }, function (err) {
-            next(err);
-        });
+    productApi.list(function (err, data) {
+        if (err) return next(err);
+        res.json({data: data});
     });
 };
 
 exports.update = function (req, res, next) {
+    var productApi = require('../../api/product')(req.user);
     isValid(req, function (err, value) {
         if (err) return res.sendMsg(err, true, 400);
         productApi.update(req.params.id, value, function (err) {
@@ -38,20 +36,12 @@ exports.update = function (req, res, next) {
 };
 
 exports.remove = function (req, res, next) {
+    var productApi = require('../../api/product')(req.user);
     productApi.remove(req.params.id, function(err) {
         if (err) return next(err);
         res.sendMsg(msg.DELETED);
     })
 };
-
-var fileAPI = require('../../api/file');
-var view = Promise.promisify(function (prod, i, c, callback) {
-    fileAPI.findAll({parent: prod.uuid}, function (err, gall) {
-        if (err) return callback(new HttpError(500));
-        prod.gallery = gall;
-        callback();
-    });
-});
 
 function viewData (data) {
     var res = {
