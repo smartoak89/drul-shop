@@ -1,9 +1,16 @@
 exports.index = {
     get: function (req, res, next) {
-        var productApi = require('../api/product');
+        var productAPI = require('../api/product');
         var convector = require('../libs/currency').converter;
         var userAPI = require('../api/user');
 
+        console.log(req.query);
+        // if (req.query) {
+        //     productAPI.findAll(req.query, function (err, result) {
+        //         if (err) return next(err);
+        //         res.json(result);
+        //     });
+        // }
         userAPI.currentAcriveUser(req, function (err, user) {
             if (err) return next(err);
             var data = {

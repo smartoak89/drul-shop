@@ -8,7 +8,7 @@ exports.categories = function (req, res, next) {
     res.render('admin/categ');
 };
 exports.products = function (req, res, next) {
-    res.render('admin/tovs');
+    res.render('admin/products');
 };
 
 exports.users = function (req, res, next) {
