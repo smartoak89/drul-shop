@@ -24,6 +24,14 @@ exports.list = function (req, res, next) {
     });
 };
 
+exports.get = function (req, res, next) {
+    var productApi = require('../../api/product')(req.user);
+    productApi.findOne({uuid: req.params.id}, function (err, data) {
+        if (err) return next(err);
+        res.json({data: data});
+    });
+};
+
 exports.update = function (req, res, next) {
     var productApi = require('../../api/product')(req.user);
     isValid(req, function (err, value) {
@@ -32,6 +40,15 @@ exports.update = function (req, res, next) {
             if (err) return next(err);
             res.sendMsg(msg.UPDATED);
         });
+    });
+};
+
+exports.gallery = function (req, res, next) {
+    var fileAPI = require('../../api/file');
+    var document = {parent: req.params.id};
+    fileAPI.findAll(document, function (err, result) {
+        if (err) return next(err);
+        res.json(result);
     });
 };
 
@@ -72,6 +89,7 @@ function isValid (req, callback) {
         color: req.body.color,
         size: req.body.size,
         price: req.body.price,
+        photo: req.body.photo,
         old_price: req.body.old_price,
 
     };
@@ -81,6 +99,7 @@ function isValid (req, callback) {
         article: v.joi.string().token().max(50),
         description: v.joi.string().max(250),
         category: v.joi.string().max(50),
+        photo: v.joi.string().max(50),
         count: v.joi.string().max(3),
         color: v.joi.array().items(v.joi.string()),
         size: v.joi.array().items(v.joi.string()),

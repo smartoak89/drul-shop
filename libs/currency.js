@@ -12,7 +12,12 @@ exports.converter = function (data, currency, callback) {
         c ? currentPrice = c.sale : callback(null, data);
 
         _.each(data, function (i) {
-            i.price = i.price / currentPrice;
+            if (i.old_price) {
+                var oldPrice =  i.old_price / currentPrice;
+                i.old_price = oldPrice.toFixed(2);
+            }
+            var price = i.price / currentPrice;
+            i.price = price.toFixed(2);
         });
 
         callback(null, data);

@@ -4,7 +4,6 @@ var HttpError = require('../error').HttpError;
 exports.index = {
     get: function (req, res, next) {
         var productApi = require('../api/product')(req.user);
-
         productApi.list(function (err, products) {
             if (err) return next(err);
             console.log('products', products);
@@ -45,21 +44,3 @@ exports.currency = {
         res.redirect('/');
     }
 };
-
-var productsList = Promise.promisify(function (callback) {
-    var productAPI = require('../api/product');
-    productAPI.list(function (err, data) {
-        if (err) return callback(err);
-        callback(null, data);
-    });
-});
-// function productsList () {
-//     var Promise = require('bluebird');
-//     new Promise(function ())
-//     var productAPI = require('../api/product');
-//
-//     productAPI.list(function (err, data) {
-//         if (err) return next(err);
-//         res.json({data: data});
-//     });
-// }

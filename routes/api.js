@@ -23,12 +23,14 @@ function getRouter(router) {
     //--Product
     router.post('/product', productHandler.create);
     router.get('/products', productHandler.list);
+    router.get('/product/:id', productHandler.get);
+    router.get('/product/:id/gallery', productHandler.gallery);
     router.put('/product/:id', productHandler.update);
     router.delete('/product/:id', productHandler.remove);
 
     //--File
     router.post('/file/:id', fileHandler.uploadPhoto);
-    router.get('/files/:id', fileHandler.list);
+    // router.get('/files/:id', fileHandler.list);
     router.get('/file/:id', fileHandler.get);
     router.delete('/file/:id', fileHandler.delete);
 

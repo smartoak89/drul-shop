@@ -15,8 +15,9 @@ var schema = new Schema({
     color: { type: Array },
     size: { type: Array },
     price: {type: Number},
-    gallery: {type: Array},
     old_price: {type: Number},
+    photo: {type: String},
+    gallery: {type: Array},
     created: {
         type: Date,
         default: Date.now

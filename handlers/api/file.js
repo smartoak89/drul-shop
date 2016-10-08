@@ -22,14 +22,6 @@ exports.uploadPhoto = function (req, res, next) {
     });
 };
 
-exports.list = function (req, res, next) {
-    var document = {parent: req.params.id};
-    fileAPI.findAll(document, function (err, result) {
-        if (err) return next(err);
-        res.json(result);
-    });
-};
-
 exports.delete = function (req, res, next) {
     fileAPI.remove(req.params.id, function (err, result) {
         if (err) return next(err);
