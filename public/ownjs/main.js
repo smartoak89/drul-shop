@@ -18,6 +18,7 @@
         $(".scroll").mCustomScrollbar({
             theme: 'rounded-dark'
         });
+        $('.sp-wrap').smoothproducts();
     });
     var slider = $('#slider'),
         tooltip = $('.tooltip');

@@ -200,7 +200,7 @@ block content
                     a по новизне
                 div.row
                     div.col-lg-4.col-md-4.col-sm-6.col-xs-12
-                        div.goodsBlock
+                        div.goodsBlock(data-toggle="modal" data-target=".bs-example-modal-lg")
                             div.marker.red sale
                             img.img-responsive.cover(src="images/11.png")
                             div.namePrice
@@ -241,5 +241,19 @@ block content
                 div.row
                     div.col-lg-12.col-md-12.col-sm-12.col-xs-12.center
                         div.paginat
-
-
+                div.modal.fade.bs-example-modal-lg(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel")
+                    div.modal-dialog.modal-lg(role="document")
+                        div.modal-content.card
+                            div.sp-wrap
+                                a(href="images/1.jpg")
+                                    img(src="images/1_tb.jpg" alt="")
+                                a(href="images/2.jpg")
+                                    img(src="images/2_tb.jpg" alt="")
+                                a(href="images/3.jpg")
+                                    img(src="images/3_tb.jpg" alt="")
+                                a(href="images/4.jpg")
+                                    img(src="images/4_tb.jpg" alt="")
+                                a(href="images/5.jpg")
+                                    img(src="images/5_tb.jpg" alt="")
+                                a(href="images/6.jpg")
+                                    img(src="images/6_tb.jpg" alt="")

@@ -572,3 +572,7 @@ input[type=checkbox]:checked + label:before {
 ::-moz-placeholder          {color:#e5e5e5;}
 :-moz-placeholder           {color:#e5e5e5;}
 :-ms-input-placeholder      {color:#e5e5e5;}
+.card{
+    min-height: 1000px;
+    border-radius: 0;
+}

@@ -9,6 +9,7 @@
     "smSlider": "https://github.com/sashamochalin/smSlider.git",
     "woco-accordion": "https://github.com/chooowai/woco-accordion.git",
     "simplePagination.js": "https://github.com/flaviusmatis/simplePagination.js.git",
-    "malihu-custom-scrollbar-plugin": "~3.1.5"
+    "malihu-custom-scrollbar-plugin": "~3.1.5",
+    "Smoothproducts": "https://github.com/kthornbloom/Smoothproducts.git"
   }
 }
