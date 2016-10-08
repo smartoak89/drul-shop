@@ -75,9 +75,10 @@ function viewData (data) {
         first_name: data.first_name,
         last_name: data.last_name,
         phone: data.phone,
-        created: data.created
+        created: data.created,
+        currency: data.currency
     };
-    return res;
+    return data;
 }
 
 function isValidUpdate (req, callback) {
@@ -87,14 +88,16 @@ function isValidUpdate (req, callback) {
         email: req.body.email,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        phone: req.body.phone
+        phone: req.body.phone,
+        currency: req.body.currency
     };
 
     var schema = v.joi.object().keys({
         email: v.joi.string().email(),
         first_name: v.joi.string(),
         last_name: v.joi.string(),
-        phone: v.joi.number().min(11)
+        phone: v.joi.number().min(11),
+        currency: v.joi.string().max(3)
     });
 
     v.validate(data, schema, callback);

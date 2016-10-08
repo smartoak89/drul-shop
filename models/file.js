@@ -12,6 +12,8 @@ var schema = new Schema({
     mime: { type: String },
     parent: { type: String },
     created: { type: Date }
+},{
+    versionKey: false
 });
 
 module.exports = mongoose.model('File', schema);

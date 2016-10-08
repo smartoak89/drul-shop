@@ -4,24 +4,20 @@ var _ = require('lodash');
 
 exports.converter = function (data, currency, callback) {
     getCurrentCourse().then(function(course) {
-        var input;
-        var price = _.find(course, {ccy: currency.toUpperCase()}).sale;
+        var curr = currency.toUpperCase();
+        if (curr == 'UAH') return callback(null, data);
 
-        if (typeof data == 'string') {
-            input = [{price: data}];
-        }
+        var currentPrice;
+        var c = _.find(course, {ccy: curr});
+        c ? currentPrice = c.sale : callback(null, data);
 
-        if (typeof data == 'object') {
-            input = [data];
-        }
-
-        _.each(input, function (i) {
-            i.price = i.price / price;
+        _.each(data, function (i) {
+            i.price = i.price / currentPrice;
         });
 
-        callback(null, input);
+        callback(null, data);
     }, function(err) {
-        self.callback(err);
+        callback(err);
     });
 };
 

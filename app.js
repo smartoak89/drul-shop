@@ -30,21 +30,22 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 
 app.use(session({
-        secret: conf.session.secret,
-        key: conf.session.key,
-        resave: conf.session.resave,
-        saveUninitialized: conf.session.saveUninitialized,
-        coockie: conf.session.coockie,
-        store: new redisStore({
-            client: redisCli,
-            ttl: conf.redis.ttl
-        })
-    }
-));
+    secret: conf.session.secret,
+    key: conf.session.key,
+    resave: conf.session.resave,
+    saveUninitialized: conf.session.saveUninitialized,
+    coockie: conf.session.coockie,
+    store: new redisStore({
+        client: redisCli,
+        ttl: conf.redis.ttl
+    })
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+
+app.use(require('./middleware/configureUser'));
 
 require('./routes')(app, express);
 

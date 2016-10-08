@@ -1,28 +1,21 @@
+var Promise = require('bluebird');
+var HttpError = require('../error').HttpError;
+
 exports.index = {
     get: function (req, res, next) {
-        var productAPI = require('../api/product');
-        var convector = require('../libs/currency').converter;
-        var userAPI = require('../api/user');
+        console.log('currentUser => ', req.user);
+        var productApi = require('../api/product')(req.user);
 
-        console.log(req.query);
-        // if (req.query) {
-        //     productAPI.findAll(req.query, function (err, result) {
-        //         if (err) return next(err);
-        //         res.json(result);
-        //     });
-        // }
-        userAPI.currentAcriveUser(req, function (err, user) {
+        productApi.list(function (err, products) {
             if (err) return next(err);
-            var data = {
-                currency: user.currency || req.session.currency || 'UAH'
-            };
-            res.render('main/index', data);
+            res.render('main/index', {data: {
+                products: products
+            }});
         });
     },
     filter: function (req, res, next) {
         res.render('main/filter');
     }
-
 };
 
 exports.auth = {
@@ -49,3 +42,21 @@ exports.currency = {
         res.redirect('/');
     }
 };
+
+var productsList = Promise.promisify(function (callback) {
+    var productAPI = require('../api/product');
+    productAPI.list(function (err, data) {
+        if (err) return callback(err);
+        callback(null, data);
+    });
+});
+// function productsList () {
+//     var Promise = require('bluebird');
+//     new Promise(function ())
+//     var productAPI = require('../api/product');
+//
+//     productAPI.list(function (err, data) {
+//         if (err) return next(err);
+//         res.json({data: data});
+//     });
+// }

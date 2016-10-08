@@ -1,17 +1,12 @@
-function Http (url) {
-    $.ajax({
-        url: url,
-        data: data,
-        success: success
-    });
-}
+console.log('load')
 
 $(document).ready(function () {
+    console.log('load doca')
     (function () {
         var currency = $('#currency .list');
         currency.click( function (event) {
             var current = event.target.textContent;
-
+            console.log('currency', currency);
             $.ajax({
                 type: "POST",
                 url: '/currency',

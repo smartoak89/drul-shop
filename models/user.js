@@ -38,6 +38,8 @@ var schema = new Schema({
         type: Date,
         default: Date.now
     }
+},{
+    versionKey: false
 });
 
 schema.methods.encryptPassword = function(password) {
