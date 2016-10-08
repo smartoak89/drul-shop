@@ -3,14 +3,14 @@ var HttpError = require('../error').HttpError;
 
 exports.index = {
     get: function (req, res, next) {
-        console.log('currentUser => ', req.user);
         var productApi = require('../api/product')(req.user);
 
         productApi.list(function (err, products) {
             if (err) return next(err);
-
+            console.log('products', products);
             res.render('main/index', {
                 data: {
+                    currency: req.user.currency,
                     products: products
                 }
             });

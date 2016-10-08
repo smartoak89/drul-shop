@@ -1,5 +1,3 @@
-console.log('load')
-
 $(document).ready(function () {
     (function () {
         var currency = $('#currency .list');
@@ -11,7 +9,7 @@ $(document).ready(function () {
                 url: '/currency',
                 data: { currency: current },
                 success: function () {
-                    console.log('sucs');
+                    window.location.reload();
                 },
                 error: function () {
                     console.log('error');
