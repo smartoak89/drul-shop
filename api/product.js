@@ -54,6 +54,13 @@ Product.prototype = {
     },
     findAll: function (document, callback) {
         db.findAll(document, callback);
+    },
+    filter: function (req, callback) {
+        var criteria = {};
+        for (key in req.body) {
+            criteria[key] = {$in: req.body[key]}
+        }
+        db.findAll(criteria, callback);
     }
 };
 

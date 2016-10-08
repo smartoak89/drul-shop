@@ -5,6 +5,8 @@ function getRouter(router) {
 
     router.get('/filter', commonHandler.index.filter);
 
+    router.post('/filter', commonHandler.index.search);
+
     router.get('/auth', commonHandler.auth.get);
 
     router.post('/auth', require('../middleware/auth'), commonHandler.auth.post);
