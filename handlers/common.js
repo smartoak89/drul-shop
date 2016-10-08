@@ -9,7 +9,6 @@ exports.index = {
             console.log('products', products);
             res.render('main/index', {
                 data: {
-                    currency: req.user.currency,
                     products: products
                 }
             });
