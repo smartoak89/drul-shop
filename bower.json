@@ -8,6 +8,7 @@
     "jquery-treegrid": "^0.3.0",
     "smSlider": "https://github.com/sashamochalin/smSlider.git",
     "woco-accordion": "https://github.com/chooowai/woco-accordion.git",
-    "simplePagination.js": "https://github.com/flaviusmatis/simplePagination.js.git"
+    "simplePagination.js": "https://github.com/flaviusmatis/simplePagination.js.git",
+    "malihu-custom-scrollbar-plugin": "~3.1.5"
   }
 }

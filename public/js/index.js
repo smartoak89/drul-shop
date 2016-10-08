@@ -7,6 +7,7 @@ function Http (url) {
 }
 
 $(document).ready(function () {
+    console.log('sdf');
     (function () {
         var currency = $('#currency .list');
         currency.click( function (event) {

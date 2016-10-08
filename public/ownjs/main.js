@@ -15,6 +15,9 @@
             edges: 2,
             displayedPages: 3
         });
+        $(".scroll").mCustomScrollbar({
+            theme: 'rounded-dark'
+        });
     });
     var slider = $('#slider'),
         tooltip = $('.tooltip');
