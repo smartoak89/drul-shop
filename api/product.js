@@ -25,9 +25,12 @@ Product.prototype = {
         db.find(id, function (err, result) {
             if (err) return callback(err);
             if (!result) return callback(new HttpError(404, 'Product Not Found'));
-            console.log('Old data => ', JSON.stringify(result));
-            console.log('Data for update => ', JSON.stringify(data));
-            db.update(result.uuid, data, callback);
+            for (var k in data) {
+                if (typeof data[k] !== 'undefined') {
+                    result[k] = data[k];
+                }
+            }
+            db.update(result.uuid, result, callback);
         })
     },
     remove: function (id, callback) {
@@ -38,10 +41,15 @@ Product.prototype = {
         });
     },
     findOne: function (document, callback) {
+        var self = this;
         db.findOne(document, function (err, result) {
             if (err) return callback(err);
             if (!result) return callback(new HttpError(404, 'Product Not Found'));
-            callback(null, result);
+            configureProduct(self.user, [result]).then(function () {
+                callback(null, result);
+            }).catch(function (err) {
+                callback(err);
+            });
         })
     },
     findAll: function (document, callback) {

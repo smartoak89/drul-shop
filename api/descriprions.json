@@ -22,12 +22,14 @@
       "POST /product": "Create a new product",
       "GET /products": "Return list of products",
       "PUT /product/{uuid}": "Update product",
-      "DELETE /product/{uuid}": "Delete product"
+      "DELETE /product/{uuid}": "Delete product",
+      "GET /product/{uuid}": "Get one product"
+      "GET /product/{uuid}/gallery": "Get all photos for current product",
     }
   },{
     "File": {
       "POST /file/{uuid}": "Upload photo for current product",
-      "GET /files/{uuid}": "Get all photos for current product"
+      "GET /file/{uuid}": "Get one photo",
     }
   }
 ]
