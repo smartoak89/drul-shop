@@ -59,6 +59,16 @@ body{
     text-align: center;
     margin-top: 35px;
 }
+.navv.compact .logoWrapper{
+    display: inline-flex;
+    text-align: left;
+    margin-top: 12px;
+    width: auto;
+
+}
+.navv.compact .logoWrapper > .logo{
+    margin: 0;
+}
 .placeTime{
     padding: 17px 0 11px 0;
     font-size: 16px;
@@ -87,10 +97,19 @@ body{
     margin-right: 25px;
     margin-left: 0;
 }
-.nav{
+.navv{
     height: 250px;
     background: #000;
     position: relative;
+    transition: all .7s ease;
+}
+.navv.compact{
+    height: 100px;
+    position:fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 .list > li:first-child{
     display: none;
@@ -102,6 +121,15 @@ body{
     font-size: 14px;
     text-align: center;
     margin-top: 70px;
+}
+.navv.compact .navigation{
+    width: auto;
+    position: relative;
+    top: 39px;
+    right: 120px;
+    display: inline;
+    float: right;
+    margin-top: 0;
 }
 .navigation > li{
     display: inline;
@@ -122,6 +150,9 @@ section {
     /*margin: 100px auto 0;*/
     position: absolute;
     right: 20px;
+}
+.navv.compact section{
+    top: 47px;
 }
 #slider{
     width: 65px;
@@ -573,6 +604,139 @@ input[type=checkbox]:checked + label:before {
 :-moz-placeholder           {color:#e5e5e5;}
 :-ms-input-placeholder      {color:#e5e5e5;}
 .card{
-    min-height: 1000px;
     border-radius: 0;
+    padding: 30px;
+}
+
+.sp-wrap{
+    max-width: none;
+    width: 100%;
+    background: transparent;
+    border:0;
+}
+
+.sp-thumbs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.sp-thumbs > a{
+    margin: 3px 3px 0 0;
+}
+.categCard{
+    color: #c3c3c3;
+    font-size: 13px;
+}
+.artNameCard{
+    margin-top: 70px;
+}
+.artNameCard > p{
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 300;
+}
+.artNameCard > div{
+    color: #000;
+    font-size: 14px;
+    font-weight: 300;
+}
+.descriptionCard{
+    font-size: 16px;
+    font-weight: 300;
+}
+.priceCard{
+    margin-top: 65px;
+}
+.priceCard > span{
+    font-weight: 300;
+    font-size: 30px;
+}
+.priceCard > strike{
+    color: #a3a3a3;
+    font-size: 24px;
+    margin-left: 65px;
+    font-weight: 300;
+}
+.marCard{
+    margin: 40px 0 30px 0;
+}
+.sizeCard{
+    font-size: 16px;
+    font-weight: 500;
+}
+.sizeCardDis{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.sizeCardDis > .checkbo{
+    margin-right: 15px;
+}
+.sizeCardDis > .checkbo:first-child{
+    padding-left: 0;
+}
+.sizeCardDis > .checkbo > span{
+    position: relative;
+    color: #000;
+    bottom: 2px;
+    font-weight: 300;
+}
+.buttonsCard{
+    margin-top: 60px;
+}
+.buttonsCard > button:first-child{
+    margin-right: 20px;
+}
+.modal-dialog .nav-tabs{
+    border: 0;
+}
+.modal-dialog .tab-content>.tab-pane{
+    padding: 25px;
+}
+.modal-dialog .tab-content>.active {
+    background-color: #f8f7f7;
+}
+.nav-tabs>li>a {
+    margin-right: 0;
+    line-height: 1.42857143;
+    border: 1px solid #eee;
+    border-bottom: 0;
+    border-radius: 0;
+    color: #000;
+}
+.nav-tabs>li>a:hover {
+    border: 0;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #000;
+    cursor: default;
+    background-color: #f8f7f7;
+    border: 0;
+    border-bottom-color: transparent;
+    border-top: 2px solid #000;
+}
+.card .table>tbody>tr>td{
+    border: 0;
+    font-size: 15px;
+    font-weight: 300;
+}
+.card .table>tbody>tr>td:first-child{
+    color: #a3a3a3;
+    width: 20%;
+}
+.card .close{
+    position: absolute;
+    top: -65px;
+    right: -50px;
+    font-weight: 100;
+    font-size: 40px;
+    color: #fff;
+    opacity: 1;
+    text-shadow: none;
+}
+@media screen and (min-width: 1292px) {
+    .modal-sizeLg{
+        width: 1220px;
+    }
 }

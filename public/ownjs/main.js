@@ -19,6 +19,32 @@
             theme: 'rounded-dark'
         });
         $('.sp-wrap').smoothproducts();
+
+        $('.goodsBlock').click(function(){
+            //console.log($(this).attr('data-id'));
+            $.ajax({
+                type: "GET",
+                url: "api/product/" + $(this).attr('data-id'),
+                success: function (resp) {
+                    console.log($("p").children(".priceCard"));
+                    $('#goodNameCard').html(resp.data.name);
+                    $(".priceCard").children("span").html(resp.data.price + ' грн');
+                    $('.bs-example-modal-lg').modal('show');
+                },
+                error: function () {
+                    console.log('error');
+                }
+            })
+        })
+
+        $(window).scroll(function () {
+            var scrollh = $(this).scrollTop();
+            if (scrollh > 60) {
+                $(".navv").addClass('compact');
+            } else {
+                $(".navv").removeClass('compact');
+            }
+        });
     });
     var slider = $('#slider'),
         tooltip = $('.tooltip');
