@@ -51,6 +51,7 @@ block content
                     a по новизне
                 div.row
                 - each product in data.products
+<<<<<<< HEAD
                     div.col-lg-4.col-md-4.col-sm-6.col-xs-12
                         div.goodsBlock(data-id="#{product.uuid}")
                             - if(product.old_price)
@@ -82,6 +83,10 @@ block content
                     //            p Пальто mango
                     //            hr.line
                     //            span 2700 грн
+=======
+                    +product(product)
+
+>>>>>>> 907652651a94311beb43ce56b5570b1a9fd161d9
                     //div.col-lg-4.col-md-4.col-sm-6.col-xs-12
                     //    div.goodsBlock
                     //        div.marker.red sale

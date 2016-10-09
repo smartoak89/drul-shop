@@ -8,3 +8,16 @@ mixin errorMessage()
     div.callout.callout-danger.fade.in.marTop40
         h4 Oh snap!
         p Error message!
+mixin product(product)
+    div.col-lg-4.col-md-4.col-sm-6.col-xs-12
+        div.goodsBlock
+            - if(product.old_price)
+            div.marker.red sale
+            img.img-responsive.cover(src="/api/file/#{product.photo}")
+            div.namePrice
+                div #{product.article}
+                p #{product.name}
+                hr.line
+                span #{product.price + ' ' + user.currency}
+                - if(product.old_price)
+                strike #{product.old_price + ' ' + user.currency}

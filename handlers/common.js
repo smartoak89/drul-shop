@@ -3,8 +3,8 @@ var HttpError = require('../error').HttpError;
 
 exports.index = {
     get: function (req, res, next) {
-        var productApi = require('../api/product')(req.user);
-        productApi.list(function (err, products) {
+        var productAPI = require('../api/product')(req.user);
+        productAPI.list(function (err, products) {
             if (err) return next(err);
             console.log('products', products);
             res.render('main/index', {
@@ -15,7 +15,25 @@ exports.index = {
         })
     },
     filter: function (req, res, next) {
-        res.render('main/filter');
+        var productAPI = require('../api/product')(req.user);
+        productAPI.list(function (err, products) {
+            if (err) return next(err);
+            console.log('products', products);
+            res.render('main/filter', {
+                data: {
+                    products: products
+                }
+            });
+        });
+    },
+    search: function (req, res, next) {
+        var productAPI = require('../api/product')(req.user);
+        productAPI.filter(req, function (err, result) {
+            if (err) return next(err);
+            res.render('main/filter', {data: {
+                products: result
+            }});
+        })
     }
 };
 

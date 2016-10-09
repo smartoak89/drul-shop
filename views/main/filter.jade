@@ -199,6 +199,7 @@ block content
                     a по отзывам
                     a по новизне
                 div.row
+<<<<<<< HEAD
                     div.col-lg-4.col-md-4.col-sm-6.col-xs-12
                         div.goodsBlock(data-toggle="modal" data-target=".bs-example-modal-lg")
                             div.marker.red sale
@@ -238,6 +239,21 @@ block content
                                 hr.line
                                 span 2700 грн
                                 strike 3100 грн
+=======
+                - each product in data.products
+                    +product(product)
+
+                    //div.col-lg-4.col-md-4.col-sm-6.col-xs-12
+                    //    div.goodsBlock
+                    //        div.marker.red sale
+                    //        img.img-responsive.cover(src="images/11.png")
+                    //        div.namePrice
+                    //            div Артикул 30530101
+                    //            p Пальто mango
+                    //            hr.line
+                    //            span 2700 грн
+                    //            strike 3100 грн
+>>>>>>> 907652651a94311beb43ce56b5570b1a9fd161d9
                 div.row
                     div.col-lg-12.col-md-12.col-sm-12.col-xs-12.center
                         div.paginat
