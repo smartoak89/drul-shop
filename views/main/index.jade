@@ -51,42 +51,7 @@ block content
                     a по новизне
                 div.row
                 - each product in data.products
-<<<<<<< HEAD
-                    div.col-lg-4.col-md-4.col-sm-6.col-xs-12
-                        div.goodsBlock(data-id="#{product.uuid}")
-                            - if(product.old_price)
-                                div.marker.red sale
-                            img.img-responsive.cover(src="/api/file/#{product.photo}")
-                            div.namePrice
-                                div #{product.article}
-                                p #{product.name}
-                                hr.line
-                                span #{product.price + ' ' + data.currency}
-                                - if(product.old_price)
-                                    strike #{product.old_price + ' ' + user.currency}
-                    //div.col-lg-4.col-md-4.col-sm-6.col-xs-12
-                    //    div.goodsBlock
-                    //        div.marker.green -30%
-                    //        img.img-responsive.cover(src="images/11.png")
-                    //        div.namePrice
-                    //            div Артикул 30530101
-                    //            p Пальто mango
-                    //            hr.line
-                    //            span 2700 грн
-                    //            strike 3100 грн
-                    //div.col-lg-4.col-md-4.col-sm-6.col-xs-12
-                    //    div.goodsBlock
-                    //        div.marker.blue new
-                    //        img.img-responsive.cover(src="images/11.png")
-                    //        div.namePrice
-                    //            div Артикул 30530101
-                    //            p Пальто mango
-                    //            hr.line
-                    //            span 2700 грн
-=======
                     +product(product)
-
->>>>>>> 907652651a94311beb43ce56b5570b1a9fd161d9
                     //div.col-lg-4.col-md-4.col-sm-6.col-xs-12
                     //    div.goodsBlock
                     //        div.marker.red sale
@@ -101,6 +66,8 @@ block content
                     div.col-lg-12.col-md-12.col-sm-12.col-xs-12.center
                         div.paginat
                 div.modal.fade.bs-example-modal-lg(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel")
+                    button.close(type="button" data-dismiss="modal" aria-label="Close")
+                        span(aria-hidden="true") &times;
                     div.modal-dialog.modal-lg.modal-sizeLg(role="document")
                         div.modal-content.card
                             div.row
@@ -123,8 +90,6 @@ block content
                                 div.col-lg-7.col-md-7.col-sm-7.col-xs-12
                                     div.row
                                         div.col-lg-12.col-md-12.col-sm-12.col-xs-12
-                                            button.close(type="button" data-dismiss="modal" aria-label="Close")
-                                                span(aria-hidden="true") &times;
                                             p.categCard Женские пальто | Maria Veneda
                                             div.artNameCard
                                                 div Артикул 30530101
