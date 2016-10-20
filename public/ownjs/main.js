@@ -36,7 +36,14 @@
                 }
             })
         })
-
+        $('#toLogin').click(function(){
+            $('.register-modal').modal('hide');
+            $('.login-modal').modal('show');
+        });
+        $('#toRegis').click(function(){
+            $('.login-modal').modal('hide');
+            $('.register-modal').modal('show');
+        });
         $(window).scroll(function () {
             var scrollh = $(this).scrollTop();
             if (scrollh > 60) {

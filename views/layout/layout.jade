@@ -33,9 +33,9 @@ html
                         li.placeTime#clock
                             p Киев 00:39
                         li.singIn.pull-right
-                            button.btn.btn-drul.dark(type="button") войти
+                            button.btn.btn-drul.dark(type="button" data-toggle="modal" data-target=".login-modal") войти
                         li.singUp.pull-right
-                            button.btn.btn-drul(type="button") регистрация
+                            button.btn.btn-drul(type="button" data-toggle="modal" data-target=".register-modal") регистрация
                         li.icon.iconRig.pull-right
                             div.s-3
                         li.icon.iconRig.pull-right
@@ -122,6 +122,36 @@ html
                                 i.fa.fa-instagram
                             li
                                 i.fa.fa-dribbble
+        div.modal.fade.register-modal(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel")
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+                span(aria-hidden="true") &times;
+            div.modal-dialog.modal-md(role="document")
+                div.modal-content
+                    div.row
+                        div.col-lg-12.col-md-12.col-sm-12.col-xs-12
+                            div.butRegLogWrap
+                                button.logRegBut#toLogin войти
+                                button.logRegBut.active регистрация
+                            div.inputRegLogWrap
+                                input(placeholder="Имя")
+                                input(placeholder="Фамилия")
+                                input(placeholder="Эл. почта")
+                                input(placeholder="Моб. номер")
+                                button.btn-drul.dark Зарегистрироваться
+        div.modal.fade.login-modal(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel")
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+                span(aria-hidden="true") &times;
+            div.modal-dialog.modal-md(role="document")
+                div.modal-content
+                    div.row
+                        div.col-lg-12.col-md-12.col-sm-12.col-xs-12
+                            div.butRegLogWrap
+                                button.logRegBut.active войти
+                                button.logRegBut#toRegis регистрация
+                            div.inputRegLogWrap
+                                input(placeholder="Имя")
+                                input(placeholder="Фамилия")
+                                button.btn-drul.dark Войти
 
 script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js")

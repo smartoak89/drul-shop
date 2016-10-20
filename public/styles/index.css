@@ -101,7 +101,7 @@ body{
     height: 250px;
     background: #000;
     position: relative;
-    transition: all .7s ease;
+    transition: all .2s ease;
 }
 .navv.compact{
     height: 100px;
@@ -213,6 +213,9 @@ section {
     background-size: cover;
     position: relative;
     max-height: 560px;
+}
+.navv.compact + #sm_slider{
+    margin-top: 135px;
 }
 #sm_slider > ul{
     margin-bottom: 0;
@@ -599,10 +602,10 @@ input[type=checkbox]:checked + label:before {
     left: 8px;
     font-weight: 500;
 }
-::-webkit-input-placeholder {color:#e5e5e5;}
-::-moz-placeholder          {color:#e5e5e5;}
-:-moz-placeholder           {color:#e5e5e5;}
-:-ms-input-placeholder      {color:#e5e5e5;}
+::-webkit-input-placeholder {color:#a3a3a3;}
+::-moz-placeholder          {color:#a3a3a3;}
+:-moz-placeholder           {color:#a3a3a3;}
+:-ms-input-placeholder      {color:#a3a3a3;}
 .card{
     border-radius: 0;
     padding: 30px;
@@ -725,15 +728,47 @@ input[type=checkbox]:checked + label:before {
     color: #a3a3a3;
     width: 20%;
 }
-.card .close{
+.card .close, .register-modal .close, .login-modal .close{
     position: absolute;
-    top: -65px;
-    right: -50px;
+    top: 25px;
+    right: 20px;
     font-weight: 100;
     font-size: 40px;
     color: #fff;
     opacity: 1;
     text-shadow: none;
+}
+.butRegLogWrap{
+    display: flex;
+    justify-content: center;
+}
+.logRegBut{
+    background: transparent;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+.logRegBut.active{
+    border: 1px solid #fff;
+}
+.logRegBut:first-child{
+    margin-right: 10px;
+}
+.inputRegLogWrap{
+    display: flex;
+    margin-top: 10em;
+    flex-direction:column;
+    padding:0 110px;
+}
+.inputRegLogWrap > input{
+    margin-bottom: 15px;
+    padding: 8px 10px;
+}
+.register-modal .modal-content, .login-modal .modal-content{
+    background: transparent;
+    border: 0;
+    box-shadow: none;
 }
 @media screen and (min-width: 1292px) {
     .modal-sizeLg{
