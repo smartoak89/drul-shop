@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
     (function () {
         var currency = $('#currency .list');
@@ -29,5 +31,70 @@ $(document).ready(function () {
             setTimeout(clock,1000);
         }
         clock();
+    })();
+
+    // Add and delete category
+    (function () {
+        $('button.create-categ').click(function () {
+            $('#create-categ').modal('show');
+        });
+
+        $('button[data-add=category]').click(function () {
+            var input = $('form.add-category input');
+            var formData = {
+                name: $(input[0]).val(),
+                link: $(input[1]).val(),
+                article: $(input[2]).val()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: '/api/category',
+                data: formData,
+                success: function (data) {
+                    addToTemplate(formData, data.uuid);
+                    $('#create-categ').modal('hide');
+                },
+                error: function (err) {
+                    console.log('error', err);
+                }
+            });
+
+        });
+
+        $('a.delete-categ').click(function () {
+            var self = $(this);
+            $('#deleteCateg').modal('show');
+
+            $('button[data-modal-delete=categ]').click(function () {
+                $.ajax({
+                    type: "DELETE",
+                    url: '/api/category/' + self.attr('data-id'),
+                    success: function (msg) {
+                        self.parent().parent().remove();
+                        $('#deleteCateg').modal('hide');
+                    },
+                    error: function (err) {
+                        console.log('error', err);
+                    }
+                });
+            });
+        });
+
+        $('button[data-modal=close]').click(function () {
+            $('#create-categ').modal('hide');
+            $('#deleteCateg').modal('hide');
+        });
+
+        function addToTemplate(form, id) {
+            var body = $('.category-body');
+            var tr = $("<tr></tr>");
+            for (key in form) {
+                tr.append($("<td></td>").html(form[key]));
+            }
+            tr.append($("<td><a class='delete-categ pull-right' data-id='"+ id +"'><i class='fa fa-close'></i></a></td>"));
+            body.append(tr);
+        }
+
     })();
 });

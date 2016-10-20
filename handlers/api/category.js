@@ -5,9 +5,10 @@ var categoryAPI = require('../../api/category');
 exports.create = function (req, res, next) {
     isValid(req, function (err, value) {
         if (err) return res.sendMsg(err, true, 400);
-        categoryAPI.create(value, function (err) {
+        categoryAPI.create(value, function (err, result) {
             if (err) return next(err);
-            res.sendMsg(msg.CATEGORY_ADDED);
+            res.json({uuid: result.uuid});
+            // res.sendMsg(msg.CATEGORY_ADDED);
         })
     });
 };
@@ -61,12 +62,15 @@ function isValid (req, callback) {
 
     var data = {
         name: req.body.name,
-        link: req.body.link
+        link: req.body.link,
+        article: req.body.article
     };
 
     var schema = v.joi.object().keys({
-        name: v.joi.string().alphanum().min(3).max(20).required(),
-        link: v.joi.string().alphanum().min(3).max(20).required()
+        name: v.joi.string().min(3).max(20).required(),
+        link: v.joi.string().alphanum().min(3).max(20).required(),
+        article: v.joi.string().alphanum().min(3).max(20).required()
+
     });
 
     v.validate(data, schema, callback);

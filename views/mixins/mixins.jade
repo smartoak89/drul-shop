@@ -20,4 +20,4 @@ mixin product(product)
                 hr.line
                 span #{product.price + ' ' + user.currency}
                 - if(product.old_price)
-                strike #{product.old_price + ' ' + user.currency}
+                    strike #{product.old_price + ' ' + user.currency}

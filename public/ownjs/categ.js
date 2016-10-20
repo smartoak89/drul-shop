@@ -6,7 +6,7 @@
         'oLanguage': {
             'sInfoFiltered': '<span class="label label-info"><i class="fa fa-filter"></i> filtering from _MAX_ records</span>',
         },
-        'ajax': "/api/category",
+        'ajax': "/api/categories",
         "columns": [
             { "data": "name"},
             { "data":"link"}

@@ -16,10 +16,7 @@ var schema = new Schema({
     subcat: {
         type: Array
     },
-    created: {
-        type: Date,
-        default: Date.now
-    }
+    article: {type: String}
 },{
     versionKey: false
 });

@@ -5,7 +5,20 @@ exports.index = function (req, res, next) {
 };
 
 exports.categories = function (req, res, next) {
-    res.render('admin/categ');
+    var categoryAPI = require('../../api/category');
+    categoryAPI.list(function (err, result) {
+        if (err) return next(err);
+        var list = result.map(function (i) {
+            return {
+                uuid: i.uuid,
+                name: i.name,
+                link: i.link,
+                article: i.article,
+                subcat: i.subcat
+            }
+        });
+        res.render('admin/categ', {categories: list});
+    });
 };
 exports.products = function (req, res, next) {
     res.render('admin/products');
