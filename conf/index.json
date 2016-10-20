@@ -22,5 +22,6 @@
       "port": "6379",
       "ttl": 50000
     },
-    "tmp": "tmp"
+    "tmp": "tmp",
+    "frontend_path": "../app/index.html"
 }

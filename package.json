@@ -17,6 +17,7 @@
     "express": "^4.0.0",
     "express-flash": "0.0.2",
     "express-session": "^1.0.4",
+    "gulp": "^3.9.1",
     "jade": "^1.11.0",
     "joi": "^9.0.4",
     "lodash": "^4.16.3",
@@ -33,5 +34,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "koderra"
+  "author": "koderra",
+  "devDependencies": {
+    "gulp-jade": "^1.1.0"
+  }
 }
