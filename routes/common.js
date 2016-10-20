@@ -1,17 +1,17 @@
 var commonHandler = require('../handlers/common');
 
 function getRouter(router) {
-    router.get('/', commonHandler.index.get);
+    router.get('/', commonHandler.app.get);
 
-    router.get('/filter', commonHandler.index.filter);
-
-    router.post('/filter', commonHandler.index.search);
-
-    router.get('/auth', commonHandler.auth.get);
-
-    router.post('/auth', require('../middleware/auth'), commonHandler.auth.post);
-
-    router.post('/currency', commonHandler.currency.post);
+    // router.get('/filter', commonHandler.index.filter);
+    //
+    // router.post('/filter', commonHandler.index.search);
+    //
+    // router.get('/auth', commonHandler.auth.get);
+    //
+    // router.post('/auth', require('../middleware/auth'), commonHandler.auth.post);
+    //
+    // router.post('/currency', commonHandler.currency.post);
 
     return router;
 }

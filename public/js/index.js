@@ -92,7 +92,10 @@ $(document).ready(function () {
             for (key in form) {
                 tr.append($("<td></td>").html(form[key]));
             }
+<<<<<<< HEAD
             tr.append($("<td><a class='delete-categ pull-right' data-id='"+ id +"'><i class='fa fa-close'></i></a></td>"));
+=======
+>>>>>>> 3611ae70a26a3ee54b6a501de9450be39ceca6b9
             body.append(tr);
         }
 
