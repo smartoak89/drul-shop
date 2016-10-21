@@ -1,4 +1,4 @@
-<div id="sm_slider" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+<div id="sm_slider" uib-carousel active="$ctrl.active" interval="$ctrl.myInterval" no-wrap="$ctrl.noWrapSlides">
     <div uib-slide class="pad35" ng-repeat="slide in $ctrl.slides track by slide.id" index="slide.id">
         <div class="row">
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
