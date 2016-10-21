@@ -1,6 +1,6 @@
 angular.module('app')
     .component('mainAdminContent', {
-        templateUrl: "components/admin/partial/main-admin-content.html",
+        templateUrl: "admin/components/partial/main-admin-content.html",
         controller: [function() {
             console.log('content');
         }]
