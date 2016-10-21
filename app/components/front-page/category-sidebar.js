@@ -1,12 +1,10 @@
 angular.module('app')
     .component('categoriesSidebar', {
         templateUrl: "components/front-page/category-sidebar.html",
-        controller: ['Httpquery', function(Httpquery) {
+        controller: ['Httpquery', 'category', function(Httpquery, category) {
             this.$onInit = function () {
-                var self = this;
-                Httpquery.query({path: 'categories'}, function (res) {
-                    self.categories = res;
-                })
+                this.categories = category.getList();
+                console.log(this.categories)
             }
         }]
     });
