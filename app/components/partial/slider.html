@@ -1,48 +1,45 @@
-<div uib-carousel active="0">
-    <ul>
-        <li uib-slide class="pad35">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                    <div class="bigBlock">
-                        <div class="marker blue">new</div><img src="assets/images/11.png" class="img-responsive cover"/>
-                        <div class="bigNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span></div>
-                    </div>
+<div id="sm_slider" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+    <div uib-slide class="pad35" ng-repeat="slide in $ctrl.slides track by slide.id" index="slide.id">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                <div class="bigBlock">
+                    <div class="marker blue">new</div><img src="assets/images/11.png" class="img-responsive cover"/>
+                    <div class="bigNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span></div>
                 </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                    <div class="row step">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="littleBlock">
-                                <div class="marker blue">new</div><img src="assets/images/11.png" class="img-responsive cover"/>
-                                <div class="littleNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span></div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <div class="row step">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="littleBlock">
+                            <div class="marker blue">new</div><img src="assets/images/11.png" class="img-responsive cover"/>
+                            <div class="littleNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="littleBlock">
+                            <div class="marker red">sale</div><img src="assets/images/11.png" class="img-responsive cover"/>
+                            <div class="littleNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span>
+                                <strike>3100 грн</strike>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="littleBlock">
-                                <div class="marker red">sale</div><img src="assets/images/11.png" class="img-responsive cover"/>
-                                <div class="littleNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span>
-                                    <strike>3100 грн</strike>
-                                </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="littleBlock">
+                            <div class="marker green">-30%</div><img src="assets/images/11.png" class="img-responsive cover"/>
+                            <div class="littleNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span>
+                                <strike>3100 грн</strike>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="littleBlock">
-                                <div class="marker green">-30%</div><img src="assets/images/11.png" class="img-responsive cover"/>
-                                <div class="littleNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span>
-                                    <strike>3100 грн</strike>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="littleBlock">
-                                <div class="marker blue">new</div><img src="assets/images/11.png" class="img-responsive cover"/>
-                                <div class="littleNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span></div>
-                            </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="littleBlock">
+                            <div class="marker blue">new</div><img src="assets/images/11.png" class="img-responsive cover"/>
+                            <div class="littleNamePrice"><span>Пальто Mango</span><br/><span>2700 грн</span></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </li>
-        <li uib-slide class="pad35">2</li>
-        <li uib-slide class="pad35">3</li>
-    </ul>
+        </div>
+        <div class="carousel-caption"></div>
+    </div>
 </div>
