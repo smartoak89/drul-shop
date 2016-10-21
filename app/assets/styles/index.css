@@ -779,13 +779,19 @@ input[type=checkbox]:checked + label:before {
     margin-bottom: 15px;
     padding: 8px 10px;
 }
-.register-modal .modal-content, .login-modal .modal-content{
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-}
+
 @media screen and (min-width: 1292px) {
     .modal-sizeLg{
         width: 1220px;
     }
+}
+
+.modal-auth .modal-content,
+.modal-register .modal-content{
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.modal {
+    background: rgba(0, 0, 0, 0.61);
 }

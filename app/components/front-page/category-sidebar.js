@@ -4,7 +4,6 @@ angular.module('app')
         controller: ['Httpquery', 'category', function(Httpquery, category) {
             this.$onInit = function () {
                 this.categories = category.getList();
-                console.log(this.categories)
             }
         }]
     });

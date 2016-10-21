@@ -30,7 +30,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         resolve: {
             checkCateg: ['$location', 'category', function($location, category){
                 var categ = category.getList();
-                var currentCateg = _.find(categ, {name: $location.path().split('/').pop()})
+                var currentCateg = _.find(categ, {name: $location.path().split('/').pop()});
                 if(!currentCateg){
                     $location.path('/');
                 }
