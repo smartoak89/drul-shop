@@ -92,7 +92,6 @@ $(document).ready(function () {
             for (key in form) {
                 tr.append($("<td></td>").html(form[key]));
             }
-            body.append(tr);
         }
 
     })();

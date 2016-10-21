@@ -217,14 +217,47 @@ section {
 .navv.compact + #sm_slider{
     margin-top: 135px;
 }
-#sm_slider > ul{
-    margin-bottom: 0;
-}
-.sm_slide{
+#sm_slider > div{
     height: 100%;
 }
+#sm_slider .carousel-control.left, #sm_slider .carousel-control.right{
+     width: 0;
+}
+#sm_slider .carousel-control.left .glyphicon , #sm_slider .carousel-control.right .glyphicon {
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    background: #fff;
+    opacity: 0.6;
+    color: #ccc;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 1.9em;
+    text-shadow: none;
+}
+#sm_slider .carousel-control.left span:before{
+    content: '\f104'
+}
+#sm_slider .carousel-control.right span:before{
+    content: '\f105'
+}
+#sm_slider .carousel-indicators{
+    bottom: 15px;
+}
+#sm_slider .carousel-indicators li{
+    width: 17px;
+    height: 7px;
+    background-color: #cecece;
+    border: 1px solid #cecece;
+    border-radius: 0;
+    margin: 0 5px 0 0;
+}
+#sm_slider .carousel-indicators li.active, #sm_slider .carousel-indicators li:hover{
+    background-color: #000;
+    border: 1px solid #000;
+}
 .pad35{
-    padding: 35px;
+    padding: 35px 35px 70px 35px;
  }
 
 .bigBlock{
@@ -304,26 +337,7 @@ section {
 .step > .col-lg-6:first-child, .step > .col-lg-6:nth-child(2){
     margin-bottom: 35px;
 }
-.sm_nav {
-    padding: 28px 0px;
-    right: 47%;
-}
-.sm_nav-item {
-    width: 25px;
-}
-.sm_nav-item i {
-    display: block;
-    width: 17px;
-    height: 7px;
-    background-color: #cecece;
-    border-radius: 0;
-}
-.sm_nav-item.active i, .sm_nav-item:hover i {
-    background-color: #000;
-}
-.sm_nav-item.active:hover i {
-    background-color: #000;
-}
+
 .main{
     margin-top: 35px;
 }
