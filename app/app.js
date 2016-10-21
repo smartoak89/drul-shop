@@ -28,8 +28,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             'content@filterPage': {template: "<filter-page></filter-page>"}
         },
         resolve: {
-            checkCateg: ['$location', function($location){
-                console.log($location.path().split('/').pop());
+            checkCateg: ['$location', 'category', function($location, category){
+                var categ = category.getList();
+                var currentCateg = _.find(categ, {name: $location.path().split('/').pop()})
+                if(!currentCateg){
+                    $location.path('/');
+                }
             }]
         }
     });
