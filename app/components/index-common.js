@@ -1,6 +1,6 @@
 angular.module('app')
-    .component('index', {
-        templateUrl: "components/index.html",
+    .component('indexCommon', {
+        templateUrl: "components/index-common.html",
         controller: ['test', function(test) {
             this.testS = test;
         }]

@@ -7,9 +7,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
     $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('/', {
+    $stateProvider.state('indexCommon', {
         url: "/",
-        template: "<index></index>"
+        views: {
+            '': {template: "<index-common></index-common>"},
+            'content@indexCommon': {template: "<main-content></main-content>"}
+        }
     });
 
 }]);
