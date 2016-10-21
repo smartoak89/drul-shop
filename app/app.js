@@ -1,7 +1,6 @@
-/*global angular*/
 "use strict";
 
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router', 'admin']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
