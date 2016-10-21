@@ -26,6 +26,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         views: {
             '': {template: "<template-common></template-common>"},
             'content@filterPage': {template: "<filter-page></filter-page>"}
+        },
+        resolve: {
+            checkCateg: ['$location', function($location){
+                console.log($location.path().split('/').pop());
+            }]
         }
     });
 
