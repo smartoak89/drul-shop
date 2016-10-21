@@ -1,6 +1,6 @@
 angular.module('admin')
     .component('indexAdmin', {
-        templateUrl: "components/admin/index-admin.html",
+        templateUrl: "admin/components/index-admin.html",
         controller: [function() {
         }]
     });
