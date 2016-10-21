@@ -24,7 +24,7 @@ exports.list = function (req, res, next) {
                 subcat: i.subcat
             }
         });
-        res.json({data: list});
+        res.json(list);
     });
 };
 

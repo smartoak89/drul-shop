@@ -1,7 +1,4 @@
 angular.module('app')
-    .service('test', function () {
-        this.test = null;
-        this.change = function () {
-            this.test = 'Masha'
-        }
-    });
+    .service('Httpquery', ['$resource', function ($resource) {
+        return $resource('/api/:path', {});
+    }]);

@@ -6,7 +6,8 @@ var app = angular.module('app', [
     'admin',
     'ngAnimate',
     'ngSanitize',
-    'ui.bootstrap']);
+    'ui.bootstrap',
+    'ngResource']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -15,8 +16,16 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     $stateProvider.state('indexCommon', {
         url: "/",
         views: {
-            '': {template: "<index-common></index-common>"},
-            'content@indexCommon': {template: "<main-content></main-content>"}
+            '': {template: "<template-common></template-common>"},
+            'content@indexCommon': {template: "<front-content></front-content>"}
+        }
+    });
+
+    $stateProvider.state('filterPage', {
+        url: "/category/:name",
+        views: {
+            '': {template: "<template-common></template-common>"},
+            'content@filterPage': {template: "<filter-page></filter-page>"}
         }
     });
 

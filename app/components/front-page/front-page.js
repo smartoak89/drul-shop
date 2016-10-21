@@ -1,6 +1,6 @@
 angular.module('app')
-    .component('mainContent', {
-        templateUrl: "components/partial/main-content.html",
+    .component('frontContent', {
+        templateUrl: "components/front-page/front-page.html",
         controller: [function() {
             console.log('Index content loaded!')
         }]
