@@ -5,7 +5,8 @@ var app = angular.module('app', [
     'admin',
     'ngAnimate',
     'ngSanitize',
-    'ui.bootstrap']);
+    'ui.bootstrap',
+    'ngResource']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
