@@ -19,7 +19,7 @@
     margin-right: 10px;
 }
 .uaFlag:before{
-    background-image: url("../images/uaFlag.png");
+    background-image: url("../../app/assets/images/uaFlag.png");
     background-size: 14px 14px;
     position: relative;
     display: inline-block;
@@ -30,7 +30,7 @@
     margin-right: 5px;
 }
 .rusFlag:before{
-    background-image: url("../images/rusFlag.png");
+    background-image: url("../../app/assets/images/rusFlag.png");
     background-size: 14px 14px;
     position: relative;
     display: inline-block;

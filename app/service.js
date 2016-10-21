@@ -1,6 +1,7 @@
 angular.module('app')
-    .factory('myf', function () {
-        return {
-            blabla: 'slkdjf'
+    .service('test', function () {
+        this.test = null;
+        this.change = function () {
+            this.test = 'Masha'
         }
     });

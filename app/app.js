@@ -1,15 +1,17 @@
-/*global angular*/
 "use strict";
 
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router', 'admin']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('/', {
+    $stateProvider.state('indexCommon', {
         url: "/",
-        template: "<index></index>"
+        views: {
+            '': {template: "<index-common></index-common>"},
+            'content@indexCommon': {template: "<main-content></main-content>"}
+        }
     });
 
 }]);
