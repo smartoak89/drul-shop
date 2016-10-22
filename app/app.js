@@ -7,7 +7,10 @@ var app = angular.module('app', [
     'ngAnimate',
     'ngSanitize',
     'ui.bootstrap',
-    'ngResource']);
+    'ngResource',
+    'ui.select',
+    'rzModule'
+]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
