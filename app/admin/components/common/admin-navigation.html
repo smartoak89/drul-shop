@@ -1,0 +1,24 @@
+<aside role="complementary" class="sidebar sidebar-dark" style="width: 230px">
+    <div class="sidebar-block">
+        <div class="media">
+            <div class="media-left"><a href="page-profile.html"><span data-toggle="tooltip" data-container="body" title="" data-original-title="available" class="status dotted dotted-primary"></span><img src="/images/ava/uifaces5.jpg" alt="photo profile" class="media-object img-circle"></a></div>
+            <div class="media-body">
+                <h4 class="media-heading">Emma Greene</h4>
+                <p class="text-muted"><small>Graphic Designer</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+        <ul role="navigation" class="nav nav-stacked">
+            <li ng-repeat="cat in $ctrl.categs" role="presentation" class="nav-item">
+                <a ui-sref="{{cat.url}}" ui-sref-active="active">
+                        <span class="nav-icon">
+                            <i class="fa fa-cube"></i>
+                        </span>
+                    <span class="nav-text">{{cat.name}}</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</aside>
