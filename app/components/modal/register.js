@@ -1,7 +1,6 @@
 angular.module('app')
-    .component('register', {
-        templateUrl: "components/modal/register.html",
-        controller: [function() {
-            console.log('register')
-        }]
-    });
+    .controller('register', ['$uibModalInstance', '$scope', function ($uibModalInstance, $scope) {
+        $scope.close = function () {
+            $uibModalInstance.dismiss();
+        }
+    }]);

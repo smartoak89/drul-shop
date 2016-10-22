@@ -6,8 +6,7 @@ var path = require('path');
 
 exports.app = {
     get: function (req, res, next) {
-        var pathToFrontend = path.join(path.parse(__dirname).dir, '/app/index.html')
-        res.sendFile(pathToFrontend);
+        res.sendFile(path.join(conf.rootDir, '/app/index.html'));
     }
 };
 

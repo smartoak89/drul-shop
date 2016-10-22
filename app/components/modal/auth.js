@@ -1,7 +1,6 @@
 angular.module('app')
-    .component('auth', {
-        templateUrl: "components/modal/auth.html",
-        controller: [function() {
-            console.log('auth')
-        }]
-    });
+    .controller('auth', ['$uibModalInstance', '$scope', function ($uibModalInstance, $scope) {
+        $scope.close = function () {
+            $uibModalInstance.dismiss();
+        }
+    }]);
