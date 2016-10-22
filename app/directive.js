@@ -1,4 +1,5 @@
 angular.module('app')
+    //Modal window
     .directive('modal', function($uibModal) {
         var modalInstance;
         return {
