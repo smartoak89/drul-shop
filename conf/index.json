@@ -1,5 +1,5 @@
 {
-    "port" : "8088",
+    "port" : "8000",
     "live": false,
     "session": {
         "secret": "SomeThink",

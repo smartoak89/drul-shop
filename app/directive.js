@@ -14,7 +14,8 @@ angular.module('app')
 
                     modalInstance = $uibModal.open({
                         animation: false,
-                        template: '<' + type + '></' + type + '>',
+                        templateUrl: 'components/modal/' + type + '.html',
+                        controller: type,
                         size: type
                     });
                 }));
