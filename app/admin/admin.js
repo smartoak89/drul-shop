@@ -8,7 +8,7 @@ angular.module('admin', [])
         $stateProvider.state('indexAdmin', {
             url: "/admin",
             views: {
-                '': {template: "<index-admin></index-admin>"},
+                '': {template: "<template-admin></template-admin>"},
                 'content@indexAdmin': {template: "<main-admin-content></main-admin-content>"}
             }
         });
