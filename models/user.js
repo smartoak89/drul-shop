@@ -13,11 +13,11 @@ var schema = new Schema({
         //unique: true,
         // required: true
     },
-    first_name: {
+    firstname: {
         type: String,
         // required: true
     },
-    last_name: {
+    lastname: {
         type: String,
         // required: true
     },

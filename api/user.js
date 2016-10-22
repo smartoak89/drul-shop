@@ -32,14 +32,12 @@ module.exports = {
         db.find(id, callback);
     },
     auth: function (email, password, callback) {
-        db.findOne({email: email}, function (err, result) {
-            console.log('email', email);
-            console.log('password', password);
+        db.findOne({email: email}, function (err, user) {
             if (err) return callback(err);
-            if (!result) return callback(new HttpError(404, 'User Not Found'));
-            if (!result.checkPassword(password)) return callback();
-            console.log('Got user =>', result);
-            return callback (null, result);
+            if (!user) return callback(null);
+            if (!user.checkPassword(password)) return callback();
+            console.log('Got user =>', user);
+            return callback (null, user);
         });
     },
     findOne: function (data, callback) {
