@@ -1,4 +1,4 @@
-<div class="navv">
+<div class="navv" ng-class="$ctrl.scroll?'compact':''">
     <div class="container-fluid">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="logoWrapper">
@@ -12,8 +12,10 @@
             </ul>
             <section>
                 <!--span.tooltip-->
-                <div id="slider"></div>
-                <div class="volume s-7"></div>
+                <div id="slider">
+                    <rzslider rz-slider-model="$ctrl.volumeSlider.value" rz-slider-options="$ctrl.volumeSlider.options"></rzslider>
+                </div>
+                <div class="volume" ng-class="$ctrl.volume"></div>
             </section>
         </div>
     </div>
