@@ -1,5 +1,21 @@
 <!--Slider-->
 <slider></slider>
 
-<!--Categories-->
-<categories-sidebar></categories-sidebar>
+<div class="container-fluid">
+
+    <!--Category sidebar-->
+    <categories-sidebar></categories-sidebar>
+
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+
+        <!--Sort product-->
+        <sort-product></sort-product>
+
+        <div class="row">
+
+            <!--Product-->
+            <product ng-repeat="product in $ctrl.products" product="product"></product>
+
+        </div>
+    </div>
+</div>
