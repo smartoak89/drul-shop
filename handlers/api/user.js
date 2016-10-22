@@ -7,11 +7,11 @@ exports.register = function (req, res, next) {
         if (err) return res.sendMsg(err, true, 400);
         userAPI.findOne({email: value.email}, function(err, result) {
             if (err) return next(err);
-            if (result) return res.sendMsg(msg.EMAIL_EXISTS, true, 400)
+            if (result) return res.sendMsg(msg.EMAIL_EXISTS, true, 400);
             userAPI.create(value, function (err, user) {
                 if (err) return next(err);
                 if (!user) return res.sendMsg(msg.REGISTERED_ERROR, true, 400);
-                res.sendMsg(msg.REGISTERED_SUCCESS);
+                res.json({uuid: user.uuid});
             })
         });
     });
@@ -56,14 +56,14 @@ exports.find = function (req, res, next) {
 exports.auth = function (req, res, next) {
     isValid(req, function (err) {
         if (err) return res.sendMsg(err, true, 400);
-        userAPI.auth(req.body.email, req.body.password, function (err, result) {
+        userAPI.auth(req.body.email, req.body.password, function (err, user) {
             if (err) return next(err);
-            if (!result) return res.sendMsg(msg.AUTH_ERROR, true, 400);
+            if (!user) return res.sendMsg(msg.AUTH_ERROR, true, 400);
             req.session.user = {
-                uuid: result.uuid,
-                email: result.email
+                uuid: user.uuid,
+                email: user.email
             };
-            res.sendMsg(msg.AUTH_SUCCESS);
+            res.json({user: user});
         })
     });
 };
@@ -108,12 +108,18 @@ function isValid (req, callback) {
 
     var data = {
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        phone: req.body.phone,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname
     };
 
     var schema = v.joi.object().keys({
         email: v.joi.string().email().required(),
-        password: v.joi.string().regex(/^[a-zA-Z0-9-_]{3,30}$/).required()
+        password: v.joi.string().regex(/^[a-zA-Z0-9-_]{4,30}$/).required(),
+        phone: v.joi.number(),
+        firstname: v.joi.string().max(20),
+        lastname: v.joi.string().max(20)
     });
 
     v.validate(data, schema, callback);

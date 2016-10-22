@@ -420,9 +420,7 @@ section {
     display: block;
     text-decoration: none;
 }
-.sort{
-    padding: 20px 0;
-}
+
 .sort > a{
     padding-left: 15px;
     color: #36a5ec;

@@ -20,7 +20,7 @@ exports.list = function (req, res, next) {
 
     productApi.list(function (err, data) {
         if (err) return next(err);
-        res.json({data: data});
+        res.json(data);
     });
 };
 

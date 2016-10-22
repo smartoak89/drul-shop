@@ -11,13 +11,11 @@ mixin errorMessage()
 mixin product(product)
     div.col-lg-4.col-md-4.col-sm-6.col-xs-12
         div.goodsBlock
-            - if(product.old_price)
             div.marker.red sale
-            img.img-responsive.cover(src="/api/file/#{product.photo}")
+            img.img-responsive.cover(src="/api/file/")
             div.namePrice
-                div #{product.article}
-                p #{product.name}
+                div атрикль
+                p имя
                 hr.line
-                span #{product.price + ' ' + user.currency}
-                - if(product.old_price)
-                    strike #{product.old_price + ' ' + user.currency}
+                span 100$
+                strike 10$
