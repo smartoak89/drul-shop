@@ -13,6 +13,7 @@
     "Smoothproducts": "https://github.com/kthornbloom/Smoothproducts.git",
     "angular": "^1.5.8",
     "angular-ui-select": "^0.19.5",
-    "angularjs-slider": "^5.7.0"
+    "angularjs-slider": "^5.7.0",
+    "angular-bootstrap-grid-tree": "~0.4.0"
   }
 }

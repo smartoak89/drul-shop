@@ -1,6 +1,6 @@
 angular.module('admin')
-    .component('categs', {
-        templateUrl: "admin/components/categs/categs.html",
+    .component('goods', {
+        templateUrl: "admin/components/goods/goods.html",
         controller: [function() {
             var self = this;
 

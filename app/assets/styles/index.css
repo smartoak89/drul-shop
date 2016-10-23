@@ -933,3 +933,6 @@ input[type=checkbox]:checked + label:before {
     box-shadow: 0 1px 10px #464646;
     border-radius: 50%;
 }
+.butWrapp{
+    padding: 15px;
+}

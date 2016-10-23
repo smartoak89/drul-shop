@@ -1,6 +1,6 @@
 angular.module('admin')
-    .component('curr', {
-        templateUrl: "admin/components/curr/curr.html",
+    .component('requests', {
+        templateUrl: "admin/components/requests/requests.html",
         controller: [function() {
             var self = this;
 

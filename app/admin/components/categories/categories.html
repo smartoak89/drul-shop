@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="butWrapp pull-right">
+            <button ng-click="$ctrl.addCategory()" class="btn btn-default">Add category</buttonng-click>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <tree-grid
+                tree-data="$ctrl.tree_data"
+                col-defs      = "$ctrl.col_defs"
+                expand-on     = "$ctrl.expanding_property"
+                tree-control  = "$ctrl.my_tree"
+        ></tree-grid>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 angular.module('admin')
-    .component('com', {
-        templateUrl: "admin/components/com/com.html",
+    .component('comments', {
+        templateUrl: "admin/components/comments/comments.html",
         controller: [function() {
             var self = this;
 
