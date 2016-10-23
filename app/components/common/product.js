@@ -17,6 +17,6 @@ angular.module('app')
             product: '='
         },
         controller: [function() {
-            console.log('product', this.product);
+
         }]
     });

@@ -1,6 +1,5 @@
 "use strict";
 
-
 var app = angular.module('app', [
     'ui.router',
     'admin',
@@ -9,7 +8,8 @@ var app = angular.module('app', [
     'ui.bootstrap',
     'ngResource',
     'ui.select',
-    'rzModule'
+    'rzModule',
+    'ngCookies'
 ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {

@@ -2,16 +2,9 @@
     <div class="container-fluid">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <ul class="cutTime">
-
+                <!--Currency-->
                 <li id="currency" class="current">
-                    <ui-select ng-model="$ctrl.selectedItem" >
-                        <ui-select-match>
-                            <span ng-bind="$select.selected.name"></span>
-                        </ui-select-match>
-                        <ui-select-choices repeat="item in ($ctrl.itemArray | filter: $select.search) track by item.id">
-                            <span ng-bind="item.name"></span>
-                        </ui-select-choices>
-                    </ui-select>
+                    <currency></currency>
                 </li>
                 <li class="icon">
                     <div class="s-4"></div>
