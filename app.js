@@ -48,6 +48,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(function (req, res, next) {
+    // console.log('Session', req.session);
+    next();
+});
 
 require('./middleware/configureUser')(app);
 

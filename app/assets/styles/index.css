@@ -803,6 +803,9 @@ input[type=checkbox]:checked + label:before {
 .modal-dialog .tab-content>.active {
     background-color: #f8f7f7;
 }
+.modal-product {
+    width: 900px;
+}
 .nav-tabs>li>a {
     margin-right: 0;
     line-height: 1.42857143;
@@ -871,7 +874,7 @@ input[type=checkbox]:checked + label:before {
 
 @media screen and (min-width: 1292px) {
     .modal-sizeLg{
-        width: 1220px;
+        /*width: 1220px;*/
     }
 }
 .nav-text{
@@ -918,8 +921,8 @@ input[type=checkbox]:checked + label:before {
 .modal {
     background: rgba(0, 0, 0, 0.61);
 }
-.modal-auth .close-window,
-.modal-register .close-window {
+.close-window,
+.close-window {
     z-index: 1000;
     position: relative;
     background: none;
@@ -928,8 +931,8 @@ input[type=checkbox]:checked + label:before {
     color: #4a4949;
     font-size: 16px;
 }
-.modal-auth .close-window:active,
-.modal-register .close-window:active {
+.close-window:active,
+.close-window:active {
     box-shadow: 0 1px 10px #464646;
     border-radius: 50%;
 }
