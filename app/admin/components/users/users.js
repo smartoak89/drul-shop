@@ -1,6 +1,6 @@
 angular.module('admin')
     .component('users', {
-        templateUrl: "admin/components/users/users.html",
+        templateUrl: "users",
         controller: [function() {
             var self = this;
 
