@@ -1,6 +1,6 @@
     angular.module('app')
 
-    .component('currency', {
+    .component('currencyChoose', {
         template: '<ui-select ng-model="$ctrl.selectedItem" ng-change="$ctrl.changeCurrency($select.selected.name)">' +
                         '<ui-select-match>' +
                             '<span ng-bind="$select.selected.name"></span>' +
@@ -22,7 +22,7 @@
             self.selectedItem = {name: currency} || self.itemArray[0];
 
             this.changeCurrency = function (value) {
-                Product.changeCurrency($cookies.get('currency'), value);
+                Product.changeCurrency(value);
                 $cookies.put('currency', value);
             }
         }]

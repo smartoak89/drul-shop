@@ -12,12 +12,16 @@ angular.module('app')
                 var self = this;
                 if (this.products == null) {
                     return Httpquery.query({params1: 'products'}, function (res) {
+                        var currency = $cookies.get('currency');
+                        if (currency != 'UAH') {
+                            self.changeCurrency(currency);
+                        }
                         return self.products = res;
                     })
                 }
                 return self.products;
             },
-            changeCurrency: function (oldC, newC) {
+            changeCurrency: function (newC) {
                 var self = this;
                 var prod;
                 Httpquery.query({params1: 'products'}, function (res) {
@@ -31,6 +35,7 @@ angular.module('app')
                     if (curr == undefined) {
                         return _.each(self.products, function (el, i) {
                             el.price = prod[i].price;
+                            el.currency = 'UAH';
                         })
                     }
                     var currentPrice = curr.sale;
@@ -40,10 +45,9 @@ angular.module('app')
                             el.old_price =  (prod[i].old_price / currentPrice).toFixed(2);
                         }
                         el.price = (prod[i].price / currentPrice).toFixed(2);
+                        el.currency = curr.ccy;
                     })
                 }
-
-
             }
         }
     }]);

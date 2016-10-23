@@ -8,15 +8,15 @@ angular.module('app')
                                     '<div class="namePrice">' +
                                     '<div>{{$ctrl.product.article}}</div>' +
                                     '<p>{{$ctrl.product.name}}</p>' +
-                                    '<hr class="line"/><span>{{$ctrl.product.price}}</span>' +
-                                '<strike ng-show="$ctrl.product.old_price">{{$ctrl.product.old_price}}</strike>' +
+                                    '<hr class="line"/><span>{{$ctrl.product.price + " " + $ctrl.product.currency}}</span>' +
+                                '<strike ng-show="$ctrl.product.old_price">{{$ctrl.product.old_price + " " + $ctrl.product.currency}}</strike>' +
                                 '</div>' +
                             '</div>' +
                     '</div>',
         bindings: {
             product: '='
         },
-        controller: [function() {
-
+        controller: ['$cookies', function($cookies) {
+            this.product.currency = $cookies.get('currency');
         }]
     });

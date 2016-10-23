@@ -11,7 +11,6 @@ var app = angular.module('app', [
     'rzModule',
     'ngCookies'
 ]);
-
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
