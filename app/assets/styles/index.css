@@ -538,7 +538,7 @@ section {
     height: 65px;
     margin: 0 auto;
 }
-.footer{
+.footerr{
     background: #000;
     height: 320px;
     margin-top: 150px
@@ -877,7 +877,41 @@ input[type=checkbox]:checked + label:before {
         /*width: 1220px;*/
     }
 }
-
+.nav-text{
+    color: #f5f7fa;
+}
+.nav.nav-stacked>li>a:focus .nav-text,
+.nav.nav-stacked>li>a:hover .nav-text,
+.nav.nav-stacked>li.active>a .nav-text,
+.nav.nav-stacked>li.active>a:focus .nav-text,
+.nav.nav-stacked>li.active>a:hover .nav-text{
+    color: #48CFAD;
+}
+.sidebar.sidebar-dark .nav-stacked>li.nav-header,
+.sidebar.sidebar-dark .nav-stacked>li>a .nav-caret,
+.sidebar.sidebar-dark .nav-stacked>li>a .nav-icon,
+.sidebar.sidebar-dark .text-muted {
+    color: rgba(245,247,250,.54);
+}
+.nav.nav-stacked>li>a{
+    border-left: 2px solid #434A54;
+}
+.nav.nav-stacked>li>a:focus,
+.nav.nav-stacked>li>a:hover {
+    color: #48CFAD;
+    border-bottom: none;
+    border-right: none;
+    border-left: 2px solid #48CFAD;
+    background-color: transparent;
+}
+.nav.nav-stacked>li.active>a,
+.nav.nav-stacked>li.active>a:focus,
+.nav.nav-stacked>li.active>a:hover{
+    color: #48CFAD;
+    border-bottom: none;
+    border-right: none;
+    border-left: 3px solid #48CFAD;
+}
 .modal-auth .modal-content,
 .modal-register .modal-content{
     background: transparent;
@@ -901,4 +935,7 @@ input[type=checkbox]:checked + label:before {
 .close-window:active {
     box-shadow: 0 1px 10px #464646;
     border-radius: 50%;
+}
+.butWrapp{
+    padding: 15px;
 }
