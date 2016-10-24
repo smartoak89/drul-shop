@@ -16,7 +16,12 @@ angular.module('app')
                         animation: false,
                         templateUrl: 'components/modal/' + type + '.html',
                         controller: type,
-                        size: type
+                        size: type,
+                        resolve: {
+                            modalData: function () {
+                                return scope;
+                            }
+                        }
                     });
                 }));
             }
