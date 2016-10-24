@@ -942,9 +942,89 @@ input[type=checkbox]:checked + label:before {
 .content-wrapper{
     height: calc(100vh - 100px);
     min-height: inherit;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
+}
+.admin .form-control, .form-control:focus {
+    box-shadow: none;
+}
+
+.admin .form-control:focus {
+    border-color: #48CFAD;
+    outline: 0;
+}
+.admin .btn-primary {
+    color: rgba(22,24,27,.87);
+    background-color: #48CFAD;
+    border-color: transparent;
+}
+.admin .btn-primary.active,
+.admin .btn-primary.focus,
+.admin .btn-primary:active,
+.admin .btn-primary:focus,
+.admin .btn-primary:hover,
+.admin .open>.btn-primary.dropdown-toggle {
+    color: rgba(22,24,27,.87);
+    background-color: #2fb593;
+    border-color: transparent;
+}
+.admin .btn-primary.active.focus,
+.admin .btn-primary.active:focus,
+.admin .btn-primary.active:hover,
+.admin .btn-primary:active.focus,
+.admin .btn-primary:active:focus,
+.admin .btn-primary:active:hover,
+.admin .open>.btn-primary.dropdown-toggle.focus,
+.admin .open>.btn-primary.dropdown-toggle:focus,
+.admin .open>.btn-primary.dropdown-toggle:hover {
+    color: rgba(22,24,27,.87);
+    background-color: #28987c;
+    border-color: transparent;
+    outline: #fff solid 1px;
+}
+.admin table>tbody>tr>td, .admin table>thead>tr>th {
+    vertical-align: middle;
+    text-align: center;
+}
+.admin table>tbody>tr>td>ul>li:before{
+    content: '- ';
+    font-weight: 500;
+}
+.admin table>tbody>tr>td>div{
+    position: relative;
+}
+.admin table>tbody>tr>td>div>ul{
+    width: 100px;
+    min-width: inherit;
+    left: 12%;
+}
+.admin table>tbody>tr>td>div>ul>li{
+    text-align: center;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 300;
+}
+.admin table>tbody>tr>td>div>ul>li:hover,
+.admin table>tbody>tr>td>div>i:hover{
+    background-color: gainsboro;
+    cursor: pointer;
+}
+.admin table>tbody>tr>td>div .fa-check{
+    color: #00A000;
+}
+.admin table>tbody>tr>td>div .fa-close{
+    color: #ca3a11;
+}
+.admin table>tbody>tr>td>div .fa-truck{
+    color: darkgoldenrod;
+}
+.admin table>tbody>tr>td>div .fa-question-circle-o{
+    color: #1b6d85;
+}
+.admin table>tbody>tr>td>div>i{
+    padding: 15px;
+    border-radius: 2px;
 }
