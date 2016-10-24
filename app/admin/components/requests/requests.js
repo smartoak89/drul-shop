@@ -3,6 +3,7 @@ angular.module('admin')
         templateUrl: "admin/components/requests/requests.html",
         controller: [function() {
             var self = this;
+            self.status = "question-circle-o";
 
         }]
     });

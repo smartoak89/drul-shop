@@ -1,1 +1,43 @@
-<p>Requests</p>
+<div class="row admin">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <table class="table table-grid table-hover">
+            <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Дата</th>
+                <th>Заказчик</th>
+                <th>Товары</th>
+                <th>Сумма</th>
+                <th>Статус</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>11-11-2016</td>
+                <td><a>Валера</a></td>
+                <td>
+                    <ul>
+                        <li>art 1</li>
+                        <li>art 2</li>
+                        <li>art 3</li>
+                    </ul>
+                </td>
+                <td>1300 UAH</td>
+                <td>
+                    <div>
+                        <i class="fa fa-{{$ctrl.status}}" id="dLabel" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false"></i>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li ng-click="$ctrl.status='question-circle-o'"><i class="fa fa-question-circle-o"></i> Уточняется</li>
+                            <li ng-click="$ctrl.status='check'"><i class="fa fa-check"></i> Выполнен</li>
+                            <li ng-click="$ctrl.status='close'"><i class="fa fa-close"></i> Отменен</li>
+                            <li ng-click="$ctrl.status='truck'"><i class="fa fa-truck"></i> Доствка</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
