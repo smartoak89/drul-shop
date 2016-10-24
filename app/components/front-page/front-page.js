@@ -6,6 +6,9 @@ angular.module('app')
 
             this.$onInit = function () {
                 self.products = Product.getList();
-            }
+            };
+            angular.element(document).ready(function () {
+                console.log('ready')
+            });
         }]
     });

@@ -4,14 +4,14 @@ angular.module('admin')
         controller: [function() {
             var self = this;
             self.categs =[
-                {name: 'Категории', url: 'categoriesAdmin'},
-                {name: 'Торвары', url: 'goodsAdmin'},
-                {name: 'Пользователи', url: 'usersAdmin'},
-                {name: 'Заказы', url: 'requestsAdmin'},
-                {name: 'Акции', url: 'stocksAdmin'},
-                {name: 'Валюта', url: 'currencyAdmin'},
-                {name: 'Доставка', url: 'deliveryAdmin'},
-                {name: 'Комментарии', url: 'commentsAdmin'}
+                {name: 'Категории', url: 'admin.categoriesAdmin'},
+                {name: 'Торвары', url: 'admin.goodsAdmin'},
+                {name: 'Пользователи', url: 'admin.usersAdmin'},
+                {name: 'Заказы', url: 'admin.requestsAdmin'},
+                {name: 'Акции', url: 'admin.stocksAdmin'},
+                {name: 'Валюта', url: 'admin.currencyAdmin'},
+                {name: 'Доставка', url: 'admin.deliveryAdmin'},
+                {name: 'Комментарии', url: 'admin.commentsAdmin'}
             ]
 
         }]

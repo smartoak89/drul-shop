@@ -15,19 +15,19 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
     $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('indexCommon', {
+    $stateProvider.state('index', {
         url: "/",
         views: {
             '': {template: "<template-common></template-common>"},
-            'content@indexCommon': {template: "<front-content></front-content>"}
+            'content@index': {template: "<front-content></front-content>"}
         }
     });
 
-    $stateProvider.state('filterPage', {
-        url: "/category/:name",
+    $stateProvider.state('index.filterPage', {
+        url: "category/:name",
         views: {
             '': {template: "<template-common></template-common>"},
-            'content@filterPage': {template: "<filter-page></filter-page>"}
+            'content': {template: "<filter-page></filter-page>"}
         },
         resolve: {
             checkCateg: ['$location', 'Category', function($location, Category){
