@@ -3,69 +3,67 @@
 angular.module('admin', ['treeGrid'])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/');
-
-        $stateProvider.state('indexAdmin', {
+        $stateProvider.state('admin', {
             url: "/admin",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@indexAdmin': {template: "<main-admin-content></main-admin-content>"}
+                'content': {template: "<main-admin-content></main-admin-content>"}
             }
         });
-        $stateProvider.state('categoriesAdmin', {
-            url: "/admin/categories",
+        $stateProvider.state('admin.categoriesAdmin', {
+            url: "/categories",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@categoriesAdmin': {template: "<categories></categories>"}
+                'content': {template: "<categories></categories>"}
             }
         });
-        $stateProvider.state('goodsAdmin', {
-            url: "/admin/goods",
+        $stateProvider.state('admin.goodsAdmin', {
+            url: "/goods",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@goodsAdmin': {template: "<goods></goods>"}
+                'content': {template: "<goods></goods>"}
             }
         });
-        $stateProvider.state('usersAdmin', {
-            url: "/admin/users",
+        $stateProvider.state('admin.usersAdmin', {
+            url: "/users",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@usersAdmin': {template: "<users></users>"}
+                'content': {template: "<users></users>"}
             }
         });
-        $stateProvider.state('requestsAdmin', {
-            url: "/admin/requests",
+        $stateProvider.state('admin.requestsAdmin', {
+            url: "/requests",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@requestsAdmin': {template: "<requests></requests>"}
+                'content': {template: "<requests></requests>"}
             }
         });
-        $stateProvider.state('stocksAdmin', {
-            url: "/admin/stocks",
+        $stateProvider.state('admin.stocksAdmin', {
+            url: "/stocks",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@stocksAdmin': {template: "<stocks></stocks>"}
+                'content': {template: "<stocks></stocks>"}
             }
         });
-        $stateProvider.state('currencyAdmin', {
-            url: "/admin/currency",
+        $stateProvider.state('admin.currencyAdmin', {
+            url: "/currency",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@currencyAdmin': {template: "<currency></currency>"}
+                'content': {template: "<currency></currency>"}
             }
         });
-        $stateProvider.state('deliveryAdmin', {
-            url: "/admin/delivery",
+        $stateProvider.state('admin.deliveryAdmin', {
+            url: "/delivery",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@deliveryAdmin': {template: "<delivery></delivery>"}
+                'content': {template: "<delivery></delivery>"}
             }
         });
-        $stateProvider.state('commentsAdmin', {
-            url: "/admin/comments",
+        $stateProvider.state('admin.commentsAdmin', {
+            url: "/comments",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content@commentsAdmin': {template: "<comments></comments>"}
+                'content': {template: "<comments></comments>"}
             }
         });
 
