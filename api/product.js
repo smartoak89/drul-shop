@@ -2,11 +2,7 @@ var db = require('../libs/datastore')('product');
 var HttpError = require('../error').HttpError;
 var Promise = require('bluebird');
 
-function Product (user) {
-    this.user = user;
-}
-
-Product.prototype = {
+module.exports = {
     create: function (data, callback) {
         db.create(data, callback)
     },
@@ -14,7 +10,7 @@ Product.prototype = {
         var self = this;
         db.list(function (err, result) {
             if (err) return callback(err);
-            configureProduct(self.user, result).then(function () {
+            configureProduct(result).then(function () {
                 callback(null, result);
             }).catch(function (err) {
                 callback(err);
@@ -45,7 +41,7 @@ Product.prototype = {
         db.findOne(document, function (err, result) {
             if (err) return callback(err);
             if (!result) return callback(new HttpError(404, 'Product Not Found'));
-            configureProduct(self.user, [result]).then(function () {
+            configureProduct([result]).then(function () {
                 callback(null, result);
             }).catch(function (err) {
                 callback(err);
@@ -64,24 +60,16 @@ Product.prototype = {
     }
 };
 
-var configureProduct = Promise.promisify(function (user, list, callback) {
+var configureProduct = Promise.promisify(function (list, callback) {
     var fileAPI = require('./file');
-    var converter = require('../libs/currency').converter;
-    converter(list, user.currency, function (err, result) {
-        if (err) return calblack(err);
 
-        return Promise.map(list, Promise.promisify(function (product, i, c, cb) {
-            fileAPI.findAll({parent: product.uuid}, function (err, gall) {
-                if (err) return callback(500);
-                product.gallery = gall;
-                cb();
-            });
-        })).then(function () {
-            callback();
+    Promise.map(list, Promise.promisify(function (product, i, c, cb) {
+        fileAPI.findAll({parent: product.uuid}, function (err, gall) {
+            if (err) return callback(500);
+            product.gallery = gall;
+            cb();
         });
+    })).then(function () {
+        callback();
     });
 });
-
-module.exports = function (user) {
-    return new Product(user);
-};

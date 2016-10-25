@@ -18,6 +18,7 @@ var schema = new Schema({
     old_price: {type: Number},
     photo: {type: String},
     gallery: {type: Array},
+    diferredId: {type: String},
     created: {
         type: Date,
         default: Date.now

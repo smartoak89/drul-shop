@@ -31,5 +31,11 @@
       "POST /file/{uuid}": "Upload photo for current product",
       "GET /file/{uuid}": "Get one photo",
     }
+  },{
+    "Deferred": {
+      "POST /deferred/:{product uuid}": {body: userId}"add to deferred",
+      "GET /deferreds/:userid": "Get all deferreds",
+      "DELETE /deferreds/:uuid": "delete deferred",
+    }
   }
 ]

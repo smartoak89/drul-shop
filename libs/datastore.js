@@ -20,7 +20,7 @@ Datastore.prototype = {
         })
     },
     create: function (data, callback) {
-        data.uuid = uuid.v4();
+        if (!data.uuid) data.uuid = uuid.v4();
         var model = new this.model(data);
         model.save(data, function (err, result) {
             if (err) return callback(err);
@@ -33,6 +33,7 @@ Datastore.prototype = {
         var self = this;
         this.find(id, function (err) {
             if (err) return callback(err);
+            console.log('updatedData', data);
             self.model.update({uuid: id}, data, function (err, result) {
                 if (err) return callback(err);
                 if (!result) return callback(500);

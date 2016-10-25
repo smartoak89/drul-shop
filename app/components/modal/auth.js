@@ -1,11 +1,13 @@
 angular.module('app')
-    .controller('auth', ['$uibModalInstance', '$scope', 'Httpquery', function ($uibModalInstance, $scope, Httpquery) {
+    .controller('auth', ['$uibModalInstance', '$scope', 'Httpquery', 'User', function ($uibModalInstance, $scope, Httpquery, User) {
         $scope.user = {};
 
         $scope.login = function () {
             if (isValid() == true) {
                 Httpquery.save({params1: 'user', params2: 'auth'}, $scope.user, function (res) {
                     console.log('success', res);
+                    User.set(res);
+                    $scope.close();
                 }, function (ex) {
                     $scope.error = ex.data.message;
                     console.log('error', ex);

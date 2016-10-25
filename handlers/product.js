@@ -1,9 +1,9 @@
-var msg = require('../../message/ru/product');
-var log = require('../../libs/logger')(module);
-var HttpError = require('../../error').HttpError;
+var msg = require('../message/ru/product');
+var log = require('../libs/logger')(module);
+var HttpError = require('../error/index').HttpError;
 
 exports.create = function (req, res, next) {
-    var productApi = require('../../api/product')(req.user);
+    var productApi = require('../api/product')(req.user);
 
     isValid(req, function (err, value) {
         log.log('gotVal %', value);
@@ -16,7 +16,7 @@ exports.create = function (req, res, next) {
 };
 
 exports.list = function (req, res, next) {
-    var productApi = require('../../api/product')(req.user);
+    var productApi = require('../api/product');
 
     productApi.list(function (err, data) {
         if (err) return next(err);
@@ -25,7 +25,7 @@ exports.list = function (req, res, next) {
 };
 
 exports.get = function (req, res, next) {
-    var productApi = require('../../api/product')(req.user);
+    var productApi = require('../api/product')(req.user);
     productApi.findOne({uuid: req.params.id}, function (err, data) {
         if (err) return next(err);
         res.json({data: data});
@@ -33,7 +33,7 @@ exports.get = function (req, res, next) {
 };
 
 exports.update = function (req, res, next) {
-    var productApi = require('../../api/product')(req.user);
+    var productApi = require('../api/product')(req.user);
     isValid(req, function (err, value) {
         if (err) return res.sendMsg(err, true, 400);
         productApi.update(req.params.id, value, function (err) {
@@ -44,7 +44,7 @@ exports.update = function (req, res, next) {
 };
 
 exports.gallery = function (req, res, next) {
-    var fileAPI = require('../../api/file');
+    var fileAPI = require('../api/file');
     var document = {parent: req.params.id};
     fileAPI.findAll(document, function (err, result) {
         if (err) return next(err);
@@ -53,7 +53,7 @@ exports.gallery = function (req, res, next) {
 };
 
 exports.remove = function (req, res, next) {
-    var productApi = require('../../api/product')(req.user);
+    var productApi = require('../api/product')(req.user);
     productApi.remove(req.params.id, function(err) {
         if (err) return next(err);
         res.sendMsg(msg.DELETED);
@@ -78,7 +78,7 @@ function viewData (data) {
 }
 
 function isValid (req, callback) {
-    var v = require('../../libs/validator');
+    var v = require('../libs/validator');
 
     var data = {
         name: req.body.name,

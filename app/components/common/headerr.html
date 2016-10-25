@@ -16,10 +16,12 @@
                     <p>Киев 00:39</p>
                 </li>
                 <li class="singIn pull-right">
-                    <button type="button" class="btn btn-drul dark" data-modal="auth">войти</button>
+                    <button type="button" class="btn btn-drul dark" data-modal="auth" ng-hide="$ctrl.User.active">войти</button>
+                    <button type="button" class="btn btn-drul dark" ng-click="$ctrl.logout()" ng-show="$ctrl.User.active">выйти</button>
                 </li>
                 <li class="singUp pull-right">
-                    <button type="button" class="btn btn-drul" data-modal="register">регистрация</button>
+                    {{$ctrl.User.active.firstname + ' ' + $ctrl.user.User.active.lastname}}
+                    <button type="button" class="btn btn-drul" data-modal="register" ng-hide="$ctrl.User.active">регистрация</button>
                 </li>
                 <li class="icon iconRig pull-right">
                     <div class="s-3"></div>

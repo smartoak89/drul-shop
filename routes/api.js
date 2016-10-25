@@ -1,7 +1,7 @@
-var categoryHandler = require('../handlers/api/category');
-var userHandler = require('../handlers/api/user');
-var productHandler = require('../handlers/api/product');
-var fileHandler = require('../handlers/api/file');
+var categoryHandler = require('../handlers/category');
+var userHandler = require('../handlers/user');
+var productHandler = require('../handlers/product');
+var fileHandler = require('../handlers/file');
 
 function getRouter(router) {
     //--Category
@@ -33,6 +33,13 @@ function getRouter(router) {
     // router.get('/files/:id', fileHandler.list);
     router.get('/file/:id', fileHandler.get);
     router.delete('/file/:id', fileHandler.delete);
+
+    //--Deferred
+    var deferredHandler = require('../handlers/deferred');
+
+    router.post('/deferred/:id', deferredHandler.add);
+    router.get('/deferred/:id', deferredHandler.getList);
+    router.delete('/deferred/:id', deferredHandler.delete);
 
     return router;
 }

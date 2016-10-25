@@ -1,6 +1,6 @@
-var userAPI = require('../../api/user');
-var msg = require('../../message/ru/user');
-var HttpError = require('../../error').HttpError;
+var userAPI = require('../api/user');
+var msg = require('../message/ru/user');
+var HttpError = require('../error/index').HttpError;
 
 exports.register = function (req, res, next) {
     isValid(req, function (err, value) {
@@ -9,9 +9,11 @@ exports.register = function (req, res, next) {
             if (err) return next(err);
             if (result) return res.sendMsg(msg.EMAIL_EXISTS, true, 400);
             userAPI.create(value, function (err, user) {
+                var view = require('../view-model/index').user;
+
                 if (err) return next(err);
                 if (!user) return res.sendMsg(msg.REGISTERED_ERROR, true, 400);
-                res.json({uuid: user.uuid});
+                res.json(view(user));
             })
         });
     });
@@ -54,16 +56,18 @@ exports.find = function (req, res, next) {
 };
 
 exports.auth = function (req, res, next) {
-    isValid(req, function (err) {
+    isValidAuth(req, function (err) {
         if (err) return res.sendMsg(err, true, 400);
         userAPI.auth(req.body.email, req.body.password, function (err, user) {
+            var view = require('../view-model/index').user;
+
             if (err) return next(err);
             if (!user) return res.sendMsg(msg.AUTH_ERROR, true, 400);
             req.session.user = {
                 uuid: user.uuid,
                 email: user.email
             };
-            res.json({user: user});
+            res.json(view(user));
         })
     });
 };
@@ -82,20 +86,20 @@ function viewData (data) {
 }
 
 function isValidUpdate (req, callback) {
-    var v = require('../../libs/validator');
+    var v = require('../libs/validator');
 
     var data = {
         email: req.body.email,
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         phone: req.body.phone,
         currency: req.body.currency
     };
 
     var schema = v.joi.object().keys({
         email: v.joi.string().email(),
-        first_name: v.joi.string(),
-        last_name: v.joi.string(),
+        firstname: v.joi.string(),
+        lastname: v.joi.string(),
         phone: v.joi.number().min(11),
         currency: v.joi.string().max(3)
     });
@@ -104,8 +108,7 @@ function isValidUpdate (req, callback) {
 }
 
 function isValid (req, callback) {
-    var v = require('../../libs/validator');
-
+    var v = require('../libs/validator');
     var data = {
         email: req.body.email,
         password: req.body.password,
@@ -117,10 +120,26 @@ function isValid (req, callback) {
     var schema = v.joi.object().keys({
         email: v.joi.string().email().required(),
         password: v.joi.string().regex(/^[a-zA-Z0-9-_]{4,30}$/).required(),
-        phone: v.joi.number(),
-        firstname: v.joi.string().max(20),
-        lastname: v.joi.string().max(20)
+        phone: v.joi.number().required(),
+        firstname: v.joi.string().regex(/^[a-zA-Z0-9-_]{4,30}$/).required(),
+        lastname: v.joi.string().regex(/^[a-zA-Z0-9-_]{4,30}$/).required()
     });
 
     v.validate(data, schema, callback);
 }
+
+function isValidAuth (req, callback) {
+    var v = require('../libs/validator');
+    var data = {
+        email: req.body.email,
+        password: req.body.password
+    };
+
+    var schema = v.joi.object().keys({
+        email: v.joi.string().email().required(),
+        password: v.joi.string().regex(/^[a-zA-Z0-9-_]{4,30}$/).required()
+    });
+
+    v.validate(data, schema, callback);
+}
+

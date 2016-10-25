@@ -1,9 +1,9 @@
-var fileAPI = require('../../api/file');
-var productAPI = require('../../api/product');
-var msg = require('../../message/ru/file');
-var HttpError = require('../../error').HttpError;
+var fileAPI = require('../api/file');
+var productAPI = require('../api/product');
+var msg = require('../message/ru/file');
+var HttpError = require('../error/index').HttpError;
 var Promise = require("bluebird");
-var conf = require('../../conf');
+var conf = require('../conf/index');
 var fs = require('fs');
 
 exports.uploadPhoto = function (req, res, next) {

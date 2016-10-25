@@ -15,3 +15,10 @@ util.inherits(HttpError, Error);
 HttpError.prototype.name = 'HttpError';
 
 exports.HttpError = HttpError;
+
+exports.ressError = function (code, msg) {
+    return {
+        error_code: code,
+        error_message: msg
+    }
+};
