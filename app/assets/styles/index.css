@@ -1102,22 +1102,182 @@ input[type=radio]:checked + label:before {
     padding: 10px 20px;
 }
 .office .btn-drul {
-    padding: 10px 28px;
+    padding: 10px 22px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
 }
-.custom tbody>tr:nth-child(1n)>td{
+.office .btn-drul>div{
+    margin-left: 10px;
+}
+.custom tbody>tr:nth-child(1n)>td,
+.custom1 tbody>tr:nth-child(1n)>td,
+.custom2 tbody>tr:nth-child(1n)>td{
     border: 1px solid #dedede;
+    border-left: 0;
+    border-right: 0;
     height: 150px;
     background-color: #fff;
     vertical-align: top;
     padding: 0;
     position: relative;
 }
-.custom tbody>tr:nth-child(1n)>td>img{
+.custom tbody>tr:nth-child(1n)>td:first-child,
+.custom1 tbody>tr:nth-child(1n)>td:first-child,
+.custom2 tbody>tr:nth-child(1n)>td:first-child{
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+}
+.custom tbody>tr:nth-child(1n)>td:nth-child(3),
+.custom1 tbody>tr:nth-child(1n)>td:nth-child(4),
+.custom2 tbody>tr:nth-child(1n)>td:nth-child(3),
+.custom2 tbody>tr:nth-child(1n)>td:nth-child(4),
+.custom2 tbody>tr:nth-child(1n)>td:nth-child(5){
+    border-right: 1px solid #dedede;
+}
+.custom tbody>tr:nth-child(1n)>td:last-child,
+.custom1 tbody>tr:nth-child(1n)>td:last-child,
+.custom2 tbody>tr:nth-child(1n)>td:last-child{
+    border: 0;
+    background-color: transparent;
+}
+.custom tbody>tr:nth-child(1n)>td>img,
+.custom1 tbody>tr:nth-child(1n)>td>img,
+.custom2 tbody>tr:nth-child(1n)>td>img{
     height: 100%;
 }
-.custom tbody>tr>td>.namePrice{
+.custom tbody>tr>td>.namePrice,
+.custom1 tbody>tr>td>.namePrice,
+.custom2 tbody>tr>td>.namePrice{
     border: 0;
 }
+.office table.custom>tbody>tr>td:nth-child(2){
+    width: 57%
+}
+.office table.custom1>tbody>tr>td:nth-child(2){
+    width: 42%
+}
+.office table.custom2>tbody>tr>td:nth-child(2){
+    width: 38%
+}
+.office table.custom1>tbody>tr>td:nth-child(3){
+    width: 15%
+}
+.office table.custom2>tbody>tr>td:nth-child(3){
+    width: 8%;
+}
+.office table.custom2>tbody>tr>td:nth-child(4){
+    width: 14%;
+}
+.office table.custom>tbody>tr>td:nth-child(3),
+.office table.custom1>tbody>tr>td:nth-child(4){
+    width: 20%
+}
+.office table.custom2>tbody>tr>td:nth-child(5){
+    width: 17%;
+}
+.custom .namePrice > div,
+.custom1 .namePrice > div,
+.custom2 .namePrice > div{
+    margin-bottom:0;
+}
 .params{
-    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 2px 0;
+}
+.params>div:nth-child(1n){
+    width: 25%
+}
+.params>div:nth-child(2n){
+    width: 75%;
+    color: #000;
+    font-weight: 500;
+}
+.custom tbody>tr>td:nth-child(3)>.namePrice,
+.custom1 tbody>tr>td:nth-child(4)>.namePrice,
+.custom2 tbody>tr>td:nth-child(3)>.namePrice,
+.custom2 tbody>tr>td:nth-child(4)>.namePrice,
+.custom2 tbody>tr>td:nth-child(5)>.namePrice{
+    padding: 25px 15px;
+}
+.custom tbody>tr>td:nth-child(3)>.namePrice>span,
+.custom1 tbody>tr>td:nth-child(4)>.namePrice>span,
+.custom2 tbody>tr>td:nth-child(3)>.namePrice>span,
+.custom2 tbody>tr>td:nth-child(4)>.namePrice>span,
+.custom2 tbody>tr>td:nth-child(5)>.namePrice>span{
+    font-size: 16px;
+}
+.custom tbody>tr>td:nth-child(3)>.namePrice>span,
+.custom1 tbody>tr>td:nth-child(4)>.namePrice>span{
+    margin-right: 25px;
+}
+.custom tbody>tr>td:nth-child(3)>.namePrice>strike,
+.custom1 tbody>tr>td:nth-child(4)>.namePrice>strike{
+    font-size: 14px
+}
+.custom tbody>tr>td:nth-child(3)>.namePrice>button,
+.custom1 tbody>tr>td:nth-child(4)>.namePrice>button,
+.custom2 tbody>tr>td:nth-child(5)>.namePrice>button{
+    margin-top: 30px;
+    color: #000;
+}
+.custom tbody>tr>td:nth-child(4)>div,
+.custom1 tbody>tr>td:nth-child(5)>div,
+.custom2 tbody>tr>td:nth-child(6)>div{
+    margin:0 15px;
+}
+.custom tbody>tr:nth-child(2n)>td,
+.custom1 tbody>tr:nth-child(2n)>td,
+.custom2 tbody>tr:nth-child(2n)>td{
+    border: 0;
+    height: 30px;
+    background-color: transparent;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.counter{
+    display: flex;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+.counter > input{
+    width: 35px;
+    border-radius: 0;
+    border: 1px solid #dedede;
+    border-right: 0;
+    border-left: 0;
+    text-align: center;
+}
+.counter > button{
+    width: 28px;
+    height: 28px;
+    border-radius: 0;
+    border: 1px solid #dedede;
+    background-color: #dedede;
+    font-size: 16px;
+    outline: 0;
+}
+.marCustom1{
+    margin-top: 30px;
+}
+.center{
+    text-align: center;
+}
+.colorRed{
+    color: #ff4242;
+}
+.colorBlue{
+    color: #5689ef;
+}
+.colorGreen{
+    color: #2eb72e;
+}
+.colorGray{
+    color: #b8b8b8;
 }

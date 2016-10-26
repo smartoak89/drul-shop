@@ -55,8 +55,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         }
     });
 
-    $stateProvider.state('index.privatOffice', {
-        url: "privatOffice",
+    $stateProvider.state('index.privat-office', {
+        url: "privat-office",
         views: {
             '': {template: "<template-common></template-common>"},
             'content': {template: "<privat-office></privat-office>"}
