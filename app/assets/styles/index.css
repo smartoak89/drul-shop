@@ -630,7 +630,7 @@ section {
 }
 input[type=checkbox],
 input[type=radio]{
-    display: none;
+    /*display: none;*/
 }
 .checkbo{
     position: relative;
@@ -1059,6 +1059,10 @@ input[type=radio]:checked + label:before {
 .admin table>tbody>tr>td>div>i{
     padding: 15px;
     border-radius: 2px;
+}
+
+.admin-products img.product-photo {
+    object-fit: cover;
 }
 .office h1{
    text-transform: uppercase;

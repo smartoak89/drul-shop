@@ -1,21 +1,26 @@
-<div class="row">
+<div class="row" class="admin-products">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <table class="table table-grid">
             <thead>
             <tr>
+                <th></th>
                 <th>Фото</th>
                 <th>Название</th>
                 <th>Категория</th>
                 <th>Артикул</th>
-                <th>Remove</th>
+                <th>Цена</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Вася</td>
-                <td>Васин</td>
-                <td>380999999999</td>
-                <td>Украина</td>
+            <tr ng-repeat="product in $ctrl.products">
+                <td><input type="checkbox"/></td>
+                <td>
+                    <img class="product-photo" src="{{'/api/file/' + product.photo}}" alt="{{product.name}}" width="100" height="60">
+                </td>
+                <td>{{product.name}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.article}}</td>
+                <td>{{product.price}}</td>
                 <td><button class="btn btn-default btn-sm" ng-click="">Remove</button></td>
             </tr>
             </tbody>

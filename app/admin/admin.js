@@ -1,6 +1,9 @@
 "use strict";
 
-angular.module('admin', ['treeGrid'])
+angular.module('admin', [
+    'treeGrid',
+    'ngResource'
+])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         $stateProvider.state('admin', {
