@@ -154,13 +154,15 @@ body{
     position: relative;
     transition: all .2s ease;
 }
-.navv.compact{
-    height: 100px;
-    position:fixed;
+.fixed{
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
+    position:fixed;
+}
+.navv.compact{
+    height: 100px;
 }
 .list > li:first-child{
     display: none;
@@ -251,7 +253,7 @@ section {
     position: relative;
     max-height: 560px;
 }
-#sm_slider.compact{
+.padScroll{
     margin-top: 135px;
 }
 #sm_slider > div{
@@ -357,10 +359,11 @@ section {
     top: 10px;
     left: 10px;
     text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 500;
     color: #fff;
     padding: 1px 4px;
+    letter-spacing: 0.15em;
 }
 .blue{
     background: #36a5ec;
@@ -445,7 +448,7 @@ section {
 }
 .namePrice > div{
     color: #c3c3c3;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 300;
     margin-bottom: 5px;
 }
@@ -625,7 +628,8 @@ section {
 .accordion-header-icon.accordion-header-icon-active{
     color: #000;
 }
-input[type=checkbox] {
+input[type=checkbox],
+input[type=radio]{
     display: none;
 }
 .checkbo{
@@ -671,6 +675,22 @@ input[type=checkbox]:checked + label:before {
     align-items: center;
     justify-content: center
     /*height: 17px;*/
+}
+input[type=radio]:checked + label:before {
+    content: "\f04d";
+    /*text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);*/
+    font-family: "FontAwesome";
+    font-size: 7px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center
+    /*height: 17px;*/
+}
+.office input[type=radio] + label + span{
+    font-size: 14px;
+    color: #000;
+    margin-right: 40px;
 }
 .scroll{
     max-height: 300px;
@@ -794,13 +814,16 @@ input[type=checkbox]:checked + label:before {
 .buttonsCard > button:first-child{
     margin-right: 20px;
 }
-.modal-dialog .nav-tabs{
+.modal-dialog .nav-tabs,
+.office .nav-tabs{
     border: 0;
 }
-.modal-dialog .tab-content>.tab-pane{
+.modal-dialog .tab-content>.tab-pane,
+.office .tab-content>.tab-pane{
     padding: 25px;
 }
-.modal-dialog .tab-content>.active {
+.modal-dialog .tab-content>.active,
+.office .tab-content>.active{
     background-color: #f8f7f7;
 }
 .modal-product {
@@ -811,11 +834,17 @@ input[type=checkbox]:checked + label:before {
     line-height: 1.42857143;
     border: 1px solid #eee;
     border-bottom: 0;
+    border-left: 0;
     border-radius: 0;
     color: #000;
 }
+.nav-tabs>li:first-child>a{
+    border-left: 1px solid #eee;
+}
 .nav-tabs>li>a:hover {
-    border: 0;
+    border-right: 1px solid #f8f7f7;
+    border-top: 1px solid #f8f7f7;
+    border-bottom: 0;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
     color: #000;
@@ -825,7 +854,8 @@ input[type=checkbox]:checked + label:before {
     border-bottom-color: transparent;
     border-top: 2px solid #000;
 }
-.card .table>tbody>tr>td{
+.card .table>tbody>tr>td,
+.office .table>tbody>tr>td{
     border: 0;
     font-size: 15px;
     font-weight: 300;
@@ -834,6 +864,7 @@ input[type=checkbox]:checked + label:before {
     color: #a3a3a3;
     width: 20%;
 }
+
 .card .close, .register-modal .close, .login-modal .close{
     position: absolute;
     top: 25px;
@@ -985,7 +1016,8 @@ input[type=checkbox]:checked + label:before {
     border-color: transparent;
     outline: #fff solid 1px;
 }
-.admin table>tbody>tr>td, .admin table>thead>tr>th {
+.admin table>tbody>tr>td,
+.admin table>thead>tr>th{
     vertical-align: middle;
     text-align: center;
 }
@@ -1027,4 +1059,65 @@ input[type=checkbox]:checked + label:before {
 .admin table>tbody>tr>td>div>i{
     padding: 15px;
     border-radius: 2px;
+}
+.office h1{
+   text-transform: uppercase;
+    font-weight: 300;
+}
+.office .table{
+    box-shadow: none;
+}
+.office .table>tbody>tr>td{
+    vertical-align: middle;
+}
+.office .table>tbody>tr>td>.form-group>input{
+    border: 1px solid #fff;
+    border-radius: 0;
+    padding: 5px 15px;
+    height: 40px;
+    box-shadow: none;
+}
+.office .table>tbody>tr>td>.form-group>input:active,
+.office .table>tbody>tr>td>.form-group>input:focus{
+    border: 1px solid #000;
+}
+.office .table>tbody>tr>td:first-child{
+    font-size: 14px;
+    color: #a3a3a3;
+    width: 10%;
+}
+.office table>tbody>tr>td:nth-child(2){
+    width: 30%;
+}
+.office .checkbo{
+    padding: 10px 0;
+}
+.office .tab-content{
+    margin: 0 -30px;
+}
+.office .tab-content>.tab-pane{
+    padding: 45px 35px;
+}
+.office .nav>li>a {
+    padding: 10px 20px;
+}
+.office .btn-drul {
+    padding: 10px 28px;
+}
+.custom tbody>tr:nth-child(1n)>td{
+    border: 1px solid #dedede;
+    height: 150px;
+    background-color: #fff;
+    vertical-align: top;
+    padding: 0;
+    position: relative;
+}
+.custom tbody>tr:nth-child(1n)>td>img{
+    height: 100%;
+}
+.custom tbody>tr>td>.namePrice{
+    border: 0;
+}
+.params{
+    margin-top: 10px;
 }

@@ -11,6 +11,21 @@ var app = angular.module('app', [
     'rzModule',
     'ngCookies'
 ]);
+app.run(['$location', '$state', '$rootScope', function($location, $state, $rootScope){
+    var self = this;
+    $rootScope.$on('$locationChangeStart', function(event, toUrl) {
+        $rootScope.url = toUrl.split('/');
+        console.log($rootScope.url[$rootScope.url.length - 1])
+        if ($rootScope.url[$rootScope.url.length - 1] === '') {
+            console.log('-');
+            $(".navv").removeClass('compact');
+        }else{
+            console.log('+');
+            $(".navv").addClass('compact');
+        }
+    });
+}]);
+
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -37,6 +52,14 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                     $location.path('/');
                 }
             }]
+        }
+    });
+
+    $stateProvider.state('index.privatOffice', {
+        url: "privatOffice",
+        views: {
+            '': {template: "<template-common></template-common>"},
+            'content': {template: "<privat-office></privat-office>"}
         }
     });
 
