@@ -23,37 +23,47 @@
                         </tr>
                         <tr>
                             <td>Имя</td>
-                            <td><div class="form-group">
-                                <input class="form-control" placeholder="Имя">
-                            </div></td>
+                            <td>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Имя">
+                                </div>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Фамилия</td>
-                            <td><div class="form-group">
-                                <input class="form-control" placeholder="Фамилия">
-                            </div></td>
+                            <td>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Фамилия">
+                                </div>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Моб. номер</td>
-                            <td><div class="form-group">
-                                <input data-mask="phone_us" class="form-control" placeholder="Моб. номер">
-                            </div></td>
+                            <td>
+                                <div class="form-group">
+                                    <input data-mask="phone_us" class="form-control" placeholder="Моб. номер">
+                                </div>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Эл. почта</td>
-                            <td><div class="form-group">
-                                <input class="form-control" placeholder="Эл. почта">
-                            </div></td>
+                            <td>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Эл. почта">
+                                </div>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Пароль</td>
-                            <td><div class="form-group">
-                                <input type="password" class="form-control" placeholder="Пароль">
-                            </div></td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Пароль">
+                                </div>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
@@ -69,49 +79,220 @@
                     <uib-tab-heading>
                         Корзина
                     </uib-tab-heading>
-                    <table class="table custom">
+                    <table class="table custom1">
                         <thead>
-                            <tr>
-                                <td>Товар</td>
-                                <td>Цена</td>
-                                <td></td>
-                            </tr>
+                        <tr>
+                            <td>Товар</td>
+                            <td></td>
+                            <td>Количество</td>
+                            <td>Цена</td>
+                            <td></td>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <div class="marker red">sale</div>
-                                    <img src="assets/images/11.png" class="img-responsive cover" alt=""></td>
-                                <td>
-                                    <div class="namePrice">
-                                        <div>Артикул 30530101</div>
-                                        <p>пальто maria velada</p>
-                                        <div class="params">
-                                            <div>Состав</div>
-                                            <div>Шерсть - 56%, Вискоза - 44%</div>
-                                            <div>Размер</div>
-                                            <div>42</div>
-                                            <div>Цвет</div>
-                                            <div>Бежевый</div>
-                                        </div>
+                        <tr>
+                            <td>
+                                <div class="marker red">sale</div>
+                                <img src="assets/images/11.png" class="img-responsive cover" alt=""></td>
+                            <td>
+                                <div class="namePrice">
+                                    <div>Артикул 30530101</div>
+                                    <p>пальто maria velada</p>
+
+                                    <div class="params">
+                                        <div>Состав</div>
+                                        <div>Шерсть - 56%, Вискоза - 44%</div>
                                     </div>
-                                </td>
-                            </tr>
+                                    <div class="params">
+                                        <div>Размер</div>
+                                        <div>42</div>
+                                    </div>
+                                    <div class="params">
+                                        <div>Цвет</div>
+                                        <div>Бежевый</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="counter">
+                                    <button ng-click="$ctrl.countMinus()">‒ </button>
+                                    <input ng-model="$ctrl.counter" type="number"/>
+                                    <button ng-click="$ctrl.countPlus()">+</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="namePrice">
+                                    <span>1300 грн</span>
+                                    <strike>2700 грн</strike>
+                                    <div class="marCustom1">Цена указана без учета доставки</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="s-3"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
                         </tbody>
                     </table>
-                    </ul>
                 </uib-tab>
                 <uib-tab>
                     <uib-tab-heading>
                         Отложенные
                     </uib-tab-heading>
-                    222555
+                    <table class="table custom">
+                        <thead>
+                        <tr>
+                            <td>Товар</td>
+                            <td></td>
+                            <td>Цена</td>
+                            <td></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="marker red">sale</div>
+                                <img src="assets/images/11.png" class="img-responsive cover" alt=""></td>
+                            <td>
+                                <div class="namePrice">
+                                    <div>Артикул 30530101</div>
+                                    <p>пальто maria velada</p>
+
+                                    <div class="params">
+                                        <div>Состав</div>
+                                        <div>Шерсть - 56%, Вискоза - 44%</div>
+                                    </div>
+                                    <div class="params">
+                                        <div>Размер</div>
+                                        <div>42</div>
+                                    </div>
+                                    <div class="params">
+                                        <div>Цвет</div>
+                                        <div>Бежевый</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="namePrice">
+                                    <span>1300 грн</span>
+                                    <strike>2700 грн</strike>
+                                    <button type="button" class="btn btn-drul">переместить в
+                                        <div class="s-3"></div>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="s-3"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="marker red">sale</div>
+                                <img src="assets/images/11.png" class="img-responsive cover" alt=""></td>
+                            <td>
+                                <div class="namePrice">
+                                    <div>Артикул 30530101</div>
+                                    <p>пальто maria velada</p>
+
+                                    <div class="params">
+                                        <div>Состав</div>
+                                        <div>Шерсть - 56%, Вискоза - 44%</div>
+                                    </div>
+                                    <div class="params">
+                                        <div>Размер</div>
+                                        <div>42</div>
+                                    </div>
+                                    <div class="params">
+                                        <div>Цвет</div>
+                                        <div>Бежевый</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="namePrice">
+                                    <span>1300 грн</span>
+                                    <strike>2700 грн</strike>
+                                    <button type="button" class="btn btn-drul">переместить в
+                                        <div class="s-3"></div>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="s-3"></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </uib-tab>
                 <uib-tab>
                     <uib-tab-heading>
                         История покупок
                     </uib-tab-heading>
-                    222555
+                    <table class="table custom2">
+                        <thead>
+                        <tr>
+                            <td>Товар</td>
+                            <td></td>
+                            <td></td>
+                            <td>Дата</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="marker red">sale</div>
+                                <img src="assets/images/11.png" class="img-responsive cover" alt=""></td>
+                            <td>
+                                <div class="namePrice">
+                                    <div>Артикул 30530101</div>
+                                    <p>пальто maria velada</p>
+
+                                    <div class="params">
+                                        <div>Состав</div>
+                                        <div>Шерсть - 56%, Вискоза - 44%</div>
+                                    </div>
+                                    <div class="params">
+                                        <div>Размер</div>
+                                        <div>42</div>
+                                    </div>
+                                    <div class="params">
+                                        <div>Цвет</div>
+                                        <div>Бежевый</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="namePrice">
+                                    <span>1300 грн</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="namePrice center">
+                                    <span>12.10.2016</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="namePrice center colorRed">
+                                    <span>Не оплачено</span>
+                                    <button type="button" class="btn btn-drul">перейти к оплате</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="s-3"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </uib-tab>
             </uib-tabset>
         </div>
