@@ -630,7 +630,7 @@ section {
 }
 input[type=checkbox],
 input[type=radio]{
-    /*display: none;*/
+    display: none;
 }
 .checkbo{
     position: relative;
