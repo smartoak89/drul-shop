@@ -1065,6 +1065,10 @@ input[type=radio]:checked + label:before {
     padding: 15px;
     border-radius: 2px;
 }
+
+.admin-products img.product-photo {
+    object-fit: cover;
+}
 .office h1{
    text-transform: uppercase;
     font-weight: 300;

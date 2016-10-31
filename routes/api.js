@@ -41,6 +41,11 @@ function getRouter(router) {
     router.get('/deferred/:id', deferredHandler.getList);
     router.delete('/deferred/:id', deferredHandler.delete);
 
+    // Currency monitor
+    var curmonHandler = require('../handlers/curmon');
+    router.post('/curmon', curmonHandler.createEdit);
+    router.get('/curmon', curmonHandler.get);
+
     return router;
 }
 
