@@ -45,11 +45,11 @@ angular.module('admin', ['treeGrid'])
                 'content': {template: "<stocks></stocks>"}
             }
         });
-        $stateProvider.state('admin.currencyAdmin', {
+        $stateProvider.state('admin.settingsAdmin', {
             url: "/currency",
             views: {
                 '': {template: "<template-admin></template-admin>"},
-                'content': {template: "<currency></currency>"}
+                'content': {template: "<settings></settings>"}
             }
         });
         $stateProvider.state('admin.deliveryAdmin', {

@@ -1,6 +1,6 @@
 angular.module('admin')
-    .component('currency', {
-        templateUrl: "admin/components/currency/currency.html",
+    .component('settings', {
+        templateUrl: "admin/components/settings/settings.html",
         controller: ['Currency', function(Currency) {
             var self = this;
             self.cur = Currency.getCurrentCourse();

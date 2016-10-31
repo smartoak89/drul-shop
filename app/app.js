@@ -9,7 +9,8 @@ var app = angular.module('app', [
     'ngResource',
     'ui.select',
     'rzModule',
-    'ngCookies'
+    'ngCookies',
+    'ngPinchZoom'
 ]);
 app.run(['$location', '$state', '$rootScope', function($location, $state, $rootScope){
     var self = this;

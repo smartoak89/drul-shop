@@ -14,6 +14,7 @@
     "angular": "^1.5.8",
     "angular-ui-select": "^0.19.5",
     "angularjs-slider": "^5.7.0",
-    "angular-bootstrap-grid-tree": "~0.4.0"
+    "angular-bootstrap-grid-tree": "~0.4.0",
+    "angular-pinch-zoom": "https://github.com/ktknest/angular-pinch-zoom.git#~0.2.1"
   }
 }
